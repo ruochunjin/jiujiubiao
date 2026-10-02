@@ -26,7 +26,7 @@ from xuanji.registry import ToolContext, ToolRegistry, ToolSpec, register_tool
 from xuanji.table import Table
 from xuanji.tools.db import Database
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "ChatClient",
