@@ -15,7 +15,7 @@
         • Refiner：初始化 → 自我批评 → 多工具精化 → 多工具一致性投票
                                                    [TableCritic 一脉]
   → [3] 输出检查：归一化、拒答识别、格式门禁
-```text
+```
 
 ## 快速开始
 
@@ -26,7 +26,7 @@ engine = xuanji.XuanJi()  # 端点由环境变量配置（见下）
 result = engine.ask("这位运动员在哪一站获得第一名？",
                     table=[["Year","Venue","Position"],["2003","Paris","1st"]])
 print(result.answer)  # Paris
-```text
+```
 
 数据库一等支持（Solver 自带 schema 感知工具并真实执行 SQL）：
 
@@ -34,7 +34,7 @@ print(result.answer)  # Paris
 from xuanji import Database
 db = Database.from_sqlite("concert_singer.db")  # 或 Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
-```text
+```
 
 **离线开发/测试**无需任何端点——注入 `FakeLLM` 即可跑通全流水线。
 
@@ -47,7 +47,7 @@ result = engine.ask("How many singers are from France?", db=db)
 
 ```bash
 xuanji --dataset data.json --task tqa --limit 10 --output results.json
-```text
+```
 
 ## 扩展
 

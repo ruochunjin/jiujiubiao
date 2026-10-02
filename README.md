@@ -17,7 +17,7 @@ question + table/database
         • Refiner: init → self-criticism → multi-tool refinement →
           multi-tool consistency vote                        [TableCritic family]
   → [3] Output check: normalization, refusal detection, format gating
-```text
+```
 
 ## Quickstart
 
@@ -33,7 +33,7 @@ result = engine.ask(
 )
 print(result.answer)   # Paris
 print(result.mode)     # "refine" (small table) — "solve" for long tables / DBs
-```text
+```
 
 Databases are first-class — the solver grounds itself with schema tools and
 executes real SQL:
@@ -43,7 +43,7 @@ from xuanji import Database
 
 db = Database.from_sqlite("concert_singer.db")   # or Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
-```text
+```
 
 **Offline development / tests** need no endpoint at all:
 
@@ -52,7 +52,7 @@ from xuanji import FakeLLM, XuanJi
 
 llm = FakeLLM(rules=[(r"Now it's your turn", ["Answer: Paris"] * 3)])
 engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
-```text
+```
 
 ## Endpoint configuration
 
@@ -71,7 +71,7 @@ No SDK dependency — plain HTTP to any OpenAI-compatible endpoint
 
 ```bash
 xuanji --dataset data/examples/wtq.json --task tqa --limit 10 --output results.json
-```text
+```
 
 Dataset format: a JSON array of
 `{"id", "table_caption", "table_text": [[header], [row]...], "question", "label"}`
@@ -89,7 +89,7 @@ from xuanji import register_tool
 def count_rows(ctx, arg):
     "count_rows() — Return the number of rows in the current table."
     return str(len(ctx.memory.get("df", ctx.df)))
-```text
+```
 
 Refine-stage tools (each with `generate` + `critic`) register via
 `@register_refine_tool` in `xuanji.agents.refine_tools`.
@@ -100,7 +100,7 @@ Refine-stage tools (each with `generate` + `critic`) register via
 pip install -e .            # pandas + cloudpickle only
 pip install -e ".[fuzzy]"   # faster fuzzy matching (rapidfuzz)
 pip install -e ".[dev]"     # tests + lint
-```text
+```
 
 ## Training-side utilities
 
@@ -117,7 +117,7 @@ reward = compute_process_reward(
     schema={"results": ["venue", "wins"]}, db_path="data/results.db",
 )
 print(reward.total, reward.r_schema, reward.r_struct, reward.r_exec)
-```text
+```
 
 ## Research lineage
 
