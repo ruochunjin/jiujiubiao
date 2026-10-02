@@ -1,0 +1,122 @@
+# XuanJi 璇玑
+
+> *一幅璇玑图，读出千首诗。* — Su Hui's 璇玑图 (841 characters woven into a
+> grid, readable into thousands of poems) is the great table of Chinese
+> culture: one grid, countless readings. **XuanJi** does this for your data —
+> one table, many questions.
+
+XuanJi is a **unified question-answering toolkit for tables and databases**.
+One pipeline covers the full chain, each stage pluggable:
+
+```
+question + table/database
+  → [1] Disambiguation (optional, CLEAR-style): detect ambiguity, clarify, rewrite
+  → [2] Solving — two interchangeable engines:
+        • Solver: ReAct agent + self-consistency over a tool registry
+          (long tables, messy formats, databases)           [TALON/RAISR family]
+        • Refiner: init → self-criticism → multi-tool refinement →
+          multi-tool consistency vote                        [TableCritic family]
+  → [3] Output check: normalization, refusal detection, format gating
+```
+
+## Quickstart
+
+```python
+import xuanji
+
+engine = xuanji.XuanJi()  # endpoint from env (see below)
+result = engine.ask(
+    "In which venue did the athlete win the first place?",
+    table=[["Year", "Venue", "Position"],
+           ["2001", "Edmonton", "3rd"],
+           ["2003", "Paris", "1st"]],
+)
+print(result.answer)   # Paris
+print(result.mode)     # "refine" (small table) — "solve" for long tables / DBs
+```
+
+Databases are first-class — the solver grounds itself with schema tools and
+executes real SQL:
+
+```python
+from xuanji import Database
+
+db = Database.from_sqlite("concert_singer.db")   # or Database.from_dataframe(df)
+result = engine.ask("How many singers are from France?", db=db)
+```
+
+**Offline development / tests** need no endpoint at all:
+
+```python
+from xuanji import FakeLLM, XuanJi
+
+llm = FakeLLM(rules=[(r"Now it's your turn", ["Answer: Paris"] * 3)])
+engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+```
+
+## Endpoint configuration
+
+No SDK dependency — plain HTTP to any OpenAI-compatible endpoint
+(vLLM, Ollama, DeepSeek, OpenAI, ...):
+
+| Variable | Default | Purpose |
+| --- | --- | --- |
+| `XUANJI_BASE_URL` / `OPENAI_BASE_URL` | `https://api.openai.com/v1` | endpoint |
+| `XUANJI_API_KEY` / `OPENAI_API_KEY` | — | API key |
+| `XUANJI_MODEL` / `OPENAI_MODEL` | — | model name (required) |
+| `XUANJI_TIMEOUT` / `XUANJI_RETRIES` | `180` / `3` | request tuning |
+| `XUANJI_PYTHON_TIMEOUT` | `10` | sandbox wall-clock limit (seconds) |
+
+## CLI
+
+```bash
+xuanji --dataset data/examples/wtq.json --task tqa --limit 10 --output results.json
+```
+
+Dataset format: a JSON array of
+`{"id", "table_caption", "table_text": [[header], [row]...], "question", "label"}`
+(TabFact style: `statement` + boolean label).
+
+## Extending
+
+Register a solver tool and it joins the action space — prompt and dispatch
+update automatically:
+
+```python
+from xuanji import register_tool
+
+@register_tool
+def count_rows(ctx, arg):
+    "count_rows() — Return the number of rows in the current table."
+    return str(len(ctx.memory.get("df", ctx.df)))
+```
+
+Refine-stage tools (each with `generate` + `critic`) register via
+`@register_refine_tool` in `xuanji.agents.refine_tools`.
+
+## Installation
+
+```bash
+pip install -e .            # pandas + cloudpickle only
+pip install -e ".[fuzzy]"   # faster fuzzy matching (rapidfuzz)
+pip install -e ".[dev]"     # tests + lint
+```
+
+## Research lineage
+
+XuanJi consolidates five peer-reviewed works from one lab:
+
+- **CLEAR** (ICDE 2025) — parser-independent NL2SQL disambiguation → stage [1]
+- **TALON** (EMNLP 2025) — multi-agent long-table exploration → solver
+- **RAISR** (ICASSP 2026) — collaborative database agents, execution grounding,
+  output checking → database tools, stage [3]
+- **TableCritic** (CogSci 2025) — self-criticism + tool library → refiner
+- **CORES** (ACL 2026 Findings) — code-oriented reasoning (Python as pivot);
+  the `def()` code tool follows this paradigm
+
+If you use XuanJi, please cite the relevant papers (see CITATION.cff).
+
+## License
+
+Apache-2.0. Ported modules retain their original notices (solver prompts and
+execution sandbox: Apache-2.0, Google Research; refiner: CC-BY, TableCritic).
