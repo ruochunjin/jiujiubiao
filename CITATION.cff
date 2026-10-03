@@ -6,6 +6,6 @@ message: >-
 type: software
 # TODO: add author list and repository URL before public release.
 authors: []
-url: "https://github.com/REPLACE-ORG/xuanji"
+url: "https://github.com/ruochunjin/xuanji"
 version: 0.2.0
 license: Apache-2.0

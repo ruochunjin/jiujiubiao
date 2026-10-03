@@ -32,8 +32,8 @@ dev = ["pytest>=8.0", "ruff>=0.6"]
 xuanji = "xuanji.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/REPLACE-ORG/xuanji"
-Issues = "https://github.com/REPLACE-ORG/xuanji/issues"
+Homepage = "https://github.com/ruochunjin/xuanji"
+Issues = "https://github.com/ruochunjin/xuanji/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/xuanji"]
