@@ -18,16 +18,33 @@ from typing import Any, Sequence
 from xuanji.normalize import normalize
 
 
+def _norm_parts(value: Any, task: str) -> frozenset:
+    """Normalized answer as a SET of parts (multi-answer " | " splits)."""
+
+    norm = normalize(value, "tfv" if task == "tfv" else "tqa")
+    return frozenset(part for part in norm.split(" | ") if part)
+
+
 def denotation_accuracy(predictions: Sequence[str], labels: Sequence[Any], task: str = "tqa") -> float:
-    """Fraction of predictions whose normalized form matches the gold label."""
+    """Fraction of predictions matching the gold label after normalization.
+
+    Multi-answer values compare as SETS (WTQ official semantics): part order
+    and case are irrelevant, but extra/missing parts miss
+    (WTQ-50 nu-3074: "surround stakes | warwick stakes" must match the
+    capitalized gold).
+    """
 
     if not predictions:
         return 0.0
     hits = 0
     for pred, gold in zip(predictions, labels):
         gold_norms = gold if isinstance(gold, list) else [gold]
-        norm = normalize(pred, "tfv" if task == "tfv" else "tqa")
-        if any(norm == normalize(g, "tfv" if task == "tfv" else "tqa") for g in gold_norms):
+        pred_parts = _norm_parts(pred, task)
+        # The gold label's entries TOGETHER form the reference set (WTQ
+        # multi-part answers arrive as several entries); a single-part
+        # prediction may match one entry of an alternatives set.
+        gold_parts = frozenset().union(*(_norm_parts(g, task) for g in gold_norms))
+        if pred_parts == gold_parts or (len(pred_parts) == 1 and pred_parts <= gold_parts):
             hits += 1
     return hits / len(predictions)
 

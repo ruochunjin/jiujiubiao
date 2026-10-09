@@ -73,7 +73,13 @@ def load_wtq_table(context_csv: str) -> BenchmarkTable:
     """Load one WTQ table by its repo-relative csv path (cached on disk)."""
 
     local = _fetch_hf_file(context_csv, CACHE_DIR / "wtq" / context_csv.replace("/", "_"))
-    text = local.read_text(encoding="utf-8", errors="replace")
+    # WTQ CSVs are mixed-encoding (cp1252 en-dashes etc.); utf-8-replace
+    # mojibake corrupts answers (nu-3088: "8–14" became "8C14").
+    raw = local.read_bytes()
+    try:
+        text = raw.decode("utf-8")
+    except UnicodeDecodeError:
+        text = raw.decode("cp1252", errors="replace")
     reader = csv.reader(io.StringIO(text))
     rows = [tuple(cell.strip() for cell in row) for row in reader if row]
     if not rows:
