@@ -1,0 +1,49 @@
+{
+  "benchmark": "wtq",
+  "n": 3,
+  "accuracy": 1.0,
+  "seconds": 56.8,
+  "llm_calls": 25,
+  "llm_tokens": 33259,
+  "cases": [
+    {
+      "id": "nu-2316",
+      "question": "which driver had the most points?",
+      "gold": [
+        "Alain Prost"
+      ],
+      "answer": "Alain Prost",
+      "norm": "alain prost",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.9,
+      "error": null
+    },
+    {
+      "id": "nu-798",
+      "question": "what is each location listed for the benteak timber tree?",
+      "gold": [
+        "Kerala, Madras, Maharashtra, Karnataka"
+      ],
+      "answer": "Kerala, Madras, Maharashtra, Karnataka",
+      "norm": "kerala, madras, maharashtra, karnataka",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.9,
+      "error": null
+    },
+    {
+      "id": "nu-2650",
+      "question": "does sibiu have an altitude above 200m?",
+      "gold": [
+        "yes"
+      ],
+      "answer": "Yes",
+      "norm": "yes",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 27.1,
+      "error": null
+    }
+  ]
+}

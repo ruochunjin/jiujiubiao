@@ -24,7 +24,7 @@ from xuanji.agents.refiner import Refiner
 from xuanji.agents.solver import Solver
 from xuanji.df_utils import get_df_info, infer_dtype
 from xuanji.disambiguate import DisambiguationResult, Disambiguator
-from xuanji.llm import ChatClient
+from xuanji.llm import default_client
 from xuanji.normalize import is_refusal, normalize
 from xuanji.registry import DEFAULT_REGISTRY, ToolRegistry
 from xuanji.table import Table
@@ -64,7 +64,7 @@ class XuanJi:
     ) -> None:
         if mode not in ("auto", "solve", "refine"):
             raise ValueError("mode must be auto, solve, or refine")
-        self.llm = llm if llm is not None else ChatClient()
+        self.llm = llm if llm is not None else default_client()
         self.mode = mode
         self.task = task
         self.long_table_rows = long_table_rows

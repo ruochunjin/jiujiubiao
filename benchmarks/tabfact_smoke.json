@@ -1,0 +1,49 @@
+{
+  "benchmark": "tabfact",
+  "n": 3,
+  "accuracy": 0.3333333333333333,
+  "seconds": 55.0,
+  "llm_calls": 18,
+  "llm_tokens": 17087,
+  "cases": [
+    {
+      "id": "1203",
+      "question": "most of ronnie mitchell 's nomination be for the inside soap award",
+      "gold": [
+        "True"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.8,
+      "error": null
+    },
+    {
+      "id": "5310",
+      "question": "there be more than 2 chapter of zeta psi use gamma in the name",
+      "gold": [
+        "True"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.4,
+      "error": null
+    },
+    {
+      "id": "9040",
+      "question": "the first pick be jay washington from the united state air21 express team",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.8,
+      "error": null
+    }
+  ]
+}

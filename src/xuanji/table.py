@@ -1,5 +1,6 @@
 """Table representation helpers."""
 import re
+from pathlib import Path
 
 try:
     import pandas as pd
@@ -28,8 +29,25 @@ class Table:
         if isinstance(obj, list):
             return cls(obj[0], obj[1:], title, context)
         if isinstance(obj, str):
+            # A short newline-free string naming an existing file is a PATH
+            # (csv/tsv); anything else is markdown/csv-ish content.
+            if "\n" not in obj and len(obj) < 260 and Path(obj).exists():
+                return cls.from_csv(obj, title, context)
             return cls.from_text(obj, title, context)
         raise TypeError(f"unsupported table type {type(obj)}")
+
+    @classmethod
+    def from_csv(cls, path, title="", context=""):
+        """Load a CSV/TSV file (pandas when available, csv module otherwise)."""
+
+        import csv as csv_module
+
+        sep = "	" if str(path).endswith((".tsv", ".tab")) else ","
+        with open(path, encoding="utf-8", errors="replace", newline="") as handle:
+            rows = [[c.strip() for c in row] for row in csv_module.reader(handle, delimiter=sep) if row]
+        if not rows:
+            raise ValueError(f"empty table file: {path}")
+        return cls(rows[0], rows[1:], title or Path(path).stem, context)
 
     @classmethod
     def from_text(cls, text, title="", context=""):
