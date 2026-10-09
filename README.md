@@ -57,15 +57,31 @@ engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
 ## Endpoint configuration
 
 No SDK dependency — plain HTTP to any OpenAI-compatible endpoint
-(vLLM, Ollama, DeepSeek, OpenAI, ...):
+(vLLM, Ollama, DeepSeek, OpenAI, ...) or an Anthropic-messages endpoint
+(`XUANJI_BACKEND=anthropic`):
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
+| `XUANJI_BACKEND` | `openai` | `openai` (chat/completions) or `anthropic` (messages API) |
 | `XUANJI_BASE_URL` / `OPENAI_BASE_URL` | `https://api.openai.com/v1` | endpoint |
 | `XUANJI_API_KEY` / `OPENAI_API_KEY` | — | API key |
 | `XUANJI_MODEL` / `OPENAI_MODEL` | — | model name (required) |
-| `XUANJI_TIMEOUT` / `XUANJI_RETRIES` | `180` / `3` | request tuning |
-| `XUANJI_PYTHON_TIMEOUT` | `10` | sandbox wall-clock limit (seconds) |
+| `XUANJI_TIMEOUT` / `XUANJI_RETRIES` | `180` / `6` | request tuning (rate-limit-aware backoff) |
+
+## Benchmarks (public, reproducible)
+
+Seeded stratified samples, K3-class endpoint, `sc=3`, `mode=auto`:
+
+| Benchmark | Sample | Accuracy | Notes |
+| --- | --- | --- | --- |
+| WikiTableQuestions (test) | 100 | **0.80** | 0.86 on the first 50-item subset; misses cluster on off-by-one counting and over-answering |
+| TabFact (validation) | 100 | **0.96** | balanced labels (51/49); misses are subtle "only X" claims |
+
+Reproduce:
+
+```bash
+XUANJI_BACKEND=anthropic python benchmarks/run_benchmark.py --benchmark wtq --n 100
+```
 
 ## CLI
 

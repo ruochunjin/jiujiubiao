@@ -1,10 +1,10 @@
 {
   "benchmark": "wtq",
   "n": 100,
-  "accuracy": 0.63,
-  "seconds": 3051.1,
-  "llm_calls": 922,
-  "llm_tokens": 503338,
+  "accuracy": 0.8,
+  "seconds": 2215.3,
+  "llm_calls": 1290,
+  "llm_tokens": 1128928,
   "cases": [
     {
       "id": "nu-2316",
@@ -16,7 +16,7 @@
       "norm": "alain prost",
       "status": "completed",
       "steps": 0,
-      "seconds": 13.2,
+      "seconds": 10.2,
       "error": null
     },
     {
@@ -29,7 +29,7 @@
       "norm": "kerala, madras, maharashtra, karnataka",
       "status": "completed",
       "steps": 0,
-      "seconds": 11.0,
+      "seconds": 8.1,
       "error": null
     },
     {
@@ -38,11 +38,11 @@
       "gold": [
         "yes"
       ],
-      "answer": "yes",
+      "answer": "Yes",
       "norm": "yes",
       "status": "completed",
-      "steps": 3,
-      "seconds": 19.6,
+      "steps": 4,
+      "seconds": 11.6,
       "error": null
     },
     {
@@ -55,7 +55,7 @@
       "norm": "6",
       "status": "completed",
       "steps": 1,
-      "seconds": 26.0,
+      "seconds": 21.5,
       "error": null
     },
     {
@@ -67,8 +67,8 @@
       "answer": "0",
       "norm": "0",
       "status": "completed",
-      "steps": 2,
-      "seconds": 64.3,
+      "steps": 1,
+      "seconds": 66.7,
       "error": null
     },
     {
@@ -81,7 +81,7 @@
       "norm": "2008 beijing",
       "status": "completed",
       "steps": 1,
-      "seconds": 23.5,
+      "seconds": 21.9,
       "error": null
     },
     {
@@ -94,7 +94,7 @@
       "norm": "ivan lendl",
       "status": "completed",
       "steps": 0,
-      "seconds": 10.7,
+      "seconds": 10.4,
       "error": null
     },
     {
@@ -107,7 +107,7 @@
       "norm": "myc gene",
       "status": "completed",
       "steps": 0,
-      "seconds": 5.6,
+      "seconds": 5.3,
       "error": null
     },
     {
@@ -120,7 +120,7 @@
       "norm": "beijing, china",
       "status": "completed",
       "steps": 0,
-      "seconds": 15.6,
+      "seconds": 13.1,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "norm": "errea",
       "status": "completed",
       "steps": 1,
-      "seconds": 58.0,
+      "seconds": 34.3,
       "error": null
     },
     {
@@ -146,7 +146,7 @@
       "norm": "das liebesopfer (libretto only, no music completed)",
       "status": "completed",
       "steps": 0,
-      "seconds": 13.2,
+      "seconds": 9.7,
       "error": null
     },
     {
@@ -159,7 +159,7 @@
       "norm": "96",
       "status": "completed",
       "steps": 1,
-      "seconds": 27.8,
+      "seconds": 21.3,
       "error": null
     },
     {
@@ -171,8 +171,8 @@
       "answer": "John Briggs | Kerry Baily",
       "norm": "john briggs | kerry baily",
       "status": "completed",
-      "steps": 0,
-      "seconds": 7.3,
+      "steps": 1,
+      "seconds": 26.0,
       "error": null
     },
     {
@@ -185,7 +185,7 @@
       "norm": "14",
       "status": "completed",
       "steps": 0,
-      "seconds": 6.2,
+      "seconds": 9.2,
       "error": null
     },
     {
@@ -211,7 +211,7 @@
       "norm": "hailin city",
       "status": "completed",
       "steps": 1,
-      "seconds": 43.5,
+      "seconds": 20.4,
       "error": null
     },
     {
@@ -223,8 +223,8 @@
       "answer": "Indonesia",
       "norm": "indonesia",
       "status": "completed",
-      "steps": 1,
-      "seconds": 41.7,
+      "steps": 0,
+      "seconds": 8.4,
       "error": null
     },
     {
@@ -237,7 +237,7 @@
       "norm": "111",
       "status": "completed",
       "steps": 3,
-      "seconds": 29.2,
+      "seconds": 19.8,
       "error": null
     },
     {
@@ -250,7 +250,7 @@
       "norm": "pakistan | south africa",
       "status": "completed",
       "steps": 0,
-      "seconds": 18.8,
+      "seconds": 16.9,
       "error": null
     },
     {
@@ -262,8 +262,8 @@
       "answer": "3",
       "norm": "3",
       "status": "completed",
-      "steps": 0,
-      "seconds": 13.9,
+      "steps": 1,
+      "seconds": 25.1,
       "error": null
     },
     {
@@ -276,7 +276,7 @@
       "norm": "l 8–14",
       "status": "completed",
       "steps": 0,
-      "seconds": 11.6,
+      "seconds": 6.4,
       "error": null
     },
     {
@@ -288,8 +288,8 @@
       "answer": "37 miles (60 km)",
       "norm": "37 miles (60 km)",
       "status": "completed",
-      "steps": 4,
-      "seconds": 36.2,
+      "steps": 5,
+      "seconds": 24.3,
       "error": null
     },
     {
@@ -302,7 +302,7 @@
       "norm": "exponent range",
       "status": "completed",
       "steps": 0,
-      "seconds": 11.0,
+      "seconds": 12.1,
       "error": null
     },
     {
@@ -315,7 +315,7 @@
       "norm": "brighton & hove albion",
       "status": "completed",
       "steps": 0,
-      "seconds": 7.5,
+      "seconds": 5.1,
       "error": null
     },
     {
@@ -327,8 +327,8 @@
       "answer": "Spas Delev",
       "norm": "spas delev",
       "status": "completed",
-      "steps": 1,
-      "seconds": 28.7,
+      "steps": 0,
+      "seconds": 22.3,
       "error": null
     },
     {
@@ -341,7 +341,7 @@
       "norm": "2",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.0,
+      "seconds": 22.1,
       "error": null
     },
     {
@@ -354,7 +354,7 @@
       "norm": "yelena proklova 49.the tv presenter",
       "status": "completed",
       "steps": 0,
-      "seconds": 13.1,
+      "seconds": 11.1,
       "error": null
     },
     {
@@ -367,7 +367,7 @@
       "norm": "5",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.1,
+      "seconds": 25.6,
       "error": null
     },
     {
@@ -380,7 +380,7 @@
       "norm": "no",
       "status": "completed",
       "steps": 1,
-      "seconds": 34.0,
+      "seconds": 52.3,
       "error": null
     },
     {
@@ -392,8 +392,8 @@
       "answer": "4",
       "norm": "4",
       "status": "completed",
-      "steps": 1,
-      "seconds": 27.2,
+      "steps": 0,
+      "seconds": 7.1,
       "error": null
     },
     {
@@ -406,7 +406,7 @@
       "norm": "carlin",
       "status": "completed",
       "steps": 0,
-      "seconds": 9.2,
+      "seconds": 8.3,
       "error": null
     },
     {
@@ -418,8 +418,8 @@
       "answer": "Asia",
       "norm": "asia",
       "status": "completed",
-      "steps": 0,
-      "seconds": 18.4,
+      "steps": 2,
+      "seconds": 48.5,
       "error": null
     },
     {
@@ -432,7 +432,7 @@
       "norm": "13",
       "status": "completed",
       "steps": 1,
-      "seconds": 67.8,
+      "seconds": 89.2,
       "error": null
     },
     {
@@ -446,7 +446,7 @@
       "norm": "surround stakes | warwick stakes",
       "status": "completed",
       "steps": 1,
-      "seconds": 33.1,
+      "seconds": 24.6,
       "error": null
     },
     {
@@ -458,8 +458,8 @@
       "answer": "3",
       "norm": "3",
       "status": "completed",
-      "steps": 0,
-      "seconds": 21.9,
+      "steps": 1,
+      "seconds": 20.0,
       "error": null
     },
     {
@@ -471,8 +471,8 @@
       "answer": "3",
       "norm": "3",
       "status": "completed",
-      "steps": 1,
-      "seconds": 29.2,
+      "steps": 0,
+      "seconds": 8.9,
       "error": null
     },
     {
@@ -484,8 +484,8 @@
       "answer": "9",
       "norm": "9",
       "status": "completed",
-      "steps": 1,
-      "seconds": 29.3,
+      "steps": 0,
+      "seconds": 11.5,
       "error": null
     },
     {
@@ -497,8 +497,8 @@
       "answer": "Adam Kszczot",
       "norm": "adam kszczot",
       "status": "completed",
-      "steps": 1,
-      "seconds": 36.0,
+      "steps": 0,
+      "seconds": 9.9,
       "error": null
     },
     {
@@ -511,7 +511,7 @@
       "norm": "16",
       "status": "completed",
       "steps": 1,
-      "seconds": 24.8,
+      "seconds": 20.4,
       "error": null
     },
     {
@@ -524,7 +524,7 @@
       "norm": "22",
       "status": "completed",
       "steps": 1,
-      "seconds": 22.6,
+      "seconds": 20.2,
       "error": null
     },
     {
@@ -536,8 +536,8 @@
       "answer": "7",
       "norm": "7",
       "status": "completed",
-      "steps": 0,
-      "seconds": 10.7,
+      "steps": 1,
+      "seconds": 24.6,
       "error": null
     },
     {
@@ -549,8 +549,8 @@
       "answer": "Yugoslavia",
       "norm": "yugoslavia",
       "status": "completed",
-      "steps": 1,
-      "seconds": 34.1,
+      "steps": 0,
+      "seconds": 13.8,
       "error": null
     },
     {
@@ -562,8 +562,8 @@
       "answer": "6",
       "norm": "6",
       "status": "completed",
-      "steps": 1,
-      "seconds": 28.4,
+      "steps": 0,
+      "seconds": 18.4,
       "error": null
     },
     {
@@ -575,8 +575,8 @@
       "answer": "3",
       "norm": "3",
       "status": "completed",
-      "steps": 0,
-      "seconds": 10.3,
+      "steps": 1,
+      "seconds": 24.7,
       "error": null
     },
     {
@@ -589,7 +589,7 @@
       "norm": "2",
       "status": "completed",
       "steps": 1,
-      "seconds": 22.7,
+      "seconds": 22.6,
       "error": null
     },
     {
@@ -602,7 +602,7 @@
       "norm": "30",
       "status": "completed",
       "steps": 0,
-      "seconds": 8.1,
+      "seconds": 6.4,
       "error": null
     },
     {
@@ -615,7 +615,7 @@
       "norm": "3090",
       "status": "completed",
       "steps": 1,
-      "seconds": 18.7,
+      "seconds": 18.1,
       "error": null
     },
     {
@@ -627,8 +627,8 @@
       "answer": "2",
       "norm": "2",
       "status": "completed",
-      "steps": 0,
-      "seconds": 14.1,
+      "steps": 1,
+      "seconds": 27.5,
       "error": null
     },
     {
@@ -641,7 +641,7 @@
       "norm": "japan",
       "status": "completed",
       "steps": 0,
-      "seconds": 14.7,
+      "seconds": 9.5,
       "error": null
     },
     {
@@ -654,7 +654,7 @@
       "norm": "11",
       "status": "completed",
       "steps": 1,
-      "seconds": 17.8,
+      "seconds": 16.7,
       "error": null
     },
     {
@@ -667,7 +667,7 @@
       "norm": "13",
       "status": "completed",
       "steps": 1,
-      "seconds": 30.1,
+      "seconds": 36.2,
       "error": null
     },
     {
@@ -679,8 +679,8 @@
       "answer": "26",
       "norm": "26",
       "status": "completed",
-      "steps": 0,
-      "seconds": 34.1,
+      "steps": 1,
+      "seconds": 45.4,
       "error": null
     },
     {
@@ -692,8 +692,8 @@
       "answer": "2",
       "norm": "2",
       "status": "completed",
-      "steps": 0,
-      "seconds": 18.9,
+      "steps": 1,
+      "seconds": 30.0,
       "error": null
     },
     {
@@ -706,7 +706,7 @@
       "norm": "6",
       "status": "completed",
       "steps": 1,
-      "seconds": 44.4,
+      "seconds": 23.6,
       "error": null
     },
     {
@@ -718,8 +718,8 @@
       "answer": "8 years",
       "norm": "8 years",
       "status": "completed",
-      "steps": 3,
-      "seconds": 19.2,
+      "steps": 7,
+      "seconds": 50.1,
       "error": null
     },
     {
@@ -732,7 +732,7 @@
       "norm": "8",
       "status": "completed",
       "steps": 1,
-      "seconds": 47.0,
+      "seconds": 50.6,
       "error": null
     },
     {
@@ -745,7 +745,7 @@
       "norm": "matthew steer",
       "status": "completed",
       "steps": 0,
-      "seconds": 17.9,
+      "seconds": 8.3,
       "error": null
     },
     {
@@ -758,7 +758,7 @@
       "norm": "whistler, bc, canada",
       "status": "completed",
       "steps": 0,
-      "seconds": 14.0,
+      "seconds": 7.8,
       "error": null
     },
     {
@@ -784,7 +784,7 @@
       "norm": "5",
       "status": "completed",
       "steps": 0,
-      "seconds": 13.8,
+      "seconds": 14.9,
       "error": null
     },
     {
@@ -797,7 +797,7 @@
       "norm": "canada",
       "status": "completed",
       "steps": 1,
-      "seconds": 51.7,
+      "seconds": 21.3,
       "error": null
     },
     {
@@ -810,7 +810,7 @@
       "norm": "rihanna",
       "status": "completed",
       "steps": 2,
-      "seconds": 32.4,
+      "seconds": 7.0,
       "error": null
     },
     {
@@ -823,7 +823,7 @@
       "norm": "raúl",
       "status": "completed",
       "steps": 0,
-      "seconds": 40.9,
+      "seconds": 93.5,
       "error": null
     },
     {
@@ -832,11 +832,11 @@
       "gold": [
         "William A. Mann"
       ],
-      "answer": "William A. Mann",
-      "norm": "william a. mann",
+      "answer": "MG William A. Mann",
+      "norm": "mg william a. mann",
       "status": "completed",
-      "steps": 1,
-      "seconds": 39.6,
+      "steps": 0,
+      "seconds": 8.9,
       "error": null
     },
     {
@@ -849,7 +849,7 @@
       "norm": "22 april 1961",
       "status": "completed",
       "steps": 1,
-      "seconds": 43.6,
+      "seconds": 32.6,
       "error": null
     },
     {
@@ -861,8 +861,8 @@
       "answer": "Strasbourg Cathedral",
       "norm": "strasbourg cathedral",
       "status": "completed",
-      "steps": 0,
-      "seconds": 33.4,
+      "steps": 1,
+      "seconds": 26.9,
       "error": null
     },
     {
@@ -874,8 +874,8 @@
       "answer": "United States",
       "norm": "united states",
       "status": "completed",
-      "steps": 1,
-      "seconds": 56.4,
+      "steps": 0,
+      "seconds": 13.9,
       "error": null
     },
     {
@@ -888,7 +888,7 @@
       "norm": "10",
       "status": "completed",
       "steps": 1,
-      "seconds": 80.5,
+      "seconds": 34.3,
       "error": null
     },
     {
@@ -901,7 +901,7 @@
       "norm": "1988",
       "status": "completed",
       "steps": 0,
-      "seconds": 10.1,
+      "seconds": 6.4,
       "error": null
     },
     {
@@ -914,7 +914,7 @@
       "norm": "roommates",
       "status": "completed",
       "steps": 0,
-      "seconds": 17.3,
+      "seconds": 7.6,
       "error": null
     },
     {
@@ -927,7 +927,7 @@
       "norm": "1999",
       "status": "completed",
       "steps": 0,
-      "seconds": 12.0,
+      "seconds": 9.1,
       "error": null
     },
     {
@@ -940,7 +940,7 @@
       "norm": "5",
       "status": "completed",
       "steps": 1,
-      "seconds": 23.9,
+      "seconds": 25.9,
       "error": null
     },
     {
@@ -952,8 +952,8 @@
       "answer": "Anjaparavanda",
       "norm": "anjaparavanda",
       "status": "completed",
-      "steps": 0,
-      "seconds": 13.4,
+      "steps": 1,
+      "seconds": 23.3,
       "error": null
     },
     {
@@ -962,12 +962,12 @@
       "gold": [
         "3"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
       "steps": 0,
-      "seconds": 49.0,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.7,
+      "error": null
     },
     {
       "id": "nu-1192",
@@ -975,12 +975,12 @@
       "gold": [
         "2"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.6,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "2",
+      "norm": "2",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 27.8,
+      "error": null
     },
     {
       "id": "nu-3677",
@@ -988,12 +988,12 @@
       "gold": [
         "22"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "22",
+      "norm": "22",
+      "status": "completed",
       "steps": 0,
-      "seconds": 27.9,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.4,
+      "error": null
     },
     {
       "id": "nu-1185",
@@ -1001,11 +1001,11 @@
       "gold": [
         "Benning Road-H Street Metro Extra Line"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "incomplete",
-      "steps": 10,
-      "seconds": 130.8,
+      "answer": "X9",
+      "norm": "x9",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.6,
       "error": null
     },
     {
@@ -1014,12 +1014,12 @@
       "gold": [
         "3"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 27.8,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "4",
+      "norm": "4",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 25.2,
+      "error": null
     },
     {
       "id": "nu-1508",
@@ -1027,12 +1027,12 @@
       "gold": [
         "February 1795"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "February 1795",
+      "norm": "february 1795",
+      "status": "completed",
       "steps": 0,
-      "seconds": 26.9,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.2,
+      "error": null
     },
     {
       "id": "nu-1567",
@@ -1040,11 +1040,11 @@
       "gold": [
         "Bromine"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "incomplete",
-      "steps": 10,
-      "seconds": 128.7,
+      "answer": "Bromine",
+      "norm": "bromine",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 9.6,
       "error": null
     },
     {
@@ -1053,12 +1053,12 @@
       "gold": [
         "7"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 27.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "7",
+      "norm": "7",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 28.3,
+      "error": null
     },
     {
       "id": "nu-1989",
@@ -1066,12 +1066,12 @@
       "gold": [
         "P4"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 28.2,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "P4 (11/22 PS)",
+      "norm": "p4 (11/22 ps)",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 32.2,
+      "error": null
     },
     {
       "id": "nu-3266",
@@ -1079,12 +1079,12 @@
       "gold": [
         "5"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 43.9,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "5",
+      "norm": "5",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 28.2,
+      "error": null
     },
     {
       "id": "nu-157",
@@ -1092,12 +1092,12 @@
       "gold": [
         "10"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "10",
+      "norm": "10",
+      "status": "completed",
       "steps": 0,
-      "seconds": 27.0,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 11.1,
+      "error": null
     },
     {
       "id": "nu-1226",
@@ -1105,12 +1105,12 @@
       "gold": [
         "3"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 27.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 31.7,
+      "error": null
     },
     {
       "id": "nu-645",
@@ -1118,12 +1118,12 @@
       "gold": [
         "11"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.8,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "11",
+      "norm": "11",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 54.0,
+      "error": null
     },
     {
       "id": "nu-758",
@@ -1131,12 +1131,12 @@
       "gold": [
         "421"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "421",
+      "norm": "421",
+      "status": "completed",
       "steps": 0,
-      "seconds": 26.7,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 5.1,
+      "error": null
     },
     {
       "id": "nu-2918",
@@ -1144,12 +1144,12 @@
       "gold": [
         "31-3"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.6,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "31 wins versus 3 losses",
+      "norm": "31 wins versus 3 losses",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 35.9,
+      "error": null
     },
     {
       "id": "nu-1375",
@@ -1157,12 +1157,12 @@
       "gold": [
         "Panama"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "Panama",
+      "norm": "panama",
+      "status": "completed",
       "steps": 0,
-      "seconds": 67.5,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.8,
+      "error": null
     },
     {
       "id": "nu-292",
@@ -1170,12 +1170,12 @@
       "gold": [
         "Homem Objeto"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "Homem Objeto",
+      "norm": "homem objeto",
+      "status": "completed",
       "steps": 0,
-      "seconds": 26.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 11.9,
+      "error": null
     },
     {
       "id": "nu-2725",
@@ -1183,12 +1183,12 @@
       "gold": [
         "10"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 27.7,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "10",
+      "norm": "10",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 19.8,
+      "error": null
     },
     {
       "id": "nu-25",
@@ -1196,12 +1196,12 @@
       "gold": [
         "3"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 29.8,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "8",
+      "norm": "8",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 28.5,
+      "error": null
     },
     {
       "id": "nu-1017",
@@ -1209,12 +1209,12 @@
       "gold": [
         "Baltimore Bullets"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.9,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "Baltimore Bullets*",
+      "norm": "baltimore bullets*",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 26.6,
+      "error": null
     },
     {
       "id": "nu-1745",
@@ -1222,12 +1222,12 @@
       "gold": [
         "14 April 2006"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 27.7,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "Manchester United at Old Trafford on 14 April 2006",
+      "norm": "manchester united at old trafford on 14 april 2006",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 25.0,
+      "error": null
     },
     {
       "id": "nu-1304",
@@ -1235,12 +1235,12 @@
       "gold": [
         "4"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.8,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 31.1,
+      "error": null
     },
     {
       "id": "nu-3631",
@@ -1248,11 +1248,11 @@
       "gold": [
         "32,100"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "incomplete",
-      "steps": 10,
-      "seconds": 129.0,
+      "answer": "32100",
+      "norm": "32100",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 23.6,
       "error": null
     },
     {
@@ -1261,12 +1261,12 @@
       "gold": [
         "Jeff King"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "Jeff King",
+      "norm": "jeff king",
+      "status": "completed",
       "steps": 0,
-      "seconds": 26.6,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 5.0,
+      "error": null
     },
     {
       "id": "nu-3822",
@@ -1274,12 +1274,12 @@
       "gold": [
         "Me-110"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "Me-109",
+      "norm": "me-109",
+      "status": "completed",
       "steps": 0,
-      "seconds": 27.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 13.4,
+      "error": null
     },
     {
       "id": "nu-592",
@@ -1287,12 +1287,12 @@
       "gold": [
         "Thiruvay Mozhi"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "Thiruvay Mozhi",
+      "norm": "thiruvay mozhi",
+      "status": "completed",
       "steps": 0,
-      "seconds": 27.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.9,
+      "error": null
     },
     {
       "id": "nu-1472",
@@ -1300,12 +1300,12 @@
       "gold": [
         "9 years"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 26.7,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "9 years",
+      "norm": "9 years",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 39.5,
+      "error": null
     }
   ]
 }

@@ -1,35 +1,35 @@
 {
   "benchmark": "tabfact",
   "n": 100,
-  "accuracy": 0.31,
-  "seconds": 2736.1,
-  "llm_calls": 837,
-  "llm_tokens": 675633,
+  "accuracy": 0.96,
+  "seconds": 1992.6,
+  "llm_calls": 1055,
+  "llm_tokens": 866474,
   "cases": [
     {
       "id": "1203",
       "question": "most of ronnie mitchell 's nomination be for the inside soap award",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 38.8,
+      "seconds": 34.8,
       "error": null
     },
     {
       "id": "5310",
       "question": "there be more than 2 chapter of zeta psi use gamma in the name",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 1,
-      "seconds": 41.7,
+      "steps": 0,
+      "seconds": 16.4,
       "error": null
     },
     {
@@ -42,20 +42,20 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 7.8,
+      "seconds": 11.3,
       "error": null
     },
     {
       "id": "10864",
       "question": "the year 1984 have a time of 3:01.44 in helsinki , finland",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 18.2,
+      "seconds": 10.4,
       "error": null
     },
     {
@@ -68,7 +68,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 9.4,
+      "seconds": 7.6,
       "error": null
     },
     {
@@ -81,7 +81,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 53.1,
+      "seconds": 34.2,
       "error": null
     },
     {
@@ -94,33 +94,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 25.6,
+      "seconds": 26.0,
       "error": null
     },
     {
       "id": "6347",
       "question": "marcus stewart be the only player to have at least 1 goal score in each of the league , the fa cup and the league cup",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 36.3,
+      "seconds": 14.3,
       "error": null
     },
     {
       "id": "3203",
       "question": "the complete race span a time frame of may 17 to june 6",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 16.4,
+      "seconds": 8.5,
       "error": null
     },
     {
@@ -133,7 +133,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 6.7,
+      "seconds": 14.4,
       "error": null
     },
     {
@@ -146,7 +146,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 40.5,
+      "seconds": 30.4,
       "error": null
     },
     {
@@ -159,7 +159,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 9.8,
+      "seconds": 7.0,
       "error": null
     },
     {
@@ -172,7 +172,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.4,
+      "seconds": 31.6,
       "error": null
     },
     {
@@ -185,20 +185,20 @@
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 12.2,
+      "seconds": 11.2,
       "error": null
     },
     {
       "id": "3657",
       "question": "michael schumacher start in 2nd position in the grid , whereas pedro diniz start in the third position",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 6.6,
+      "seconds": 8.1,
       "error": null
     },
     {
@@ -210,34 +210,34 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 1,
-      "seconds": 31.4,
+      "steps": 0,
+      "seconds": 12.0,
       "error": null
     },
     {
       "id": "9162",
       "question": "the largest crowd on 2 august 1980 be 24738",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 1,
-      "seconds": 26.5,
+      "steps": 0,
+      "seconds": 9.2,
       "error": null
     },
     {
       "id": "1094",
       "question": "during the 1926 - 27 new york ranger season , game 35 be 5 day after game 34",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.6,
+      "seconds": 23.1,
       "error": null
     },
     {
@@ -250,33 +250,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 45.9,
+      "seconds": 25.8,
       "error": null
     },
     {
       "id": "8158",
       "question": "the highest home team score be 20.20 (140)",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 50.4,
+      "steps": 1,
+      "seconds": 24.0,
       "error": null
     },
     {
       "id": "951",
       "question": "each team face 2 opponent in this part of the 1977 - 78 coupe de france",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 44.9,
+      "seconds": 35.2,
       "error": null
     },
     {
@@ -288,60 +288,60 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 0,
-      "seconds": 20.1,
+      "steps": 1,
+      "seconds": 40.5,
       "error": null
     },
     {
       "id": "8415",
       "question": "all of skip hall 's match take place in the united state",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 15.2,
+      "seconds": 8.4,
       "error": null
     },
     {
       "id": "2853",
       "question": "wong wing ki have win the vietnam open grand prix more than any other tournament",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 71.4,
+      "steps": 0,
+      "seconds": 14.4,
       "error": null
     },
     {
       "id": "377",
       "question": "17 gold medal be evenly award to 17 team",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 74.4,
+      "steps": 0,
+      "seconds": 17.7,
       "error": null
     },
     {
       "id": "4299",
       "question": "alberta have have the less growth from 2006 to 2011 in canada",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 1,
-      "seconds": 32.1,
+      "steps": 0,
+      "seconds": 10.8,
       "error": null
     },
     {
@@ -354,7 +354,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 9.4,
+      "seconds": 12.2,
       "error": null
     },
     {
@@ -367,33 +367,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 24.5,
+      "seconds": 26.5,
       "error": null
     },
     {
       "id": "644",
       "question": "in 1998 , marc rosset be championand be a runner - up in1996",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 20.0,
+      "seconds": 11.1,
       "error": null
     },
     {
       "id": "356",
       "question": "the brunet be the only team in the top 7 to get more than 100 point",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 0,
-      "seconds": 13.2,
+      "steps": 1,
+      "seconds": 31.0,
       "error": null
     },
     {
@@ -405,8 +405,8 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 0,
-      "seconds": 10.4,
+      "steps": 1,
+      "seconds": 30.4,
       "error": null
     },
     {
@@ -415,37 +415,37 @@
       "gold": [
         "True"
       ],
-      "answer": "True",
-      "norm": "True",
+      "answer": "False",
+      "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 86.5,
+      "steps": 1,
+      "seconds": 32.9,
       "error": null
     },
     {
       "id": "1623",
       "question": "during the 2003 - 04 toronto raptor season donyell marshall have the highest rebound during all the game except 2",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 75.0,
+      "steps": 0,
+      "seconds": 18.0,
       "error": null
     },
     {
       "id": "12500",
       "question": "most of the top 9 increase in tourism be in north america",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 2,
-      "seconds": 99.1,
+      "steps": 0,
+      "seconds": 11.9,
       "error": null
     },
     {
@@ -457,8 +457,8 @@
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 0,
-      "seconds": 66.0,
+      "steps": 1,
+      "seconds": 70.1,
       "error": null
     },
     {
@@ -471,7 +471,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 6.9,
+      "seconds": 9.1,
       "error": null
     },
     {
@@ -483,21 +483,21 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 0,
-      "seconds": 26.5,
+      "steps": 1,
+      "seconds": 33.7,
       "error": null
     },
     {
       "id": "7404",
       "question": "ecuador be not the only country to use the us dollar as its currency , and the bank of the republic be its central bank",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 20.7,
+      "seconds": 14.3,
       "error": null
     },
     {
@@ -510,20 +510,20 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 18.2,
+      "seconds": 8.9,
       "error": null
     },
     {
       "id": "12777",
       "question": "in 1997 , team (s) 74 bace motorsports come in 1st position and have winning of 917791",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 24.9,
+      "seconds": 9.1,
       "error": null
     },
     {
@@ -535,8 +535,8 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 1,
-      "seconds": 42.2,
+      "steps": 0,
+      "seconds": 18.3,
       "error": null
     },
     {
@@ -548,8 +548,8 @@
       "answer": "True",
       "norm": "True",
       "status": "completed",
-      "steps": 0,
-      "seconds": 12.8,
+      "steps": 1,
+      "seconds": 27.3,
       "error": null
     },
     {
@@ -561,34 +561,34 @@
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 1,
-      "seconds": 53.2,
+      "steps": 0,
+      "seconds": 35.6,
       "error": null
     },
     {
       "id": "7464",
       "question": "milhail popov win the men 's single only 2 time but win the men 's double with the same partner 3 time",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 53.8,
+      "seconds": 40.2,
       "error": null
     },
     {
       "id": "7202",
       "question": "virginia wade win both the 1973 australian open double and french open double in 3 set",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 26.8,
+      "seconds": 9.8,
       "error": null
     },
     {
@@ -601,7 +601,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.7,
+      "seconds": 30.3,
       "error": null
     },
     {
@@ -614,33 +614,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 8.8,
+      "seconds": 10.5,
       "error": null
     },
     {
       "id": "12001",
       "question": "team 2 , when the score be 1 - 4 , and team 1 be olympique de marseille (d2) be as nancy (d1)",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 17.5,
+      "seconds": 12.5,
       "error": null
     },
     {
       "id": "10326",
       "question": "s06e20 be the netflix number of the episode in which aircraft engine be 1 of the segment",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 11.5,
+      "seconds": 11.7,
       "error": null
     },
     {
@@ -653,20 +653,20 @@
       "norm": "True",
       "status": "completed",
       "steps": 1,
-      "seconds": 35.2,
+      "seconds": 37.1,
       "error": null
     },
     {
       "id": "3530",
       "question": "the boston celtic remain at 41 game lose for more than 4 game before move to 42 game lose",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 0,
-      "seconds": 40.5,
+      "steps": 1,
+      "seconds": 44.9,
       "error": null
     },
     {
@@ -679,7 +679,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 10.4,
+      "seconds": 9.2,
       "error": null
     },
     {
@@ -692,20 +692,20 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 12.8,
+      "seconds": 13.5,
       "error": null
     },
     {
       "id": "1800",
       "question": "the team of germany have the most win of all at 13",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 11.6,
+      "seconds": 12.3,
       "error": null
     },
     {
@@ -718,7 +718,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 10.1,
+      "seconds": 7.3,
       "error": null
     },
     {
@@ -731,20 +731,20 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 8.2,
+      "seconds": 15.0,
       "error": null
     },
     {
       "id": "8346",
       "question": "andy wallace go 2 less lap in 2002 than in 2003",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
-      "steps": 0,
-      "seconds": 11.2,
+      "steps": 1,
+      "seconds": 43.6,
       "error": null
     },
     {
@@ -757,33 +757,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 8.9,
+      "seconds": 7.3,
       "error": null
     },
     {
       "id": "3618",
       "question": "the australian open never record a result of a in the table",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 9.6,
+      "seconds": 11.9,
       "error": null
     },
     {
       "id": "1224",
       "question": "david wolkove write 3 episode of the show",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 36.4,
+      "seconds": 26.8,
       "error": null
     },
     {
@@ -796,33 +796,33 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 10.3,
+      "seconds": 7.9,
       "error": null
     },
     {
       "id": "6573",
       "question": "tracy mcgrady have a low point (17) for the detroit pristons in their 2010 - 11 season and it be december 26 against chicago",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 13.9,
+      "seconds": 10.2,
       "error": null
     },
     {
       "id": "9370",
       "question": "rockstar game use rockstar north , neo software , rockstar vienna and rockstar game as their developer before 2007",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 0,
-      "seconds": 15.9,
+      "seconds": 10.4,
       "error": null
     },
     {
@@ -835,7 +835,7 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 8.7,
+      "seconds": 9.3,
       "error": null
     },
     {
@@ -848,27 +848,79 @@
       "norm": "True",
       "status": "completed",
       "steps": 0,
-      "seconds": 15.7,
+      "seconds": 7.6,
       "error": null
     },
     {
       "id": "5429",
       "question": "the home team score a total of 213 point during the 1959 vfl season",
       "gold": [
-        "True"
+        "False"
       ],
       "answer": "False",
       "norm": "False",
       "status": "completed",
       "steps": 1,
-      "seconds": 33.4,
+      "seconds": 31.3,
       "error": null
     },
     {
       "id": "7004",
       "question": "the new york jet lose 1 game in overtime during their 1979 season",
       "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 38.4,
+      "error": null
+    },
+    {
+      "id": "4852",
+      "question": "the largest margin of victory be against the indian on april 7",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 46.9,
+      "error": null
+    },
+    {
+      "id": "5954",
+      "question": "the cowboy do not win a game in december",
+      "gold": [
         "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 8.7,
+      "error": null
+    },
+    {
+      "id": "2539",
+      "question": "everyone with a state of lu have the title of duke",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 8.2,
+      "error": null
+    },
+    {
+      "id": "8809",
+      "question": "the pole service team be the only 1 that score 0 point",
+      "gold": [
+        "False"
       ],
       "answer": "False",
       "norm": "False",
@@ -878,82 +930,30 @@
       "error": null
     },
     {
-      "id": "4852",
-      "question": "the largest margin of victory be against the indian on april 7",
-      "gold": [
-        "True"
-      ],
-      "answer": "False",
-      "norm": "False",
-      "status": "completed",
-      "steps": 1,
-      "seconds": 51.8,
-      "error": null
-    },
-    {
-      "id": "5954",
-      "question": "the cowboy do not win a game in december",
-      "gold": [
-        "True"
-      ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "2539",
-      "question": "everyone with a state of lu have the title of duke",
-      "gold": [
-        "True"
-      ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.2,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
-    },
-    {
-      "id": "8809",
-      "question": "the pole service team be the only 1 that score 0 point",
-      "gold": [
-        "True"
-      ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
-    },
-    {
       "id": "7020",
       "question": "in the 9th round of vancouver canuck draft pick matt merten from providence college be pick",
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.0,
+      "error": null
     },
     {
       "id": "3709",
       "question": "the most recent player top be rank set a top 3 record be colin miller in the 1997 - 98 season",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 12.7,
+      "error": null
     },
     {
       "id": "679",
@@ -961,12 +961,12 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 23.7,
+      "error": null
     },
     {
       "id": "4264",
@@ -974,12 +974,12 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 12.1,
+      "error": null
     },
     {
       "id": "8909",
@@ -987,51 +987,51 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 34.1,
+      "error": null
     },
     {
       "id": "8926",
       "question": "when the america receive 115 program , australia receive at most 12",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.8,
+      "error": null
     },
     {
       "id": "136",
       "question": "during the 1980 summer olympics , both australia and spain only win 1 bronze medal for swim",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.5,
+      "error": null
     },
     {
       "id": "4417",
       "question": "7 wrestler compete and the winner be the 5th to enter",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 24.1,
+      "error": null
     },
     {
       "id": "12202",
@@ -1039,38 +1039,38 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 7.9,
+      "error": null
     },
     {
       "id": "651",
       "question": "the highest attendance figure for a single game be 2818",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 40.5,
+      "error": null
     },
     {
       "id": "1759",
       "question": "marcin gortat lead the team in rebound for 13 game",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 42.6,
+      "error": null
     },
     {
       "id": "11169",
@@ -1078,12 +1078,12 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 16.4,
+      "error": null
     },
     {
       "id": "11035",
@@ -1091,25 +1091,25 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 12.1,
+      "error": null
     },
     {
       "id": "11537",
       "question": "14.11 (95) be the home team score when the away team score 8.14 (62)",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 12.3,
+      "error": null
     },
     {
       "id": "10359",
@@ -1117,25 +1117,25 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 10.2,
+      "error": null
     },
     {
       "id": "4486",
       "question": "attendance in all game be consistently lower than 52090",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 33.7,
+      "error": null
     },
     {
       "id": "12387",
@@ -1143,25 +1143,25 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.4,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.8,
+      "error": null
     },
     {
       "id": "8903",
       "question": "tom bigelow compete in the duquoin 100 race",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.6,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 8.4,
+      "error": null
     },
     {
       "id": "9432",
@@ -1169,25 +1169,25 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.5,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.7,
+      "error": null
     },
     {
       "id": "3459",
       "question": "the fourth round qualifying have the most fixture",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 30.7,
+      "error": null
     },
     {
       "id": "4381",
@@ -1195,64 +1195,64 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 10.4,
+      "error": null
     },
     {
       "id": "11343",
       "question": "the total round list for ufc 114 be greater than 1",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 18.2,
+      "error": null
     },
     {
       "id": "4416",
       "question": "shawn michael and jeff hardy be both eliminate by umaga",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 14.8,
+      "error": null
     },
     {
       "id": "11960",
       "question": "the number of contestant when the international destination be milan and turkey be tba",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 10.5,
+      "error": null
     },
     {
       "id": "4853",
       "question": "the white sox win half the game play against the twin",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 33.0,
+      "error": null
     },
     {
       "id": "5962",
@@ -1260,12 +1260,12 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 7.6,
+      "error": null
     },
     {
       "id": "6841",
@@ -1273,38 +1273,38 @@
       "gold": [
         "True"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
-      "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 61.0,
+      "error": null
     },
     {
       "id": "3112",
       "question": "ryan thomas 's shortest fight end at 0:34 second in the first round",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 39.9,
+      "error": null
     },
     {
       "id": "10479",
       "question": "the team song power to win be first use in 1987",
       "gold": [
-        "True"
+        "False"
       ],
-      "answer": "",
-      "norm": "",
-      "status": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden",
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
       "steps": 0,
-      "seconds": 25.3,
-      "error": "RuntimeError: LLM request failed after 3 retries: HTTP Error 403: Forbidden"
+      "seconds": 9.7,
+      "error": null
     }
   ]
 }
