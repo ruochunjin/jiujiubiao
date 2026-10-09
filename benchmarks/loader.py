@@ -167,11 +167,15 @@ def load_tabfact(
         row = queries[index]
         if row["table_id"] not in table_map:
             continue
+        answer = row["answer"]
+        # The mirror stores the label as a STRING "True"/"False" — a bare
+        # truthiness check marks everything True (TabFact-100 artifact).
+        answer_bool = answer if isinstance(answer, bool) else str(answer) == "True"
         items.append(
             BenchmarkItem(
                 id=str(row["query_id"]),
                 question=str(row["query"]),
-                answers=("True" if row["answer"] else "False",),
+                answers=("True" if answer_bool else "False",),
                 table_path=row["table_id"],
             )
         )

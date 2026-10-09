@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import os
+import random
 import re
 import time
 import urllib.error
@@ -83,7 +84,7 @@ class AnthropicClient:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.timeout = float(os.environ.get("XUANJI_TIMEOUT", "180"))
-        self.retries = int(os.environ.get("XUANJI_RETRIES", "3"))
+        self.retries = int(os.environ.get("XUANJI_RETRIES", "6"))
         self.pool = ThreadPoolExecutor(max_workers=max_workers)
         self.verbose = verbose
         self.n_calls = 0
@@ -132,7 +133,13 @@ class AnthropicClient:
                 )
             except (urllib.error.URLError, TimeoutError, KeyError, ValueError) as error:
                 last = error
-                time.sleep(2 * (attempt + 1))
+                # Rate-limit/quota statuses get real backoff with jitter;
+                # a fixed 2-6s ladder dies under sustained load (TabFact-100).
+                status = getattr(error, "code", None)
+                if status in (403, 429, 500, 502, 503, 529):
+                    time.sleep(min(90.0, 5.0 * (2 ** attempt)) + random.random())
+                else:
+                    time.sleep(2 * (attempt + 1))
         raise RuntimeError(f"LLM request failed after {self.retries} retries: {last}")
 
     def sample(self, prompt: str, n: int, **kwargs) -> list[str]:
@@ -215,7 +222,7 @@ class ChatClient:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.timeout = float(os.environ.get("XUANJI_TIMEOUT", "180"))
-        self.retries = int(os.environ.get("XUANJI_RETRIES", "3"))
+        self.retries = int(os.environ.get("XUANJI_RETRIES", "6"))
         self.pool = ThreadPoolExecutor(max_workers=max_workers)
         self.verbose = verbose
         self.n_calls = 0
@@ -257,7 +264,13 @@ class ChatClient:
                 return payload["choices"][0]["message"]["content"] or ""
             except (urllib.error.URLError, TimeoutError, KeyError, ValueError) as error:
                 last = error
-                time.sleep(2 * (attempt + 1))
+                # Rate-limit/quota statuses get real backoff with jitter;
+                # a fixed 2-6s ladder dies under sustained load (TabFact-100).
+                status = getattr(error, "code", None)
+                if status in (403, 429, 500, 502, 503, 529):
+                    time.sleep(min(90.0, 5.0 * (2 ** attempt)) + random.random())
+                else:
+                    time.sleep(2 * (attempt + 1))
         raise RuntimeError(f"LLM request failed after {self.retries} retries: {last}")
 
     def sample(self, prompt: str, n: int, **kwargs) -> list[str]:
