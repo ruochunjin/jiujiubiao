@@ -20,15 +20,16 @@ For offline development and tests, inject ``xuanji.FakeLLM``.
 
 from xuanji.disambiguate import DisambiguationResult, Disambiguator
 from xuanji.eval import denotation_accuracy, load_dataset
-from xuanji.llm import LLM, ChatClient, FakeLLM
+from xuanji.llm import LLM, AnthropicClient, ChatClient, FakeLLM
 from xuanji.pipeline import XuanJi, XuanJiResult, ask
 from xuanji.registry import ToolContext, ToolRegistry, ToolSpec, register_tool
 from xuanji.table import Table
 from xuanji.tools.db import Database
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
+    "AnthropicClient",
     "ChatClient",
     "Database",
     "DisambiguationResult",

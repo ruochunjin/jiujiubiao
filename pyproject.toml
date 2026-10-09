@@ -4,7 +4,7 @@ requires = ["hatchling"]
 
 [project]
 name = "xuanji-tables"
-version = "0.2.0"
+version = "0.3.0"
 description = "XuanJi (璇玑): unified question answering over tables and databases — disambiguation, agentic solving with self-consistency, and self-criticism refinement"
 readme = "README.md"
 requires-python = ">=3.10"
