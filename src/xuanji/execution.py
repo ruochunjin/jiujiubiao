@@ -202,12 +202,19 @@ def python_repl_ast(code, custom_globals=None, custom_locals=None, memory=None):
         if len(payload) > 64 * 1024 * 1024:
             raise ValueError("Python execution state exceeds 64 MiB")
         # No API keys or inherited provider settings are needed by generated code.
+        # Windows Python needs SystemRoot (and TMP/TEMP for tempfile) even for
+        # a bare interpreter start — stripping them kills the worker with a
+        # bare exit 1 on CPython ≤ 3.12 (CI finding, windows-latest).
         env = {
             "PATH": os.defpath,
             "PYTHONDONTWRITEBYTECODE": "1",
             "OPENBLAS_NUM_THREADS": "1",
             "OMP_NUM_THREADS": "1",
         }
+        if os.name == "nt":
+            for var in ("SystemRoot", "TMP", "TEMP", "USERPROFILE", "APPDATA"):
+                if os.environ.get(var):
+                    env[var] = os.environ[var]
         with tempfile.TemporaryFile() as output, tempfile.TemporaryFile() as errors:
             source_root = str(Path(__file__).resolve().parents[1])
             worker_start = (
