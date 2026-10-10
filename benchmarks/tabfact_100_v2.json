@@ -1,0 +1,1310 @@
+{
+  "benchmark": "tabfact",
+  "n": 100,
+  "accuracy": 0.97,
+  "seconds": 3023.1,
+  "llm_calls": 977,
+  "llm_tokens": 788444,
+  "cases": [
+    {
+      "id": "1203",
+      "question": "most of ronnie mitchell 's nomination be for the inside soap award",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 57.7,
+      "error": null
+    },
+    {
+      "id": "5310",
+      "question": "there be more than 2 chapter of zeta psi use gamma in the name",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 23.8,
+      "error": null
+    },
+    {
+      "id": "9040",
+      "question": "the first pick be jay washington from the united state air21 express team",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.6,
+      "error": null
+    },
+    {
+      "id": "10864",
+      "question": "the year 1984 have a time of 3:01.44 in helsinki , finland",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.0,
+      "error": null
+    },
+    {
+      "id": "11054",
+      "question": "the school name wabash be locate in wabash and have an ihsaa football class of aa",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.7,
+      "error": null
+    },
+    {
+      "id": "392",
+      "question": "home team carlton have a score of 27.9 (171) which be the highest in the 1991 foster 's cup",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 49.9,
+      "error": null
+    },
+    {
+      "id": "8132",
+      "question": "st kilda have the lowest score for an away team",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 39.6,
+      "error": null
+    },
+    {
+      "id": "6347",
+      "question": "marcus stewart be the only player to have at least 1 goal score in each of the league , the fa cup and the league cup",
+      "gold": [
+        "False"
+      ],
+      "answer": "False. Ensure exact",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.5,
+      "error": null
+    },
+    {
+      "id": "3203",
+      "question": "the complete race span a time frame of may 17 to june 6",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 23.7,
+      "error": null
+    },
+    {
+      "id": "10331",
+      "question": "bruce fleisher , with 2411543 worth of earnings , be rank 2",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 8.8,
+      "error": null
+    },
+    {
+      "id": "6174",
+      "question": "the earliest boat to be complete be the satsuki dd - 27",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 48.6,
+      "error": null
+    },
+    {
+      "id": "9346",
+      "question": "the release date for model number core i7 - 940 be november 2008",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 9.8,
+      "error": null
+    },
+    {
+      "id": "4967",
+      "question": "lotus - ford construct the most winning car in the 1978 formula one season",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 49.2,
+      "error": null
+    },
+    {
+      "id": "7701",
+      "question": "injun 4 and injun 5 be the only injun satellite still in orbit",
+      "gold": [
+        "True"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.8,
+      "error": null
+    },
+    {
+      "id": "3657",
+      "question": "michael schumacher start in 2nd position in the grid , whereas pedro diniz start in the third position",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.0,
+      "error": null
+    },
+    {
+      "id": "2552",
+      "question": "st john 's town , air march 30 , 2011 have the least amount of viewer of all the epidodes",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 28.5,
+      "error": null
+    },
+    {
+      "id": "9162",
+      "question": "the largest crowd on 2 august 1980 be 24738",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 51.8,
+      "error": null
+    },
+    {
+      "id": "1094",
+      "question": "during the 1926 - 27 new york ranger season , game 35 be 5 day after game 34",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 23.2,
+      "error": null
+    },
+    {
+      "id": "9342",
+      "question": "while not the cheapest model release nor the most expensive , 562 be the release price for model number core i7 - 940 in november 2008",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 46.7,
+      "error": null
+    },
+    {
+      "id": "8158",
+      "question": "the highest home team score be 20.20 (140)",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 38.2,
+      "error": null
+    },
+    {
+      "id": "951",
+      "question": "each team face 2 opponent in this part of the 1977 - 78 coupe de france",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 29.8,
+      "error": null
+    },
+    {
+      "id": "1267",
+      "question": "the only team to score zero point be the boston patriot on september 10 , 1966",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 36.4,
+      "error": null
+    },
+    {
+      "id": "8415",
+      "question": "all of skip hall 's match take place in the united state",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.9,
+      "error": null
+    },
+    {
+      "id": "2853",
+      "question": "wong wing ki have win the vietnam open grand prix more than any other tournament",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 108.9,
+      "error": null
+    },
+    {
+      "id": "377",
+      "question": "17 gold medal be evenly award to 17 team",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 77.2,
+      "error": null
+    },
+    {
+      "id": "4299",
+      "question": "alberta have have the less growth from 2006 to 2011 in canada",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.5,
+      "error": null
+    },
+    {
+      "id": "11894",
+      "question": "the buffalo brave be the opponent with a score of 141 - 102",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.3,
+      "error": null
+    },
+    {
+      "id": "8442",
+      "question": "there be 2 player on the roster that go to niagara university",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.4,
+      "error": null
+    },
+    {
+      "id": "644",
+      "question": "in 1998 , marc rosset be championand be a runner - up in1996",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 24.6,
+      "error": null
+    },
+    {
+      "id": "356",
+      "question": "the brunet be the only team in the top 7 to get more than 100 point",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 56.3,
+      "error": null
+    },
+    {
+      "id": "3186",
+      "question": "only 1 of the top 3 winner be a group act",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 49.0,
+      "error": null
+    },
+    {
+      "id": "2421",
+      "question": "russia 's universal rocket call proton and soyuz combine have 24 launch",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 50.1,
+      "error": null
+    },
+    {
+      "id": "1623",
+      "question": "during the 2003 - 04 toronto raptor season donyell marshall have the highest rebound during all the game except 2",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.8,
+      "error": null
+    },
+    {
+      "id": "12500",
+      "question": "most of the top 9 increase in tourism be in north america",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 29.4,
+      "error": null
+    },
+    {
+      "id": "1287",
+      "question": "raphael butler win use ko (punch) in 4 out of 7 fight",
+      "gold": [
+        "True"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 26.7,
+      "error": null
+    },
+    {
+      "id": "9396",
+      "question": "the total for la paz be 35994",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.3,
+      "error": null
+    },
+    {
+      "id": "313",
+      "question": "kristie kerr , tie for 4th place , finish the round 1 stroke under lorena ochoa of mexico",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.7,
+      "error": null
+    },
+    {
+      "id": "7404",
+      "question": "ecuador be not the only country to use the us dollar as its currency , and the bank of the republic be its central bank",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 27.1,
+      "error": null
+    },
+    {
+      "id": "9687",
+      "question": "in 2008 , the chunnam dragon beat chonburi 1 - 0",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 16.6,
+      "error": null
+    },
+    {
+      "id": "12777",
+      "question": "in 1997 , team (s) 74 bace motorsports come in 1st position and have winning of 917791",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 23.4,
+      "error": null
+    },
+    {
+      "id": "2332",
+      "question": "5 of the player pick be from the oha",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 12.9,
+      "error": null
+    },
+    {
+      "id": "4858",
+      "question": "wayne gardner race on the rothmans honda team 8 out of 10 time",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 12.1,
+      "error": null
+    },
+    {
+      "id": "6780",
+      "question": "there be 4 match be 4 or more goal be score by a single team",
+      "gold": [
+        "True"
+      ],
+      "answer": "False. But user says answer exactly True/False; maybe final only. Hmm",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 41.9,
+      "error": null
+    },
+    {
+      "id": "7464",
+      "question": "milhail popov win the men 's single only 2 time but win the men 's double with the same partner 3 time",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 26.1,
+      "error": null
+    },
+    {
+      "id": "7202",
+      "question": "virginia wade win both the 1973 australian open double and french open double in 3 set",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.0,
+      "error": null
+    },
+    {
+      "id": "4707",
+      "question": "the manila nomad have be division 1 and 2 , 2 year each",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.5,
+      "error": null
+    },
+    {
+      "id": "10625",
+      "question": "the wind farm glenough extension be schedule for 2013",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.5,
+      "error": null
+    },
+    {
+      "id": "12001",
+      "question": "team 2 , when the score be 1 - 4 , and team 1 be olympique de marseille (d2) be as nancy (d1)",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.2,
+      "error": null
+    },
+    {
+      "id": "10326",
+      "question": "s06e20 be the netflix number of the episode in which aircraft engine be 1 of the segment",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.7,
+      "error": null
+    },
+    {
+      "id": "4280",
+      "question": "the episode feature rid mower and popcorn be show later than the episode feature artificial christmas tree and soda cracker",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 51.4,
+      "error": null
+    },
+    {
+      "id": "3530",
+      "question": "the boston celtic remain at 41 game lose for more than 4 game before move to 42 game lose",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 86.9,
+      "error": null
+    },
+    {
+      "id": "9194",
+      "question": "argentinos junior be the home team for the 2nd leg of the match with an aggregate of 2 - 3",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 84.6,
+      "error": null
+    },
+    {
+      "id": "12721",
+      "question": "a good knight 's work be direct by sidney hayers and written by richard c okie",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 12.6,
+      "error": null
+    },
+    {
+      "id": "1800",
+      "question": "the team of germany have the most win of all at 13",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 36.8,
+      "error": null
+    },
+    {
+      "id": "11727",
+      "question": "the 45th game be play on january , 28 at the american airline arena",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.9,
+      "error": null
+    },
+    {
+      "id": "12692",
+      "question": "the week 1 game , play at the astrodome have a result of l 20 - 0",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 8.7,
+      "error": null
+    },
+    {
+      "id": "8346",
+      "question": "andy wallace go 2 less lap in 2002 than in 2003",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.4,
+      "error": null
+    },
+    {
+      "id": "607",
+      "question": "government theni medical college be establish in 2006 and government thiruvarur medical college be establish in 2007",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.0,
+      "error": null
+    },
+    {
+      "id": "3618",
+      "question": "the australian open never record a result of a in the table",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.9,
+      "error": null
+    },
+    {
+      "id": "1224",
+      "question": "david wolkove write 3 episode of the show",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.8,
+      "error": null
+    },
+    {
+      "id": "10632",
+      "question": "april 7 1996 the celtic have a result of 2 - 1",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.0,
+      "error": null
+    },
+    {
+      "id": "6573",
+      "question": "tracy mcgrady have a low point (17) for the detroit pristons in their 2010 - 11 season and it be december 26 against chicago",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.6,
+      "error": null
+    },
+    {
+      "id": "9370",
+      "question": "rockstar game use rockstar north , neo software , rockstar vienna and rockstar game as their developer before 2007",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 83.0,
+      "error": null
+    },
+    {
+      "id": "9986",
+      "question": "wisconsin 3rd 's harry griswald die july 4 , 1939 , leave his seat vacant until the next congress",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 16.2,
+      "error": null
+    },
+    {
+      "id": "8641",
+      "question": "jupiter be a planet with a semimajor axis of 5.20 and have an orbital period last 11.86 year",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.7,
+      "error": null
+    },
+    {
+      "id": "5429",
+      "question": "the home team score a total of 213 point during the 1959 vfl season",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 16.7,
+      "error": null
+    },
+    {
+      "id": "7004",
+      "question": "the new york jet lose 1 game in overtime during their 1979 season",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 37.6,
+      "error": null
+    },
+    {
+      "id": "4852",
+      "question": "the largest margin of victory be against the indian on april 7",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 70.3,
+      "error": null
+    },
+    {
+      "id": "5954",
+      "question": "the cowboy do not win a game in december",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.8,
+      "error": null
+    },
+    {
+      "id": "2539",
+      "question": "everyone with a state of lu have the title of duke",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.4,
+      "error": null
+    },
+    {
+      "id": "8809",
+      "question": "the pole service team be the only 1 that score 0 point",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 51.5,
+      "error": null
+    },
+    {
+      "id": "7020",
+      "question": "in the 9th round of vancouver canuck draft pick matt merten from providence college be pick",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.1,
+      "error": null
+    },
+    {
+      "id": "3709",
+      "question": "the most recent player top be rank set a top 3 record be colin miller in the 1997 - 98 season",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 28.5,
+      "error": null
+    },
+    {
+      "id": "679",
+      "question": "the top 4 perform club have the same number of draw",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 29.7,
+      "error": null
+    },
+    {
+      "id": "4264",
+      "question": "peter collins , mike hawthorn and luigi musso all compete in ferrari car",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 16.8,
+      "error": null
+    },
+    {
+      "id": "8909",
+      "question": "25000 crowd be the largest crowd for the game where collingwood be the away team",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 39.4,
+      "error": null
+    },
+    {
+      "id": "8926",
+      "question": "when the america receive 115 program , australia receive at most 12",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.3,
+      "error": null
+    },
+    {
+      "id": "136",
+      "question": "during the 1980 summer olympics , both australia and spain only win 1 bronze medal for swim",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.4,
+      "error": null
+    },
+    {
+      "id": "4417",
+      "question": "7 wrestler compete and the winner be the 5th to enter",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 59.0,
+      "error": null
+    },
+    {
+      "id": "12202",
+      "question": "vitória play river plate",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.9,
+      "error": null
+    },
+    {
+      "id": "651",
+      "question": "the highest attendance figure for a single game be 2818",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 22.7,
+      "error": null
+    },
+    {
+      "id": "1759",
+      "question": "marcin gortat lead the team in rebound for 13 game",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 25.1,
+      "error": null
+    },
+    {
+      "id": "11169",
+      "question": "september 23 , 1977 be the date with a comment of tailcone on , lakebed landing and flight duration of 5 min 34s",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.8,
+      "error": null
+    },
+    {
+      "id": "11035",
+      "question": "in 2004 - 2005 season , 5th , south western district 2 be the men 2nd xi",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.6,
+      "error": null
+    },
+    {
+      "id": "11537",
+      "question": "14.11 (95) be the home team score when the away team score 8.14 (62)",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.3,
+      "error": null
+    },
+    {
+      "id": "10359",
+      "question": "the south dakota state jackrabbit (3) be the champion of the tournament that have a final score of 79 - 75 ot",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.3,
+      "error": null
+    },
+    {
+      "id": "4486",
+      "question": "attendance in all game be consistently lower than 52090",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 61.8,
+      "error": null
+    },
+    {
+      "id": "12387",
+      "question": "brigham young - hawaii defeat western oregon 3 - 0 (15 - 5 , 15 - 9 , 15 - 6) in chattanooga , tennessee",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 30.1,
+      "error": null
+    },
+    {
+      "id": "8903",
+      "question": "tom bigelow compete in the duquoin 100 race",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.2,
+      "error": null
+    },
+    {
+      "id": "9432",
+      "question": "patronymic be the type for rank 2",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 37.8,
+      "error": null
+    },
+    {
+      "id": "3459",
+      "question": "the fourth round qualifying have the most fixture",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.0,
+      "error": null
+    },
+    {
+      "id": "4381",
+      "question": "2 driver 's fail to finish due to engine trouble",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.2,
+      "error": null
+    },
+    {
+      "id": "11343",
+      "question": "the total round list for ufc 114 be greater than 1",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 59.3,
+      "error": null
+    },
+    {
+      "id": "4416",
+      "question": "shawn michael and jeff hardy be both eliminate by umaga",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.2,
+      "error": null
+    },
+    {
+      "id": "11960",
+      "question": "the number of contestant when the international destination be milan and turkey be tba",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.9,
+      "error": null
+    },
+    {
+      "id": "4853",
+      "question": "the white sox win half the game play against the twin",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 64.1,
+      "error": null
+    },
+    {
+      "id": "5962",
+      "question": "barbados , guyana , us virgin island , bermuda , and panama all only win 1 medal",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 28.4,
+      "error": null
+    },
+    {
+      "id": "6841",
+      "question": "jakob win 2 set by a score of 6 - 0 but never lose a set 0 - 6",
+      "gold": [
+        "True"
+      ],
+      "answer": "True",
+      "norm": "True",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 34.7,
+      "error": null
+    },
+    {
+      "id": "3112",
+      "question": "ryan thomas 's shortest fight end at 0:34 second in the first round",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 61.7,
+      "error": null
+    },
+    {
+      "id": "10479",
+      "question": "the team song power to win be first use in 1987",
+      "gold": [
+        "False"
+      ],
+      "answer": "False",
+      "norm": "False",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 11.7,
+      "error": null
+    }
+  ]
+}
