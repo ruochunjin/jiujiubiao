@@ -6,7 +6,7 @@ import sqlite3
 import tempfile
 import unittest
 
-from xuanji.training.reward import (
+from xuanjitu.training.reward import (
     compute_process_reward,
     parse_sections,
     schema_reward,

@@ -74,9 +74,9 @@ def gold_coverage(answer: str, gold_result: str) -> float:
 
 
 def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict:
-    import xuanji
-    from xuanji.eval import denotation_accuracy
-    from xuanji.table import Table
+    import xuanjitu
+    from xuanjitu.eval import denotation_accuracy
+    from xuanjitu.table import Table
 
     table_map: dict = {}
     db_cache: dict = {}
@@ -95,7 +95,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
     else:
         raise ValueError(f"unknown benchmark: {benchmark!r}")
 
-    engine = xuanji.XuanJi(mode=mode, task=task, solver_kwargs={"sc": sc})
+    engine = xuanjitu.XuanJi(mode=mode, task=task, solver_kwargs={"sc": sc})
     llm = engine.llm
 
     report: list[dict] = []
@@ -107,7 +107,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         error = None
         try:
             if benchmark in {"clambsql", "bird"}:
-                from xuanji.tools.db import Database
+                from xuanjitu.tools.db import Database
 
                 if item.db_file not in db_cache:
                     path_fn = clambsql_db_path if benchmark == "clambsql" else bird_db_path

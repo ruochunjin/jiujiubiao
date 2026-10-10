@@ -219,7 +219,7 @@ def python_repl_ast(code, custom_globals=None, custom_locals=None, memory=None):
             source_root = str(Path(__file__).resolve().parents[1])
             worker_start = (
                 "import sys; sys.path.insert(0, sys.argv[1]); "
-                "from xuanji.execution_worker import main; main()"
+                "from xuanjitu.execution_worker import main; main()"
             )
             process = subprocess.Popen(
                 [sys.executable, "-I", "-c", worker_start, source_root],

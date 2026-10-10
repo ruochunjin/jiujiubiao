@@ -15,7 +15,7 @@ import json
 from pathlib import Path
 from typing import Any, Sequence
 
-from xuanji.normalize import normalize
+from xuanjitu.normalize import normalize
 
 
 def _norm_parts(value: Any, task: str) -> frozenset:

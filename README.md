@@ -22,7 +22,7 @@ question + table/database
 ## Quickstart
 
 ```python
-import xuanji
+import xuanjitu
 
 engine = xuanji.XuanJi()  # endpoint from env (see below)
 result = engine.ask(
@@ -39,7 +39,7 @@ Databases are first-class — the solver grounds itself with schema tools and
 executes real SQL:
 
 ```python
-from xuanji import Database
+from xuanjitu import Database
 
 db = Database.from_sqlite("concert_singer.db")   # or Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
@@ -48,7 +48,7 @@ result = engine.ask("How many singers are from France?", db=db)
 **Offline development / tests** need no endpoint at all:
 
 ```python
-from xuanji import FakeLLM, XuanJi
+from xuanjitu import FakeLLM, XuanJi
 
 llm = FakeLLM(rules=[(r"Now it's your turn", ["Answer: Paris"] * 3)])
 engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
@@ -99,7 +99,7 @@ Register a solver tool and it joins the action space — prompt and dispatch
 update automatically:
 
 ```python
-from xuanji import register_tool
+from xuanjitu import register_tool
 
 @register_tool
 def count_rows(ctx, arg):
@@ -126,7 +126,7 @@ SQLite database), with everything injected — usable standalone or as a
 verl/GRPO reward function:
 
 ```python
-from xuanji.training import compute_process_reward
+from xuanjitu.training import compute_process_reward
 
 reward = compute_process_reward(
     response, gold_sql, gold_python,

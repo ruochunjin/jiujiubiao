@@ -6,8 +6,8 @@ import argparse
 import json
 import sys
 
-from xuanji.eval import denotation_accuracy, load_dataset
-from xuanji.pipeline import XuanJi
+from xuanjitu.eval import denotation_accuracy, load_dataset
+from xuanjitu.pipeline import XuanJi
 
 
 def build_parser() -> argparse.ArgumentParser:

@@ -11,10 +11,10 @@ from __future__ import annotations
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 
-from xuanji.agents.refine_tools import REFINE_TOOL_LIBRARY, Candidate, RefineContext
-from xuanji.normalize import extract_answer, majority_vote, normalize, parse_critic
-from xuanji.prompts import refine as P
-from xuanji.table import Table
+from xuanjitu.agents.refine_tools import REFINE_TOOL_LIBRARY, Candidate, RefineContext
+from xuanjitu.normalize import extract_answer, majority_vote, normalize, parse_critic
+from xuanjitu.prompts import refine as P
+from xuanjitu.table import Table
 
 DEFAULT_TOOLSETS = {
     "tqa": ["python", "subtable"],

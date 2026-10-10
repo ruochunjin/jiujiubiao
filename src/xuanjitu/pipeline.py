@@ -2,9 +2,9 @@
 
 One call, full pipeline::
 
-    import xuanji
+    import xuanjitu
 
-    engine = xuanji.XuanJi()                      # env-configured endpoint
+    engine = xuanjitu.XuanJi()                      # env-configured endpoint
     result = engine.ask("Which venue had the most wins?", table=my_table)
     print(result.answer, result.mode, result.disambiguation)
 
@@ -20,16 +20,16 @@ from typing import Callable
 
 import pandas as pd
 
-import xuanji.tools  # noqa: F401 - registers built-in tools
-from xuanji.agents.refiner import Refiner
-from xuanji.agents.solver import Solver
-from xuanji.df_utils import get_df_info, infer_dtype
-from xuanji.disambiguate import DisambiguationResult, Disambiguator
-from xuanji.llm import default_client
-from xuanji.normalize import is_refusal, normalize
-from xuanji.registry import DEFAULT_REGISTRY, ToolRegistry
-from xuanji.table import Table
-from xuanji.tools.db import Database
+import xuanjitu.tools  # noqa: F401 - registers built-in tools
+from xuanjitu.agents.refiner import Refiner
+from xuanjitu.agents.solver import Solver
+from xuanjitu.df_utils import get_df_info, infer_dtype
+from xuanjitu.disambiguate import DisambiguationResult, Disambiguator
+from xuanjitu.llm import default_client
+from xuanjitu.normalize import is_refusal, normalize
+from xuanjitu.registry import DEFAULT_REGISTRY, ToolRegistry
+from xuanjitu.table import Table
+from xuanjitu.tools.db import Database
 
 # ---------------------------------------------------------------------------
 # Answer-type consistency gate (WTQ-100 attribution: "who" questions answered

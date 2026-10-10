@@ -3,7 +3,7 @@
 Solver tools are plain functions wrapped in :class:`ToolSpec`; registering a
 new tool makes it available to the solver's prompt builder and dispatcher::
 
-    from xuanji.registry import ToolSpec, register_tool
+    from xuanjitu.registry import ToolSpec, register_tool
 
     @register_tool
     def my_tool(ctx, arg):
@@ -24,11 +24,11 @@ class ToolContext:
     """Shared per-question state handed to every tool call."""
 
     df: pd.DataFrame | None
-    llm: Any  # xuanji.llm.LLM
+    llm: Any  # xuanjitu.llm.LLM
     question: str
     memory: dict  # execution state across def() calls; memory["df"] may evolve
     thought: str = ""
-    db: Any = None  # xuanji.tools.db.Database when solving over a database
+    db: Any = None  # xuanjitu.tools.db.Database when solving over a database
     critic: Any = None  # agents.critic.Critic, for self-repairing tools
 
 

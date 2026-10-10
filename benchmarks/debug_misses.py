@@ -18,9 +18,9 @@ from loader import load_wtq, load_wtq_table  # noqa: E402
 
 
 def main() -> None:
-    import xuanji
-    from xuanji.eval import _norm_parts
-    from xuanji.table import Table
+    import xuanjitu
+    from xuanjitu.eval import _norm_parts
+    from xuanjitu.table import Table
 
     report_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("benchmarks/wtq_100.json")
     rep = json.loads(report_path.read_text(encoding="utf-8"))
@@ -36,7 +36,7 @@ def main() -> None:
     print(f"re-running {len(missed_ids)} missed cases with trajectories")
 
     items = load_wtq(100)  # same seed -> same sample
-    engine = xuanji.XuanJi(mode="auto", solver_kwargs={"sc": 3})
+    engine = xuanjitu.XuanJi(mode="auto", solver_kwargs={"sc": 3})
     out = []
     for item in items:
         if item.id not in missed_ids:

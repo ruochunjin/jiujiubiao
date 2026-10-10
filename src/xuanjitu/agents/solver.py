@@ -8,7 +8,7 @@ the prompt automatically.
 
 Loop resolution (repeated action → critic rewrite) and code repair
 (failed Python → critic repair, up to 4 attempts) come from the injected
-:class:`~xuanji.agents.critic.Critic`.
+:class:`~xuanjitu.agents.critic.Critic`.
 """
 
 from __future__ import annotations
@@ -20,8 +20,8 @@ from typing import Any
 
 import pandas as pd
 
-from xuanji.agents.critic import Critic
-from xuanji.df_utils import (
+from xuanjitu.agents.critic import Critic
+from xuanjitu.df_utils import (
     extract_action,
     extract_value_from_string,
     final_answer,
@@ -29,9 +29,9 @@ from xuanji.df_utils import (
     is_python_action,
     is_terminal,
 )
-from xuanji.execution import parse_code_from_string, python_repl_ast
-from xuanji.prompts.solve import TASK_TEMPLATES
-from xuanji.registry import DEFAULT_REGISTRY, ToolContext, ToolRegistry
+from xuanjitu.execution import parse_code_from_string, python_repl_ast
+from xuanjitu.prompts.solve import TASK_TEMPLATES
+from xuanjitu.registry import DEFAULT_REGISTRY, ToolContext, ToolRegistry
 
 EXEC_GLOBALS = {"pd": pd, "re": re}
 try:

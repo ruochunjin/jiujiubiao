@@ -20,9 +20,9 @@ from decimal import Decimal, InvalidOperation
 import numpy as np
 import pandas as pd
 
-from xuanji.execution import parse_code_from_string, python_repl_ast
-from xuanji.prompts.solve import DESCRIPTION_PROMPT, FORMAT_PROMPT
-from xuanji.registry import ToolContext, register_tool
+from xuanjitu.execution import parse_code_from_string, python_repl_ast
+from xuanjitu.prompts.solve import DESCRIPTION_PROMPT, FORMAT_PROMPT
+from xuanjitu.registry import ToolContext, register_tool
 
 try:  # optional speedup
     from rapidfuzz import fuzz as _rf_fuzz

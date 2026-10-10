@@ -20,7 +20,7 @@
 ## 快速开始
 
 ```python
-import xuanji
+import xuanjitu
 
 engine = xuanji.XuanJi()  # 端点由环境变量配置（见下）
 result = engine.ask("这位运动员在哪一站获得第一名？",
@@ -31,7 +31,7 @@ print(result.answer)  # Paris
 数据库一等支持（Solver 自带 schema 感知工具并真实执行 SQL）：
 
 ```python
-from xuanji import Database
+from xuanjitu import Database
 db = Database.from_sqlite("concert_singer.db")  # 或 Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
 ```

@@ -8,12 +8,12 @@ from __future__ import annotations
 
 import unittest
 
-from xuanji import FakeLLM, XuanJi
-from xuanji.agents.refiner import Refiner
-from xuanji.agents.solver import Solver
-from xuanji.execution import python_repl_ast
-from xuanji.table import Table
-from xuanji.tools.db import Database
+from xuanjitu import FakeLLM, XuanJi
+from xuanjitu.agents.refiner import Refiner
+from xuanjitu.agents.solver import Solver
+from xuanjitu.execution import python_repl_ast
+from xuanjitu.table import Table
+from xuanjitu.tools.db import Database
 
 TABLE = Table(
     ["Year", "Venue", "Position"],

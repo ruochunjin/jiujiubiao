@@ -13,7 +13,7 @@ import sqlite3
 
 import pandas as pd
 
-from xuanji.registry import ToolContext, register_tool
+from xuanjitu.registry import ToolContext, register_tool
 
 
 class Database:

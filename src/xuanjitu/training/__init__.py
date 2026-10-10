@@ -1,6 +1,6 @@
 """Training-side utilities: the CORES composite process reward."""
 
-from xuanji.training.reward import (
+from xuanjitu.training.reward import (
     RewardBreakdown,
     compute_process_reward,
     parse_sections,

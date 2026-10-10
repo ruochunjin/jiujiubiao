@@ -4,7 +4,7 @@ import sys
 
 import cloudpickle
 
-from xuanji.execution import _python_repl_local, _serialize_state
+from xuanjitu.execution import _python_repl_local, _serialize_state
 
 
 def main():

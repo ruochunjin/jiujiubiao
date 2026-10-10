@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import unittest
 
-from xuanji import FakeLLM, XuanJi
-from xuanji.pipeline import _expected_type, _is_bare_number, _type_mismatch_hint
+from xuanjitu import FakeLLM, XuanJi
+from xuanjitu.pipeline import _expected_type, _is_bare_number, _type_mismatch_hint
 
 _TABLE = [
     ["Team", "Goals"],
