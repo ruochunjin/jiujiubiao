@@ -63,6 +63,10 @@ def normalize(ans, task):
     s = re.sub(r"\s+", " ", s)
     f = _num(s)
     if f is not None:
+        import math
+
+        if not math.isfinite(f):
+            return s  # inf/nan: keep the surface (BIRD OverflowError fix)
         if abs(f - round(f)) < 1e-9:
             return str(int(round(f)))
         return f"{f:.4f}".rstrip("0").rstrip(".")

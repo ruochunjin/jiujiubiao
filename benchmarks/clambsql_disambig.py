@@ -57,7 +57,7 @@ def main() -> None:
         engine2 = xuanji.XuanJi(disambiguate=True, clarify=lambda _q, a=clarify_answer: a)
         r2 = engine2.ask(row["question"], db=db)
         cov2 = gold_coverage(r2.norm or r2.answer, gold)
-        elapsed = time.perf_counter() - t0
+        _elapsed = time.perf_counter() - t0  # noqa: F841 - timing kept for debug
 
         results["direct"].append(cov1)
         results["disambiguated"].append(cov2)

@@ -1,0 +1,803 @@
+{
+  "benchmark": "bird",
+  "n": 40,
+  "accuracy": 0.4322852564102564,
+  "seconds": 3346.8,
+  "llm_calls": 456,
+  "llm_tokens": 315341,
+  "cases": [
+    {
+      "id": "bird-001",
+      "question": "Calculate the average budget of the movies directed by Jaume Collet-Serra. Hint: directed by refers to job = 'Director'; average budget = AVG(budget)",
+      "gold": [
+        "CAST(SUM(T1.budget) AS REAL) / COUNT(T1.movie_id)",
+        "38000000.0"
+      ],
+      "answer": "38000000.0",
+      "norm": "38000000",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 9.7,
+      "error": null
+    },
+    {
+      "id": "bird-002",
+      "question": "Among the papers under DB classification, which paper has the highest number of words cited? Hint: classification refers to class_label; class_label = 'DB';",
+      "gold": [
+        "paper_id",
+        "13229"
+      ],
+      "answer": "13229",
+      "norm": "13229",
+      "status": "completed",
+      "steps": 6,
+      "seconds": 36.6,
+      "error": null
+    },
+    {
+      "id": "bird-003",
+      "question": "Please list the releases that have been downloaded for more than 20000 times. Hint: releases refer to groupName; downloaded for more than 20000 times refers to totalSnatched > 20000;",
+      "gold": [
+        "groupName",
+        "thriller",
+        "the chronic",
+        "mecca and the soul brother",
+        "enter the wu-tang (36 chambers)",
+        "illmatic",
+        "ready to die",
+        "southernplayalisticadillacmuzik",
+        "operation: doomsday",
+        "analog worms attack",
+        "2001",
+        "hooray for boobies",
+        "since i left you",
+        "the marshall mathers lp",
+        "gorillaz",
+        "deadringer",
+        "demon days",
+        "sad clown bad summer 9",
+        "graduation",
+        "head rush",
+        "alopecia",
+        "the what cd",
+        "the what cd volume 2",
+        "808s &amp; heartbreak",
+        "tha carter iii",
+        "feed the animals",
+        "relapse",
+        "jj n&deg; 2",
+        "the blueprint 3",
+        "man on the moon: the end of day",
+        "cosmogramma",
+        "recovery",
+        "snafu ep",
+        "my beautiful dark twisted fantasy",
+        "plastic beach",
+        "watch the throne",
+        "the way",
+        "take care",
+        "the money store",
+        "home brew",
+        "fortune",
+        "tetra",
+        "the heist",
+        "good kid, m.a.a.d city",
+        "the 20/20 experience",
+        "wolf",
+        "yeezus",
+        "run the jewels",
+        "force back to sleep",
+        "the marshall mathers lp 2",
+        "perfect hair",
+        "... (truncated to 50 rows)"
+      ],
+      "answer": "thriller, the chronic, mecca and the soul brother, enter the wu-tang (36 chambers), illmatic, ready to die, southernplayalisticadillacmuzik, operation: doomsday, analog worms attack, 2001, hooray for boobies, since i left you, the marshall mathers lp, gorillaz, deadringer, demon days, sad clown bad summer 9, graduation, head rush, alopecia, the what cd, the what cd volume 2, 808s & heartbreak, tha carter iii, feed the animals, relapse, jj n° 2, the blueprint 3, man on the moon: the end of day, cosmogramma, recovery, snafu ep, my beautiful dark twisted fantasy, plastic beach, watch the throne, the way, take care, the money store, home brew, fortune, tetra, the heist, good kid, m.a.a.d city, the 20/20 experience, wolf, yeezus, run the jewels, force back to sleep, the marshall mathers lp 2, perfect hair, to pimp a butterfly, the good fight, compton: a soundtrack by dr. dre, the life of pablo, lemonade",
+      "norm": "thriller, the chronic, mecca and the soul brother, enter the wu-tang (36 chambers), illmatic, ready to die, southernplayalisticadillacmuzik, operation: doomsday, analog worms attack, 2001, hooray for boobies, since i left you, the marshall mathers lp, gorillaz, deadringer, demon days, sad clown bad summer 9, graduation, head rush, alopecia, the what cd, the what cd volume 2, 808s & heartbreak, tha carter iii, feed the animals, relapse, jj n° 2, the blueprint 3, man on the moon: the end of day, cosmogramma, recovery, snafu ep, my beautiful dark twisted fantasy, plastic beach, watch the throne, the way, take care, the money store, home brew, fortune, tetra, the heist, good kid, m.a.a.d city, the 20/20 experience, wolf, yeezus, run the jewels, force back to sleep, the marshall mathers lp 2, perfect hair, to pimp a butterfly, the good fight, compton: a soundtrack by dr. dre, the life of pablo, lemonade",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 40.9,
+      "error": null
+    },
+    {
+      "id": "bird-004",
+      "question": "Name the country with the largest number of households in a residential area. Hint: the largest number of households refers to MAX(households);",
+      "gold": [
+        "county",
+        "CAGUAS"
+      ],
+      "answer": "NEW YORK",
+      "norm": "new york",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 22.4,
+      "error": null
+    },
+    {
+      "id": "bird-005",
+      "question": "Calculate the total net profit of the store located in highest median income city. Hint: net profit can be computed as SUBTRACT(Unit Price, Unit Cost); highest median income city refers to City Name where MAX(Median Income);",
+      "gold": [
+        "SUM(REPLACE(T1.`Unit Price`, ',', '') - REPLACE(T1.`Unit Cost`, ',', ''))",
+        "6813326.3"
+      ],
+      "answer": "-2710.46",
+      "norm": "-2710.46",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 41.3,
+      "error": null
+    },
+    {
+      "id": "bird-006",
+      "question": "In which city is the store with the highest total sales quantity located? Hint: qty is abbreviation for quantity; highest sales quantity refers to MAX(qty)",
+      "gold": [
+        "city",
+        "Remulade"
+      ],
+      "answer": "Remulade",
+      "norm": "remulade",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 9.2,
+      "error": null
+    },
+    {
+      "id": "bird-007",
+      "question": "List the names of all players in team Avangard Omsk in season 2000-2001. Hint: names of the players refers to PlayerName; team Avangard Omsk refers to TEAM = 'Avangard Omsk'; 2000-2001 season refers to SEASON = '2000-2001';",
+      "gold": [
+        "PlayerName",
+        "Alexander Svitov",
+        "Stanislav Chistov",
+        "Alexander Perezhogin",
+        "Yegor Shastin"
+      ],
+      "answer": "Alexander Svitov, Stanislav Chistov, Alexander Perezhogin, Yegor Shastin",
+      "norm": "alexander svitov, stanislav chistov, alexander perezhogin, yegor shastin",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 8.9,
+      "error": null
+    },
+    {
+      "id": "bird-008",
+      "question": "Which product did Phillina Ober buy? Hint: product refers to \"Product Name\"",
+      "gold": [
+        "Product Name",
+        "GBC Standard Plastic Binding Systems Combs",
+        "Avery 508",
+        "SAFCO Boltless Steel Shelving"
+      ],
+      "answer": "Global High-Back Leather Tilter, Burgundy; Acco PRESSTEX Data Binder with Storage Hooks, Dark Blue, 14 7/8\" X 11\"; Tuff Stuff Recycled Round Ring Binders; GBC Standard Plastic Binding Systems Combs; Tuf-Vin Binders; Avery 508; SAFCO Boltless Steel Shelving; Memorex Micro Travel Drive 16 GB; netTALK DUO VoIP Telephone Service; Motorola HK250 Universal Bluetooth Headset",
+      "norm": "global high-back leather tilter, burgundy; acco presstex data binder with storage hooks, dark blue, 14 7/8\" x 11\"; tuff stuff recycled round ring binders; gbc standard plastic binding systems combs; tuf-vin binders; avery 508; safco boltless steel shelving; memorex micro travel drive 16 gb; nettalk duo voip telephone service; motorola hk250 universal bluetooth headset",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 43.9,
+      "error": null
+    },
+    {
+      "id": "bird-009",
+      "question": "How many images contain 'bridge' as an object element? Hint: images refers to IMG_ID; 'bridge' as an object element refers to OBJ_CLASS = 'bridge'",
+      "gold": [
+        "COUNT(DISTINCT T1.IMG_ID)",
+        "1495"
+      ],
+      "answer": "1495",
+      "norm": "1495",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 168.6,
+      "error": null
+    },
+    {
+      "id": "bird-010",
+      "question": "Among the cars with an engine displacement of no less than 400 cubic millimeter, how many cars cost at least 30,000? Hint: engine displacement of no less than 400 cubic millimeter refers to displacement > 400; cost at least 30,000 refers to price > 30000",
+      "gold": [
+        "COUNT(*)",
+        "3"
+      ],
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 16.0,
+      "error": null
+    },
+    {
+      "id": "bird-011",
+      "question": "List the full name and phone number of male customers from Fair Oaks who are subscribed to the email list. Hint: full name = First, Last; male customers refers to Gender = 'M'; Fair Oaks refers to City = 'Fair Oaks'; subscribed to the email list refers to SubscribedToEmailList = 'TRUE';",
+      "gold": [
+        "First | Last | PhoneNumber",
+        "Donald | Butler | (916) 386-4729"
+      ],
+      "answer": "Donald Butler, (916) 386-4729",
+      "norm": "donald butler, (916) 386-4729",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 14.4,
+      "error": null
+    },
+    {
+      "id": "bird-012",
+      "question": "How many minority leaders have not been registered in Federal Election Commission data? Hint: minority leaders is a title; have not been registered in Federal Election Commission data refers to fec_id IS NULL OR fec_id = ''",
+      "gold": [
+        "COUNT(*)",
+        "0"
+      ],
+      "answer": "0",
+      "norm": "0",
+      "status": "completed",
+      "steps": 6,
+      "seconds": 68.1,
+      "error": null
+    },
+    {
+      "id": "bird-013",
+      "question": "How many planes of Spirit Air Lines took off on 2018/8/7? Hint: Spirit Air Lines refers to Description = 'Spirit Air Lines: NK'; on 2018/8/7 refers to FL_DATE = '2018/8/7';",
+      "gold": [
+        "COUNT(T2.Code)",
+        "509"
+      ],
+      "answer": "509",
+      "norm": "509",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 287.9,
+      "error": null
+    },
+    {
+      "id": "bird-014",
+      "question": "What is the position coordinate on the page menu of the \"Small Hominy\" dish and how long did it appear? Hint: position coordinate = xpos, ypos; Small Hominy is a name of dish; how long it appear = SUBTRACT(last_appeared, first_appeared);",
+      "gold": [
+        "xpos | ypos | T1.last_appeared - T1.first_appeared",
+        "0.56 | 0.516133 | 0",
+        "0.587143 | 0.516133 | 0",
+        "0.438571 | 0.524297 | 0",
+        "0.414286 | 0.531873 | 0",
+        "0.421429 | 0.517275 | 0",
+        "0.592857 | 0.516133 | 0",
+        "0.582857 | 0.518933 | 0",
+        "0.347143 | 0.433867 | 0",
+        "0.441429 | 0.534212 | 0",
+        "0.44 | 0.528483 | 0",
+        "0.44 | 0.529787 | 0",
+        "0.422857 | 0.539203 | 0",
+        "0.438571 | 0.538853 | 0",
+        "0.431429 | 0.542236 | 0",
+        "0.445714 | 0.532549 | 0",
+        "0.425714 | 0.529523 | 0",
+        "0.43 | 0.522905 | 0",
+        "0.427143 | 0.524461 | 0",
+        "0.554286 | 0.511083 | 0",
+        "0.45 | 0.5352 | 0"
+      ],
+      "answer": "(0.56, 0.516133), 0",
+      "norm": "(0.56, 0.516133), 0",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 221.9,
+      "error": null
+    },
+    {
+      "id": "bird-015",
+      "question": "Count the active businesses that has an attribute of BYOB with high review count. Hint: active business ID refers to active = 'true'; category of Food refers to category_name = 'Food'; attribute of BYOB refers to attribute_name = 'BYOB'; high review count refers to review_count = 'High'",
+      "gold": [
+        "COUNT(DISTINCT T1.business_id)",
+        "118"
+      ],
+      "answer": "118",
+      "norm": "118",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 182.1,
+      "error": null
+    },
+    {
+      "id": "bird-016",
+      "question": "List all the songs associated with drama movies. Hint: drama refers to genre = 'Drama';",
+      "gold": [
+        "song",
+        "Bella Notte",
+        "Bibbidi-Bobbidi-Boo",
+        "Once Upon a Dream"
+      ],
+      "answer": "Bibbidi-Bobbidi-Boo, Bella Notte, Once Upon a Dream",
+      "norm": "bibbidi-bobbidi-boo, bella notte, once upon a dream",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 54.0,
+      "error": null
+    },
+    {
+      "id": "bird-017",
+      "question": "How many respondents of the mental health survey were diagnosed with 'Substance Use Disorder'? Hint: respondents' and 'users' are synonyms",
+      "gold": [
+        "COUNT(AnswerText)",
+        "7"
+      ],
+      "answer": "2",
+      "norm": "2",
+      "status": "completed",
+      "steps": 7,
+      "seconds": 86.3,
+      "error": null
+    },
+    {
+      "id": "bird-018",
+      "question": "Calculate the average rating of reviews for restaurants in Santa Cruz County. Hint: average rating = divide(sum(review where county = 'santa cruz county'), count(id_restaurant where county = 'santa cruz county'))",
+      "gold": [
+        "AVG(T2.review)",
+        "2.2960869565217394"
+      ],
+      "answer": "2.2960869565217394",
+      "norm": "2.2961",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 31.3,
+      "error": null
+    },
+    {
+      "id": "bird-019",
+      "question": "Find the ID of advisor of student ID 80 and state the level of courses taught by him/her. Hint: ID of advisor refers to p_id_dummy; student ID 80 refers to advisedBy.p_id = 80; level of courses refers to courseLevel",
+      "gold": [
+        "p_id_dummy | courseLevel",
+        "234 | Level_400",
+        "234 | Level_400",
+        "234 | Level_400"
+      ],
+      "answer": "234, Level_400",
+      "norm": "234, level_400",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 28.1,
+      "error": null
+    },
+    {
+      "id": "bird-020",
+      "question": "What is the maximal elevation of the summit of the shortest mountain that can be found in the island of Madagaskar? Indicate what type of mountain it is. Hint: The elevation of the summit refers to height",
+      "gold": [
+        "Empty result."
+      ],
+      "answer": "",
+      "norm": "",
+      "status": "incomplete",
+      "steps": 10,
+      "seconds": 84.8,
+      "error": null
+    },
+    {
+      "id": "bird-021",
+      "question": "List the inspection dates, scores and inspection types for the eateries with tax code AA. Hint: eateries with tax code AA refer to business_id where tax_code = 'AA';",
+      "gold": [
+        "date | score | type",
+        "2016-05-27 | None | New Construction",
+        "2016-07-25 | 89 | Routine - Unscheduled",
+        "2016-08-04 | None | Reinspection/Followup"
+      ],
+      "answer": "2016-05-27, None, New Construction; 2016-07-25, 89, Routine - Unscheduled; 2016-08-04, None, Reinspection/Followup",
+      "norm": "2016-05-27, none, new construction; 2016-07-25, 89, routine - unscheduled; 2016-08-04, none, reinspection/followup",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 22.2,
+      "error": null
+    },
+    {
+      "id": "bird-022",
+      "question": "In total, how many Hispanic male students graduated from Amridge University? Hint: Hispanic refers to race = 'H'; male refers to gender = 'M'; Amridge University refers to chronname = 'Amridge University';",
+      "gold": [
+        "SUM(T2.grad_cohort)",
+        "0.0"
+      ],
+      "answer": "0",
+      "norm": "0",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 190.5,
+      "error": null
+    },
+    {
+      "id": "bird-023",
+      "question": "Which team had the highest penalty kill chances in 1995, Florida Panthers, Edmonton Oilers or Los Angeles Kings? Hint: the highest penalty kill chances refer to MAX(PKC); year = 1995;",
+      "gold": [
+        "name",
+        "Edmonton Oilers"
+      ],
+      "answer": "Edmonton Oilers",
+      "norm": "edmonton oilers",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 44.5,
+      "error": null
+    },
+    {
+      "id": "bird-024",
+      "question": "What is the percentage of all the trains with at least 4 cars? List the directions of the said trains. Hint: at least 4 cars refers to trailPosi > = 4; calculation = MULTIPLY(DIVIDE(count(trailPosi > = 4 then id), count(id)), 100)",
+      "gold": [
+        "CAST(COUNT(CASE WHEN T2.trailPosi >= 4 THEN T1.id ELSE NULL END) AS REAL) * 100 / COUNT(T1.id)",
+        "45.0",
+        "east",
+        "east",
+        "east",
+        "east",
+        "east",
+        "east",
+        "west",
+        "west",
+        "west"
+      ],
+      "answer": "45%, east, west",
+      "norm": "45%, east, west",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 40.2,
+      "error": null
+    },
+    {
+      "id": "bird-025",
+      "question": "What is the average age of clients in South Atlantic? Hint: in South Atlantic refers to division = 'South Atlantic'; average age refers to avg(age)",
+      "gold": [
+        "AVG(T1.age)",
+        "45.10526315789474"
+      ],
+      "answer": "45.10526315789474",
+      "norm": "45.1053",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 197.4,
+      "error": null
+    },
+    {
+      "id": "bird-026",
+      "question": "Provide the first name of employee who did inspection ID 48225?",
+      "gold": [
+        "first_name",
+        "Jessica"
+      ],
+      "answer": "Jessica",
+      "norm": "jessica",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 321.7,
+      "error": null
+    },
+    {
+      "id": "bird-027",
+      "question": "Please list different IDs of movies that are the newest and have gotten the lowest rating. Hint: Year contains relative value, higer year value refers to newer date; Year = 4 refers to newest date, Year = 1 refer to oldest date; Lowest rating = 1",
+      "gold": [
+        "movieid",
+        "1964242",
+        "2219779",
+        "1856939",
+        "2273044",
+        "1681655",
+        "1695219",
+        "1915498",
+        "1929431",
+        "1947355",
+        "1965516",
+        "1995178",
+        "2032270",
+        "2199868",
+        "2210254",
+        "2271822",
+        "2312345",
+        "2338708",
+        "2405835",
+        "2440155",
+        "2461485",
+        "2474020",
+        "2504469",
+        "2510683",
+        "1721568",
+        "1684486",
+        "1729240",
+        "1787525",
+        "1830564",
+        "1927003",
+        "1927950",
+        "1932389",
+        "1943718",
+        "1948340",
+        "2005166",
+        "2005459",
+        "2187739",
+        "2282360",
+        "2397781",
+        "2462959",
+        "2487366",
+        "2487415",
+        "2542489",
+        "1872662",
+        "1673848",
+        "1769408",
+        "1931489",
+        "1785529",
+        "2382368",
+        "2460384",
+        "1894453",
+        "... (truncated to 50 rows)"
+      ],
+      "answer": "",
+      "norm": "",
+      "status": "OverflowError: cannot convert float infinity to integer",
+      "steps": 0,
+      "seconds": 142.4,
+      "error": "OverflowError: cannot convert float infinity to integer"
+    },
+    {
+      "id": "bird-028",
+      "question": "What is the average alcohol content per 12-ounce beer bottle produced by Boston Beer Company?",
+      "gold": [
+        "AVG(T1.abv)",
+        "0.05142857142857143"
+      ],
+      "answer": "0.0514",
+      "norm": "0.0514",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 35.8,
+      "error": null
+    },
+    {
+      "id": "bird-029",
+      "question": "List the ship ID of shipments shipped to the most populated city. Hint: most populated city refers to Max(population)",
+      "gold": [
+        "ship_id",
+        "1012"
+      ],
+      "answer": "1012, 1016, 1023, 1054, 1085, 1099, 1106, 1119, 1153, 1202, 1242, 1269, 1274, 1328, 1337, 1347, 1359, 1417, 1459, 1620, 1627, 1646, 1647, 1651, 1660, 1700, 1724, 1764, 1879, 1926, 1955",
+      "norm": "1012101610231054050583645786980749183470344636875988743734945281227862025433882892460003112240529970214133536064516812439552",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 37.3,
+      "error": null
+    },
+    {
+      "id": "bird-030",
+      "question": "Please list the texts of all the tweets posted from Buenos Aires with a positive sentiment. Hint: \"Buenos Aires\" is the City; positive sentiment refers to Sentiment > 0",
+      "gold": [
+        "text",
+        "RT @awscloud: .@AWS_EB now supports EC2 T2.Nano instances &amp; integrates with Amazon EC2 Container Registry. http://aws.amazon.com/about-aws/whats-new/2016/01/aws-elastic-beanstalk-adds-support-for-t2-nano-instances-and-amazon-ec2-container-registry/?sc_channel=sm&sc_campaign=launches_2016&sc_publisher=tw_go&sc_content=eb_t2_ecr&sc_country=global&sc_geo=global&sc_category=eb&adbsc=social_launches_20160112_57164086&adbid=686722028754219008&adbpl=tw&adbpr=66780587 https://",
+        "RT @awscloud: Now available: new free #AWSTraining intro video &amp; lab for Amazon Elasticsearch service. https://aws.amazon.com/training/intro_series/?adbsc=social_20160112_57014156&adbid=686986102939361280&adbpl=tw&adbpr=66780587 https://t.co",
+        "#aws mmmm.... nice http://twitter.com/h_di_giorgi/status/688485773201510401/photo/1",
+        "RT @CloudcraftCo: Create awesome architectures by mixing 3D blocks and the 2D #AWS Icons as this #IoT showcase https://cloudcraft.co/view/447df17a-a2e7-4857-a331-882edfa559bf?key=1ze3djdt0swtgldi&utm_content=buffer56833&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer http",
+        "RT @CloudcraftCo: Create awesome #VPC visualizations using our new components for #AWS! Get this template at https://cloudcraft.co/?utm_content=buffer1f73e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer https:",
+        "@CloudcraftCo is awesome thanks for letting us know. Great tool @awscloud #devops @nubity #startuplife",
+        "RT @alan_reid: Free SSL certs by AWS https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/",
+        "RT @konklone: Amazon now offering free HTTPS certificates to its AWS customers: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/ Along with @letsencrypt we are in",
+        "\"RT @firt: Amazon now creates AWS SSL/TLS certificates for free. It says: Adopting HTTPS ensures higher search rankings.https://t.co/nGu\"",
+        "\"free SSL certs with the new ACM?! ... WOW! @awscloud you're awesome! #happyMonday #SSL #ACMhttps://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/\"",
+        "\"RT @firt: Amazon now creates AWS SSL/TLS certificates for free. It says: Adopting HTTPS ensures higher search rankings.https://t.co/nGu\"",
+        "https://github.com/ services runs on dedicated hardware http://status.github.com runs in the cloud (AWS) http://twitter.com/frodriguez/status/692537518504480768/photo/1",
+        "RT @duolingo: Unfortunately Duolingo is down due to issues with @awscloud. We are working to restore the service as soon as posisble.",
+        "RT @jeffbarr: New: http://aws.amazon.com/answers/ - Clear answers to common questions about architecting building &amp; running on #AWS https://t.co",
+        "@BeluTwittahLCDA @Julii_LCDA aws gracias",
+        "Se emocionaron todos con mi videos aws",
+        "RT @awscloud: Join our #AWSwebinar Build IoT Backends with AWS IoT and AWS Lambda tomorrow! https://publish.awswebcasts.com/content/connect/c1/7/en/events/event/shared/4183083/event_landing.html?connect-session=graysonbreezutfr7brt7n9dq5vo&sco-id=27941409&campaign-id=TW1D&_charset_=utf-8&adbsc=social_webinars_20160208_58012636&adbid=696747150298906624&adbpl=tw&adbpr=66780587 https://t.co/KY94do8X",
+        "\"When the zombies rise Amazon Web Services will be ready: �������How do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=Feed:%20Mashable%20(Mashable)\"",
+        "\"When the zombies rise Amazon Web Services will be ready: �������How do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=Feed:%20Mashable%20(Mashable)\"",
+        "#CorporateITChile Cinco claves de seguridad para su cloud AWS http://www.corporateit.cl/index.php/2016/02/11/cinco-claves-de-seguridad-para-su-cloud-aws/ CorporateITnews",
+        "@fieritacatalano @copy Yo us AWS que es medio insufrible y ahora me pas a Google Storage. Es bastante barato y rpido.",
+        "RT @awscloud: EMR release 4.3.0 offers upgraded versions of Hadoop Spark Ganglia &amp; Presto: http://docs.aws.amazon.com/ElasticMapReduce/latest/ReleaseGuide/emr-release-components.html?adbsc=docs_20160212_57953606&adbid=698293262361071617&adbpl=tw&adbpr=66780587 http://twitter.com/awscloud/status/698293262361071617/photo/1",
+        "Me cae bien porque no se va a brc aws somos iguales",
+        "RT @awscloud: Located in Ireland? Learn how you can benefit from the Cloud at the AWS Enterprise Summit: http://aws.amazon.com/summits/enterprise-dublin/?adbsc=social_20160215_58303076 https://t.",
+        "RT @RemotePixel: Blog | Having fun with #AWS and #Landsat 8 data http://remotepixel.ca/blog/landsat8-ndvi-20160212.html http://twitter.com/RemotePixel/status/699235857773887489/photo/1",
+        "Otro caso de xito para compartir: �@Labioguia Implementacin de AWS para performance https://www.edrans.com/PDFs/Success_Case_LBG_ES.pdf http://twitter.com/edransIT/status/699572472241385472/photo/1",
+        "@runixo Yo us una instancia micro en AWS (tens un ao gratis si sos nuevo cliente) e instal una VPN corte: https://opensourcehacker.com/2015/04/12/almost-free-netflix-vpn-on-amazon-ec2-set-up-in-30-minutes-using-ansible/",
+        "RT @edransIT: Ultimo caso de xito ��http://us.letgo.com/en implement AWS para transformar su infraestructura cloud https://t.co/ds5ADC",
+        "RT @juanherenu: Con AWS vamos a estar en Buenos Aires buscando talentos en marzo. No se duerman en mandar sus CVs. http://www.linkedin.com/",
+        "RT @juanherenu: Con AWS vamos a estar en Buenos Aires buscando talentos en marzo. No se duerman en mandar sus CVs. http://www.linkedin.com/",
+        "RT @awscloud: Get started learning #AmazonLumberyard: our free cross-platform 3D game engine: http://docs.aws.amazon.com/lumberyard/latest/gettingstartedguide/intro.html?adbsc=docs_20160220_58195366 https://t.co/yN4Zqm",
+        "@Ryogure no pude salir con pibe por estudiar y me dice est bien e estudio primero como debe ser aws",
+        "\"Free lab from @qwikLab Introduction to AWS Key Management Servicehttps://qwiklabs.com/focuses/preview/1599?locale=en&search=53897\"",
+        "Info va @diarioti Capgemini anuncia la ampliacin de su colaboracin con Amazon Web Services http://diarioti.com/capgemini-anuncia-la-ampliacion-de-su-colaboracion-con-amazon-web-services/92856",
+        "RT @ajlopez: Amazon Buenos Aires: Looking for the best and brightest software engineers for AWS http://www.linkedin.com/ via @juanherenu",
+        "RT @ajlopez: Amazon Buenos Aires: Looking for the best and brightest software engineers for AWS http://www.linkedin.com/ via @juanherenu",
+        "RT @juanherenu: Con AWS vamos a estar en Buenos Aires buscando talentos en marzo. No se duerman en mandar sus CVs. http://www.linkedin.com/",
+        "@christerfrancis Pretty sure I'll go with Amazon SES. Best pricing already use many AWS services. Hope it's faster than @MandrillApp was!",
+        "RT @awscloud: Interested in learning best practices for #BigData solutions? Join our #AWSTraining! https://aws.amazon.com/training/course-descriptions/bigdata/?sc_channel=sm&sc_campaign=gc_bd&sc_publisher=tw_go&sc_content=bd_training&sc_country=global&sc_geo=global&sc_category=big-data&trk=global_2016_bigdata_bv&adbsc=gc_20160225_58603506&adbid=702675910269366272&adbpl=tw&adbpr=66780587 https://t.co/jF7",
+        "RT @thequeenistini: aws me encanta cuando se copan todas NO HAY TRAILER NO HAY TT TINI",
+        "#CasoDeExito Una de las empresas ms innovadoras de mobile commerce del mundo @letgo implement AWS en tiempo rcord https://www.edrans.com/PDFs/Success_Case_LetGo_ES.pdf",
+        "Y buenohoy ni se sale aws",
+        "RT @awscloud: New on @AWSIdentity blog: Announcing industry best practices for securing AWS resources #CIS http://blogs.aws.amazon.com/security/post/Tx3PTTZB14FWPBA/Announcing-Industry-Best-Practices-for-Securing-AWS-Resources?adbsc=social_20160229_58787806&adbid=704380683204964352&adbpl=tw&adbpr=66780587 https://",
+        "RT @awscloud: Use API Gateway custom authorizers to support OAuth &amp; other bearer tokens. How to: http://docs.aws.amazon.com/apigateway/latest/developerguide/use-custom-authorizer.html?adbsc=docs_20160227_58439126&adbid=703658892689969152&adbpl=tw&adbpr=66780587 https://t.co/hRUDV",
+        "\"RT @Programster_UK: #AWS #RDS now supports #MySQL 5.7! whats new in 5.7: http://blog.programster.org/whats-new-in-mysql-5-7/aws post: https://aws.amazon.com/blogs/aws/amazon-rds-update-support-for-mysql-5-7/\"",
+        "\"RT @lizbethtarin_: Y luego se fue y puso ven a bailar y yo asi de aws mil gracias jajajajaja me hizo las compras felices + #KCA #VotaMari\"",
+        "Aws se estan peleando con argumentos pelotudos que linda pareja tienen gracias por este lindo momento familia",
+        "RT @JoceCakeGirl: aws son tan lindos muero #CalumYouArePerfect �https://twitter.com/catagajardop/status/705497616226893824",
+        "somos tan importantes en sus vidas que hablan de nosotras aws tkm fans",
+        "@_villafaxe Aws que tiempos ah No le puedo dar rt conchuda",
+        "... (truncated to 50 rows)"
+      ],
+      "answer": "RT @awscloud: .@AWS_EB now supports EC2 T2.Nano instances &amp; integrates with Amazon EC2 Container Registry. http://aws.amazon.com/about-aws/whats-new/2016/01/aws-elastic-beanstalk-adds-support-for-t2-nano-instances-and-amazon-ec2-container-registry/?sc_channel=sm&sc_campaign=launches_2016&sc_publisher=tw_go&sc_content=eb_t2_ecr&sc_country=global&sc_geo=global&sc_category=eb&adbsc=social_launches_20160112_57164086&adbid=686722028754219008&adbpl=tw&adbpr=66780587 https://; RT @awscloud: Now available: new free #AWSTraining intro video &amp; lab for Amazon Elasticsearch service. https://aws.amazon.com/training/intro_series/?adbsc=social_20160112_57014156&adbid=686986102939361280&adbpl=tw&adbpr=66780587 https://t.co; #aws mmmm.... nice http://twitter.com/h_di_giorgi/status/688485773201510401/photo/1; RT @CloudcraftCo: Create awesome architectures by mixing 3D blocks and the 2D #AWS Icons as this #IoT showcase https://cloudcraft.co/view/447df17a-a2e7-4857-a331-882edfa559bf?key=1ze3djdt0swtgldi&utm_content=buffer56833&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer http; RT @CloudcraftCo: Create awesome #VPC visualizations using our new components for #AWS! Get this template at https://cloudcraft.co/?utm_content=buffer1f73e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer https:; @CloudcraftCo is awesome thanks for letting us know. Great tool @awscloud #devops @nubity #startuplife; RT @alan_reid: Free SSL certs by AWS https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/; RT @konklone: Amazon now offering free HTTPS certificates to its AWS customers: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/ Along with @letsencrypt we are in; \"RT @firt: Amazon now creates AWS SSL/TLS certificates for free. It says: Adopting HTTPS ensures higher search rankings.https://t.co/nGu\"; \"free SSL certs with the new ACM?! ... WOW! @awscloud you're awesome! #happyMonday #SSL #ACMhttps://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/\"; \"RT @firt: Amazon now creates AWS SSL/TLS certificates for free. It says: Adopting HTTPS ensures higher search rankings.https://t.co/nGu\"; https://github.com/ services runs on dedicated hardware http://status.github.com runs in the cloud (AWS) http://twitter.com/frodriguez/status/692537518504480768/photo/1; RT @duolingo: Unfortunately Duolingo is down due to issues with @awscloud. We are working to restore the service as soon as posisble.; RT @jeffbarr: New: http://aws.amazon.com/answers/ - Clear answers to common questions about architecting building &amp; running on #AWS https://t.co; @BeluTwittahLCDA @Julii_LCDA aws gracias; Se emocionaron todos con mi videos aws; RT @awscloud: Join our #AWSwebinar Build IoT Backends with AWS IoT and AWS Lambda tomorrow! https://publish.awswebcasts.com/content/connect/c1/7/en/events/event/shared/4183083/event_landing.html?connect-session=graysonbreezutfr7brt7n9dq5vo&sco-id=27941409&campaign-id=TW1D&_charset_=utf-8&adbsc=social_webinars_20160208_58012636&adbid=696747150298906624&adbpl=tw&adbpr=66780587 https://t.co/KY94do8X; \"When the zombies rise Amazon Web Services will be ready: How do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=Feed:%20Mashable%20(Mashable)\"; \"When the zombies rise Amazon Web Services will be ready: How do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=Feed:%20Mashable%20(Mashable)\"; #CorporateITChile Cinco claves de seguridad para su cloud AWS http://www.corporateit.cl/index.php/2016/02/11/cinco-claves-de-seguridad-para-su-cloud-aws/ CorporateITnews; @fieritacatalano @copy Yo us AWS que es medio insufrible y ahora me pas a Google Storage. Es bastante barato y rpido.; RT @awscloud: EMR release 4.3.0 offers upgraded versions of Hadoop Spark Ganglia &amp; Presto: http://docs.aws.amazon.com/ElasticMapReduce/latest/",
+      "norm": "rt @awscloud: .@aws_eb now supports ec2 t2.nano instances &amp; integrates with amazon ec2 container registry. http://aws.amazon.com/about-aws/whats-new/2016/01/aws-elastic-beanstalk-adds-support-for-t2-nano-instances-and-amazon-ec2-container-registry/?sc_channel=sm&sc_campaign=launches_2016&sc_publisher=tw_go&sc_content=eb_t2_ecr&sc_country=global&sc_geo=global&sc_category=eb&adbsc=social_launches_20160112_57164086&adbid=686722028754219008&adbpl=tw&adbpr=66780587 https://; rt @awscloud: now available: new free #awstraining intro video &amp; lab for amazon elasticsearch service. https://aws.amazon.com/training/intro_series/?adbsc=social_20160112_57014156&adbid=686986102939361280&adbpl=tw&adbpr=66780587 https://t.co; #aws mmmm.... nice http://twitter.com/h_di_giorgi/status/688485773201510401/photo/1; rt @cloudcraftco: create awesome architectures by mixing 3d blocks and the 2d #aws icons as this #iot showcase https://cloudcraft.co/view/447df17a-a2e7-4857-a331-882edfa559bf?key=1ze3djdt0swtgldi&utm_content=buffer56833&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer http; rt @cloudcraftco: create awesome #vpc visualizations using our new components for #aws! get this template at https://cloudcraft.co/?utm_content=buffer1f73e&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer https:; @cloudcraftco is awesome thanks for letting us know. great tool @awscloud #devops @nubity #startuplife; rt @alan_reid: free ssl certs by aws https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/; rt @konklone: amazon now offering free https certificates to its aws customers: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/ along with @letsencrypt we are in; \"rt @firt: amazon now creates aws ssl/tls certificates for free. it says: adopting https ensures higher search rankings.https://t.co/ngu\"; \"free ssl certs with the new acm?! ... wow! @awscloud you're awesome! #happymonday #ssl #acmhttps://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/\"; \"rt @firt: amazon now creates aws ssl/tls certificates for free. it says: adopting https ensures higher search rankings.https://t.co/ngu\"; https://github.com/ services runs on dedicated hardware http://status.github.com runs in the cloud (aws) http://twitter.com/frodriguez/status/692537518504480768/photo/1; rt @duolingo: unfortunately duolingo is down due to issues with @awscloud. we are working to restore the service as soon as posisble.; rt @jeffbarr: new: http://aws.amazon.com/answers/ - clear answers to common questions about architecting building &amp; running on #aws https://t.co; @belutwittahlcda @julii_lcda aws gracias; se emocionaron todos con mi videos aws; rt @awscloud: join our #awswebinar build iot backends with aws iot and aws lambda tomorrow! https://publish.awswebcasts.com/content/connect/c1/7/en/events/event/shared/4183083/event_landing.html?connect-session=graysonbreezutfr7brt7n9dq5vo&sco-id=27941409&campaign-id=tw1d&_charset_=utf-8&adbsc=social_webinars_20160208_58012636&adbid=696747150298906624&adbpl=tw&adbpr=66780587 https://t.co/ky94do8x; \"when the zombies rise amazon web services will be ready: how do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=feed:%20mashable%20(mashable)\"; \"when the zombies rise amazon web services will be ready: how do you generate interest in one of the... http://mashable.com/2016/02/10/amazon-zombies/?utm_source=twitterfeed&utm_medium=twitter&utm_campaign=feed:%20mashable%20(mashable)\"; #corporateitchile cinco claves de seguridad para su cloud aws http://www.corporateit.cl/index.php/2016/02/11/cinco-claves-de-seguridad-para-su-cloud-aws/ corporateitnews; @fieritacatalano @copy yo us aws que es medio insufrible y ahora me pas a google storage. es bastante barato y rpido.; rt @awscloud: emr release 4.3.0 offers upgraded versions of hadoop spark ganglia &amp; presto: http://docs.aws.amazon.com/elasticmapreduce/latest/",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 168.9,
+      "error": null
+    },
+    {
+      "id": "bird-031",
+      "question": "How many male students are enrolled at OCC? Hint: male students are mentioned in male.name; OCC refers to school = 'occ';",
+      "gold": [
+        "COUNT(T1.name)",
+        "122"
+      ],
+      "answer": "122",
+      "norm": "122",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 32.6,
+      "error": null
+    },
+    {
+      "id": "bird-032",
+      "question": "Compute the run rate at the end of 16 overs of the match ID 335999. Please include the name of the \"Man of_the Match\". Hint: end of 16 overs refers to count(Toss_Name = 'field' ) = 16; run rate = divide(count(Runs_Scored) when Toss_Name = 'bat', sum(Over_Id)when Toss_Name = 'field'); name refers to Player_Name",
+      "gold": [
+        "Empty result."
+      ],
+      "answer": "Run rate = 7.125 (114 runs / 16 overs); Man of the Match: AC Gilchrist",
+      "norm": "run rate = 7.125 (114 runs / 16 overs); man of the match: ac gilchrist",
+      "status": "completed",
+      "steps": 8,
+      "seconds": 220.0,
+      "error": null
+    },
+    {
+      "id": "bird-033",
+      "question": "What is the lowest sentiment polarity score of the Basketball Stars app for people who dislikes the app pretty much and how many downloads does it have? Hint: lowest sentiment polarity score refers to MIN(Sentiment_Polarity); user dislike the app pretty much refers to Sentiment_Polarity<-0.5; number of downloads it has refers to installs;",
+      "gold": [
+        "MIN(T2.Sentiment_Polarity) | Installs",
+        "-0.004320987654320997 | 10,000,000+"
+      ],
+      "answer": "-0.6000000000000001, 10,000,000+",
+      "norm": "-0.6000000000000001, 10,000,000+",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 75.0,
+      "error": null
+    },
+    {
+      "id": "bird-034",
+      "question": "Please list the titles of all the films that the customer RUTH MARTINEZ has rented.",
+      "gold": [
+        "title",
+        "ROMAN PUNK",
+        "TITANS JERK",
+        "MASSACRE USUAL",
+        "COAST RAINBOW",
+        "BLUES INSTINCT",
+        "IDOLS SNATCHERS",
+        "SHEPHERD MIDSUMMER",
+        "SADDLE ANTITRUST",
+        "SHOCK CABIN",
+        "STREETCAR INTENTIONS",
+        "LOSER HUSTLER",
+        "APACHE DIVINE",
+        "TALENTED HOMICIDE",
+        "LADY STAGE",
+        "DURHAM PANKY",
+        "MONEY HAROLD",
+        "SAGEBRUSH CLUELESS",
+        "FLINTSTONES HAPPINESS",
+        "ARACHNOPHOBIA ROLLERCOASTER",
+        "ATTRACTION NEWTON",
+        "JERICHO MULAN",
+        "HEAVYWEIGHTS BEAST",
+        "ESCAPE METROPOLIS",
+        "TALENTED HOMICIDE"
+      ],
+      "answer": "ROMAN PUNK, TITANS JERK, MASSACRE USUAL, COAST RAINBOW, BLUES INSTINCT, IDOLS SNATCHERS, SHEPHERD MIDSUMMER, SADDLE ANTITRUST, SHOCK CABIN, STREETCAR INTENTIONS, LOSER HUSTLER, APACHE DIVINE, TALENTED HOMICIDE, LADY STAGE, DURHAM PANKY, MONEY HAROLD, SAGEBRUSH CLUELESS, FLINTSTONES HAPPINESS, ARACHNOPHOBIA ROLLERCOASTER, ATTRACTION NEWTON, JERICHO MULAN, HEAVYWEIGHTS BEAST, ESCAPE METROPOLIS, TALENTED HOMICIDE",
+      "norm": "roman punk, titans jerk, massacre usual, coast rainbow, blues instinct, idols snatchers, shepherd midsummer, saddle antitrust, shock cabin, streetcar intentions, loser hustler, apache divine, talented homicide, lady stage, durham panky, money harold, sagebrush clueless, flintstones happiness, arachnophobia rollercoaster, attraction newton, jericho mulan, heavyweights beast, escape metropolis, talented homicide",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 45.7,
+      "error": null
+    },
+    {
+      "id": "bird-035",
+      "question": "How many times between 1975 and 1980 did the player abdulka01 play for LAL? Hint: between 1975 and 1980 refers to year between 1975 and 1980; player abdulka01 refers to playerID = 'abdulka01'; play for LAL refers to tmID = 'LAL'",
+      "gold": [
+        "COUNT(DISTINCT T2.year)",
+        "6"
+      ],
+      "answer": "6",
+      "norm": "6",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 41.2,
+      "error": null
+    },
+    {
+      "id": "bird-036",
+      "question": "Display the number of 9-star votes the episode Sideshow received. Hint: 9-star vote refers to stars = '9'; episode Sideshow refers to title = 'Sideshow'",
+      "gold": [
+        "votes",
+        "28"
+      ],
+      "answer": "28",
+      "norm": "28",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 26.6,
+      "error": null
+    },
+    {
+      "id": "bird-037",
+      "question": "What is the episode ID that received 2 stars and 9 votes? Hint: 2 stars refers to stars = 2; 9 votes refers to votes = 9",
+      "gold": [
+        "episode_id",
+        "S20-E10"
+      ],
+      "answer": "S20-E10",
+      "norm": "s20-e10",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 15.1,
+      "error": null
+    },
+    {
+      "id": "bird-038",
+      "question": "Of all the nonessential genes that are not of the motorprotein class and whose phenotype is cell cycle defects, how many do not have a physical type of interaction?",
+      "gold": [
+        "COUNT(T1.GeneID)",
+        "98"
+      ],
+      "answer": "71",
+      "norm": "71",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 34.8,
+      "error": null
+    },
+    {
+      "id": "bird-039",
+      "question": "List the first names of the people with more than 65 sick leave hours. Hint: SickLeaveHours>65;",
+      "gold": [
+        "FirstName",
+        "Ken",
+        "Rob",
+        "Betsy",
+        "Patrick",
+        "Danielle",
+        "Kimberly",
+        "Tom",
+        "Ebru",
+        "Mary",
+        "John",
+        "Alice",
+        "Suroor",
+        "Linda",
+        "Mindaugas",
+        "Angela",
+        "Michael",
+        "Chad",
+        "Michael",
+        "Pilar",
+        "Susan",
+        "Vamsi",
+        "Kim",
+        "Matthias",
+        "Jimmy",
+        "Christian"
+      ],
+      "answer": "Ken, Rob, Betsy, Patrick, Danielle, Kimberly, Tom, Ebru, Mary, John, Alice, Suroor, Linda, Mindaugas, Angela, Michael, Chad, Michael, Pilar, Susan, Vamsi, Kim, Matthias, Jimmy, Christian",
+      "norm": "ken, rob, betsy, patrick, danielle, kimberly, tom, ebru, mary, john, alice, suroor, linda, mindaugas, angela, michael, chad, michael, pilar, susan, vamsi, kim, matthias, jimmy, christian",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 139.9,
+      "error": null
+    },
+    {
+      "id": "bird-040",
+      "question": "How many territories are there?",
+      "gold": [
+        "SQL Error: no such table: Territories"
+      ],
+      "answer": "0",
+      "norm": "0",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 58.3,
+      "error": null
+    }
+  ]
+}
