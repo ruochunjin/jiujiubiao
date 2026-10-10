@@ -32,8 +32,6 @@ from loader import (  # noqa: E402
 )
 
 
-
-
 def _norm_value(text: str) -> str:
     """Loose value normalization for gold-coverage scoring."""
 

@@ -31,7 +31,6 @@ from xuanji.registry import DEFAULT_REGISTRY, ToolRegistry
 from xuanji.table import Table
 from xuanji.tools.db import Database
 
-
 # ---------------------------------------------------------------------------
 # Answer-type consistency gate (WTQ-100 attribution: "who" questions answered
 # with bare numbers — nu-1277 class).  Surface heuristics only; a mismatch
