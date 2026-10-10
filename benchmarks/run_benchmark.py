@@ -21,7 +21,56 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from loader import load_tabfact, load_wtq, load_wtq_table  # noqa: E402
+from loader import (  # noqa: E402
+    clambsql_db_path,
+    load_clambsql,
+    load_tabfact,
+    load_wtq,
+    load_wtq_table,
+)
+
+
+
+
+def _norm_value(text: str) -> str:
+    """Loose value normalization for gold-coverage scoring."""
+
+    import re as _re
+
+    s = str(text).strip().casefold()
+    s = _re.sub(r"[\s_]+", " ", s)
+    try:
+        f = float(s)
+        return str(int(f)) if f == int(f) else f"{f:.4g}"
+    except ValueError:
+        return s
+
+
+def gold_coverage(answer: str, gold_result: str) -> float:
+    """Fraction of gold result cell values present in the answer text.
+
+    Database-benchmark scoring: the engine answers in prose while gold is
+    SQL-execution rows; a fair check is whether every gold value appears in
+    the answer (header lines excluded), number/case normalized.
+    """
+
+    lines = [line for line in str(gold_result).splitlines() if line.strip()]
+    if not lines:
+        return 0.0
+    # First line is the SQL result header (column names) — never a value.
+    lines = lines[1:] if len(lines) > 1 else lines
+    cells: set[str] = set()
+    for line in lines:
+        for cell in line.split(" | "):
+            cell = cell.strip()
+            if cell and cell.casefold() not in {"none", "null", "nan"}:
+                cells.add(_norm_value(cell))
+    if not cells:
+        return 0.0
+    # Header values equal to row values collapse into the cell set anyway.
+    answer_norm = _norm_value(answer)
+    hits = sum(1 for value in cells if value in answer_norm)
+    return hits / len(cells)
 
 
 def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict:
@@ -30,12 +79,16 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
     from xuanji.table import Table
 
     table_map: dict = {}
+    db_cache: dict = {}
     if benchmark == "wtq":
         items = load_wtq(n, seed=seed)
         task = "tqa"
     elif benchmark == "tabfact":
         items, table_map = load_tabfact(n, seed=seed)
         task = "tfv"
+    elif benchmark == "clambsql":
+        items = load_clambsql(n, seed=seed)
+        task = "tqa"
     else:
         raise ValueError(f"unknown benchmark: {benchmark!r}")
 
@@ -50,16 +103,28 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         start = time.perf_counter()
         error = None
         try:
-            if benchmark == "wtq":
-                rows = load_wtq_table(item.table_path).to_rows()
+            if benchmark == "clambsql":
+                from xuanji.tools.db import Database
+
+                if item.db_file not in db_cache:
+                    db_cache[item.db_file] = Database.from_sqlite(
+                        clambsql_db_path(item.db_file)
+                    )
+                db = db_cache[item.db_file]
+                gold_answer = db.execute(item.gold_sql)
+                gold = [gold_answer] if gold_answer else [""]
+                result = engine.ask(item.question, db=db, task=task)
             else:
-                rows = table_map[item.table_path].to_rows()
-            result = engine.ask(
-                item.question,
-                table=Table.from_obj(rows),
-                caption=item.caption,
-                task=task,
-            )
+                if benchmark == "wtq":
+                    rows = load_wtq_table(item.table_path).to_rows()
+                else:
+                    rows = table_map[item.table_path].to_rows()
+                result = engine.ask(
+                    item.question,
+                    table=Table.from_obj(rows),
+                    caption=item.caption,
+                    task=task,
+                )
             answer, norm, status, steps = (
                 result.answer, result.norm, result.status, result.steps,
             )
@@ -69,12 +134,15 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         elapsed = time.perf_counter() - start
         total_seconds += elapsed
         predictions.append(norm or answer)
-        labels.append(list(item.answers))
+        if benchmark == "clambsql":
+            labels.append([part.strip() for part in str(gold[0]).splitlines() if part.strip()])
+        else:
+            labels.append(list(item.answers))
         report.append(
             {
                 "id": item.id,
                 "question": item.question,
-                "gold": list(item.answers),
+                "gold": labels[-1],
                 "answer": answer,
                 "norm": norm,
                 "status": status,
@@ -85,11 +153,18 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         )
         print(
             f"[{index}/{len(items)}] {item.id} {status} "
-            f"answer={norm or answer!r} gold={item.answers!r} ({elapsed:.0f}s)",
+            f"answer={norm or answer!r} gold={labels[-1]!r} ({elapsed:.0f}s)",
             flush=True,
         )
 
-    accuracy = denotation_accuracy(predictions, labels)
+    if benchmark == "clambsql":
+        # value-coverage scoring for prose-vs-SQL-result comparison
+        accuracy = sum(
+            gold_coverage(pred, " | ".join(gold_vals))
+            for pred, gold_vals in zip(predictions, labels)
+        ) / max(len(predictions), 1)
+    else:
+        accuracy = denotation_accuracy(predictions, labels)
     summary = {
         "benchmark": benchmark,
         "n": len(items),
@@ -110,7 +185,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--benchmark", default="wtq", choices=["wtq", "tabfact"])
+    parser.add_argument("--benchmark", default="wtq", choices=["wtq", "tabfact", "clambsql"])
     parser.add_argument("--n", type=int, default=100)
     parser.add_argument("--sc", type=int, default=3)
     parser.add_argument("--mode", default="auto", choices=["auto", "solve", "refine"])

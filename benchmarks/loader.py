@@ -186,7 +186,53 @@ def load_tabfact(
 __all__ = [
     "BenchmarkItem",
     "BenchmarkTable",
+    "SqlItem",
+    "clambsql_db_path",
+    "load_clambsql",
     "load_tabfact",
     "load_wtq",
     "load_wtq_table",
 ]
+
+
+_CLAMBSQL_DIR = Path(__file__).parent / "data" / "clambsql"
+
+
+@dataclass(frozen=True)
+class SqlItem:
+    """One Text-to-SQL benchmark question over a sqlite database."""
+
+    id: str
+    question: str
+    db_file: str
+    gold_sql: str
+
+
+def load_clambsql(limit: int = 60, *, seed: int = 20261009) -> list[SqlItem]:
+    """CLAMBSQL (CLEAR benchmark): 7 ambiguity types x 200, vendored locally."""
+
+    import json
+
+    data = json.loads((_CLAMBSQL_DIR / "clambsql.json").read_text(encoding="utf-8"))
+    rng = random.Random(seed)
+    by_type: dict[str, list[dict]] = {}
+    for row in data:
+        by_type.setdefault(row["ambig_type"], []).append(row)
+    items: list[SqlItem] = []
+    per_type = max(1, limit // len(by_type))
+    for ambig_type, rows in sorted(by_type.items()):
+        rng.shuffle(rows)
+        for row in rows[:per_type]:
+            items.append(
+                SqlItem(
+                    id=f"{row['ambig_type']}-{row['index']}",
+                    question=row["question"],
+                    db_file=row["db_file"],
+                    gold_sql=row["gold_query"],
+                )
+            )
+    return items[:limit]
+
+
+def clambsql_db_path(db_file: str) -> str:
+    return str(_CLAMBSQL_DIR / "database" / db_file)

@@ -52,10 +52,30 @@ except ImportError:
 EXEC_GLOBALS = {"pd": pd, "np": np, "re": re, "datetime": datetime}
 
 
+def _df_or_hint(ctx: ToolContext):
+    """(df, hint): the working dataframe, or a steering message when absent.
+
+    Database mode (ctx.df None) has no pandas frame — table tools must not
+    crash on it (CLAMBSQL smoke, 2026-10-10); steer the agent to execute_sql.
+    """
+
+    df = ctx.memory.get("df", ctx.df)
+    if df is None:
+        if getattr(ctx, "db", None) is not None:
+            return None, (
+                "This tool operates on pandas tables and cannot run on a "
+                "database; use execute_sql() with SQL against the database instead."
+            )
+        return None, "No table is loaded for this tool."
+    return df, None
+
+
 @register_tool(takes_arg=True)
 def get_value(ctx: ToolContext, value: str) -> str:
     """get_value(value) — Search for a specific value across all columns; tells you which columns contain it and at which row indices."""
-    df = ctx.memory.get("df", ctx.df)
+    df, hint = _df_or_hint(ctx)
+    if hint:
+        return hint
     search_value = str(value)
     if search_value.casefold() in [str(col).casefold() for col in df.columns]:
         return "The value is a column name; use get_column_meaning() or find_column_format()."
@@ -89,7 +109,9 @@ def get_value(ctx: ToolContext, value: str) -> str:
 @register_tool(takes_arg=True)
 def get_row(ctx: ToolContext, value: str) -> str:
     """get_row(row_index) — Retrieve one row by integer index, e.g. to understand relationships between columns in that row."""
-    df = ctx.memory.get("df", ctx.df)
+    df, hint = _df_or_hint(ctx)
+    if hint:
+        return hint
     try:
         index = int(str(value))
     except ValueError:
@@ -102,7 +124,9 @@ def get_row(ctx: ToolContext, value: str) -> str:
 @register_tool(takes_arg=True)
 def find_columns_containing_value_fuzzy(ctx: ToolContext, value: str, threshold: float = 70, top_k: int = 5) -> str:
     """find_columns_containing_value_fuzzy(value) — Fuzzy-search the whole table for a value that may be spelled differently (abbreviations, reordering, typos)."""
-    df = ctx.memory.get("df", ctx.df)
+    df, hint = _df_or_hint(ctx)
+    if hint:
+        return hint
     search_str = str(value).lower()
     results = []
 
@@ -153,7 +177,9 @@ def get_column_meaning(ctx: ToolContext, _arg: str | None = None) -> str:
 @register_tool(takes_arg=True, needs_llm=True)
 def find_column_format(ctx: ToolContext, value: str, max_repairs: int = 3) -> str:
     """find_column_format(column) — Inspect and (when needed) repair the format of a column via LLM-written pandas code, e.g. convert '79,483' text to numbers."""
-    df = ctx.memory.get("df", ctx.df)
+    df, hint = _df_or_hint(ctx)
+    if hint:
+        return hint
     column_name = str(value)
     if column_name not in df.columns:
         return f"Column '{column_name}' not found in the DataFrame. Available: {list(df.columns)}"
