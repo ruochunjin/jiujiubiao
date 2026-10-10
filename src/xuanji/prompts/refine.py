@@ -17,7 +17,9 @@ TASK_DESC = {
             "When counting entities (places, players, models), never count summary/total/"
             "remainder rows (e.g. 'Remainder of the municipality', 'Total') as entities."),
     "tfv": ("Verify whether the statement is entailed (True) or refuted (False) by the "
-            "table. The answer must be exactly True or False."),
+            "table. The answer must be exactly True or False. "
+            "Universal claims ('only', 'all', 'every', 'none') must be checked by enumerating "
+            "ALL candidates programmatically — a single overlooked counterexample flips the verdict."),
 }
 
 Q_NAME = {"tqa": "Question", "tfv": "Statement"}
