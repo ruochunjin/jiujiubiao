@@ -70,20 +70,19 @@ def _fetch_hf_file(repo_path: str, dest: Path) -> Path:
 
 
 def load_wtq_table(context_csv: str) -> BenchmarkTable:
-    """Load one WTQ table by its repo-relative csv path (cached on disk)."""
+    """Load one WTQ table by its repo-relative csv path (cached on disk).
 
-    local = _fetch_hf_file(context_csv, CACHE_DIR / "wtq" / context_csv.replace("/", "_"))
-    # WTQ CSVs are mixed-encoding (cp1252 en-dashes etc.); utf-8-replace
-    # mojibake corrupts answers (nu-3088: "8–14" became "8C14").
-    raw = local.read_bytes()
-    try:
-        text = raw.decode("utf-8")
-    except UnicodeDecodeError:
-        text = raw.decode("cp1252", errors="replace")
-    reader = csv.reader(io.StringIO(text))
+    Prefers the ``.tsv`` variant: the mirror's CSVs have mojibake baked in
+    upstream ("8–14" → "8C14"), while the TSVs are clean UTF-8.
+    """
+
+    tsv_path = context_csv.rsplit(".", 1)[0] + ".tsv"
+    local = _fetch_hf_file(tsv_path, CACHE_DIR / "wtq" / tsv_path.replace("/", "_"))
+    text = local.read_text(encoding="utf-8", errors="replace")
+    reader = csv.reader(io.StringIO(text), delimiter="\t")
     rows = [tuple(cell.strip() for cell in row) for row in reader if row]
     if not rows:
-        raise ValueError(f"empty table: {context_csv}")
+        raise ValueError(f"empty table: {tsv_path}")
     return BenchmarkTable(tuple(rows[0]), tuple(rows[1:]))
 
 

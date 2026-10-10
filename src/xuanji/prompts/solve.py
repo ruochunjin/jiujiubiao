@@ -28,6 +28,9 @@ Notes:
 - Ensure the last line is only "Final Answer: answer".
 - Directly output the Final Answer rather than outputting by Python.
 - Ensure to have a concluding thought that verifies the table, observations and the statement before giving the final answer.
+- The Final Answer must be the minimal span: just the year/number/name — never append units ("years", "kg"), venues, ranks, or qualifiers the question did not ask for.
+- Boundary words matter: "more than N" is strictly > N; "at least N" is >= N. For counting, always count via the def() tool, never by eyeballing.
+- When counting entities (places, players, models...), never count summary/total/remainder rows (e.g. "Remainder of the municipality", "Total") as entities.
 - You can call a same tool multiple times simultaneously. For example, you can output Action: tool1(args1), tool1(args2) at one same time.
 - If you use def() tool, Do not sample data, just process the dataframe.\x20
 
@@ -64,6 +67,9 @@ Notes:
 - Ensure the last line is only "Final Answer: true/false".
 - Directly output the Final Answer rather than outputting by Python.
 - Ensure to have a concluding thought that verifies the table, observations and the statement before giving the final answer.
+- The Final Answer must be the minimal span: just the year/number/name — never append units ("years", "kg"), venues, ranks, or qualifiers the question did not ask for.
+- Boundary words matter: "more than N" is strictly > N; "at least N" is >= N. For counting, always count via the def() tool, never by eyeballing.
+- When counting entities (places, players, models...), never count summary/total/remainder rows (e.g. "Remainder of the municipality", "Total") as entities.
 - You can call a same tool multiple times simultaneously. For example, you can output Action: tool1(args1), tool1(args2) at one same time.
 - If you use def() tool, Do not sample data, just process the dataframe.\x20
 - You have to make sure gather enough information to answer the question.\x20
@@ -100,6 +106,9 @@ Notes:
 - Ensure the last line is only "Final Answer: answer".
 - Directly output the Final Answer rather than outputting by Python.
 - Ensure to have a concluding thought that verifies the table, observations and the statement before giving the final answer.
+- The Final Answer must be the minimal span: just the year/number/name — never append units ("years", "kg"), venues, ranks, or qualifiers the question did not ask for.
+- Boundary words matter: "more than N" is strictly > N; "at least N" is >= N. For counting, always count via the def() tool, never by eyeballing.
+- When counting entities (places, players, models...), never count summary/total/remainder rows (e.g. "Remainder of the municipality", "Total") as entities.
 - You can call a same tool multiple times simultaneously. For example, you can output Action: tool1(args1), tool1(args2) at one same time.
 - Do not generate any code, just use the tools.
 

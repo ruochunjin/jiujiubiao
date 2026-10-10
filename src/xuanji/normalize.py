@@ -53,6 +53,13 @@ def normalize(ans, task):
         return " | ".join(sorted(p for p in parts if p))
     s = s.lower().strip().strip(".").strip()
     s = re.sub(r"^(the|a|an)\s+", "", s)
+    # Answer-shaping residue: drop trailing parentheticals ("p4 (11/22 ps)")
+    # and stray emphasis markers ("baltimore bullets*") from model outputs
+    # (WTQ-100 miss attribution, 2026-10-10).
+    s = re.sub(r"\s*\([^)]*\)\s*$", "", s)
+    s = s.strip("*").strip()
+    # Unify unicode dashes with the ASCII hyphen ("8–14" == "8-14").
+    s = re.sub(r"[‐-―]", "-", s)
     s = re.sub(r"\s+", " ", s)
     f = _num(s)
     if f is not None:

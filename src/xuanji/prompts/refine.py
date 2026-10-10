@@ -9,7 +9,13 @@ TASK_DESC = {
             "(an entity, a number, or a short phrase) and it ALWAYS exists in or can be derived "
             "from the table, so never answer 'unanswerable'/'N/A'; choose the most plausible interpretation. "
             "Copy entity names exactly as written in the table. If there are multiple answers, "
-            "separate them with ' | '."),
+            "separate them with ' | '. "
+            "Answer with the minimal span only: just the year/number/name — never append units "
+            "('years', 'kg'), venues, ranks, or qualifiers unless the question asks for them. "
+            "Boundary words matter: 'more than N' is strictly > N; 'at least N' is >= N. "
+            "For multiple answers, verify EACH part against the table before including it. "
+            "When counting entities (places, players, models), never count summary/total/"
+            "remainder rows (e.g. 'Remainder of the municipality', 'Total') as entities."),
     "tfv": ("Verify whether the statement is entailed (True) or refuted (False) by the "
             "table. The answer must be exactly True or False."),
 }
@@ -91,6 +97,10 @@ Review the candidate following these rules:
 1. Question Assessment: does the {qname_l} involve complex sub-questions, many rows, or long/noisy table content? If so, the relevant evidence may have been missed and refinement is needed.
 2. Credibility and Correctness: check every cell value the reasoning cites against the table and every logical step. Any mistake means refinement is needed.
 3. Handling of Computations: if the {qname_l} involves numerical reasoning (counting, sum, average, difference, comparison of numbers, ranking, dates arithmetic), refinement with tools is REQUIRED, because LLMs are unreliable at arithmetic.
+3b. Boundary semantics: in counting/threshold questions, "more than N" is strictly > N, "at least N" is >= N; verify the comparison operator was applied exactly.
+3c. Multi-part answers: verify EVERY part against the table; one wrong or extra part fails the answer.
+3d. Minimal span: the final answer must be the minimal span (just the year/number/name) — units, venues, ranks, or qualifiers that the question did not ask for are errors.
+3e. Aggregate rows: summary/total/remainder rows are not entities — never count or cite them as one.
 4. If the answer is missing, not in the required format, or not grounded in the table, refinement is needed.
 Only when the question is simple look-up, all cited values are correct and no computation is involved may you answer "No".
 
