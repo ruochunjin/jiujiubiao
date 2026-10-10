@@ -22,7 +22,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from loader import (  # noqa: E402
+    bird_db_path,
     clambsql_db_path,
+    load_bird,
     load_clambsql,
     load_tabfact,
     load_wtq,
@@ -89,6 +91,9 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
     elif benchmark == "clambsql":
         items = load_clambsql(n, seed=seed)
         task = "tqa"
+    elif benchmark == "bird":
+        items = load_bird(n, seed=seed)
+        task = "tqa"
     else:
         raise ValueError(f"unknown benchmark: {benchmark!r}")
 
@@ -103,12 +108,13 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         start = time.perf_counter()
         error = None
         try:
-            if benchmark == "clambsql":
+            if benchmark in {"clambsql", "bird"}:
                 from xuanji.tools.db import Database
 
                 if item.db_file not in db_cache:
+                    path_fn = clambsql_db_path if benchmark == "clambsql" else bird_db_path
                     db_cache[item.db_file] = Database.from_sqlite(
-                        clambsql_db_path(item.db_file)
+                        path_fn(item.db_file)
                     )
                 db = db_cache[item.db_file]
                 gold_answer = db.execute(item.gold_sql)
@@ -134,7 +140,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         elapsed = time.perf_counter() - start
         total_seconds += elapsed
         predictions.append(norm or answer)
-        if benchmark == "clambsql":
+        if benchmark in {"clambsql", "bird"}:
             labels.append([part.strip() for part in str(gold[0]).splitlines() if part.strip()])
         else:
             labels.append(list(item.answers))
@@ -157,7 +163,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
             flush=True,
         )
 
-    if benchmark == "clambsql":
+    if benchmark in {"clambsql", "bird"}:
         # value-coverage scoring for prose-vs-SQL-result comparison
         accuracy = sum(
             gold_coverage(pred, " | ".join(gold_vals))
@@ -185,7 +191,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--benchmark", default="wtq", choices=["wtq", "tabfact", "clambsql"])
+    parser.add_argument("--benchmark", default="wtq", choices=["wtq", "tabfact", "clambsql", "bird"])
     parser.add_argument("--n", type=int, default=100)
     parser.add_argument("--sc", type=int, default=3)
     parser.add_argument("--mode", default="auto", choices=["auto", "solve", "refine"])

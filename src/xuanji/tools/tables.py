@@ -159,6 +159,15 @@ def find_columns_containing_value_fuzzy(ctx: ToolContext, value: str, threshold:
 def get_column_meaning(ctx: ToolContext, _arg: str | None = None) -> str:
     """get_column_meaning() — Ask the LLM which columns are most relevant to the question, with per-column meanings and value statistics."""
     df = ctx.memory.get("df", ctx.df)
+    if df is None:
+        # Database mode: present the schema instead of a pandas preview.
+        if getattr(ctx, "db", None) is not None:
+            schema = ctx.db.schema_text(sample_values=2)
+            prompt = DESCRIPTION_PROMPT.format(
+                preview_data=schema, question=ctx.question, thought=ctx.thought
+            )
+            return ctx.llm.chat(prompt, temperature=0.8, stop=["Observation:"], max_tokens=512)
+        return "No table is loaded for this tool."
     preview = df.head(5).to_string(index=False) + "\n" + df.tail(1).to_string(index=False)
     prompt = DESCRIPTION_PROMPT.format(
         preview_data=preview, question=ctx.question, thought=ctx.thought

@@ -187,7 +187,9 @@ __all__ = [
     "BenchmarkItem",
     "BenchmarkTable",
     "SqlItem",
+    "bird_db_path",
     "clambsql_db_path",
+    "load_bird",
     "load_clambsql",
     "load_tabfact",
     "load_wtq",
@@ -236,3 +238,57 @@ def load_clambsql(limit: int = 60, *, seed: int = 20261009) -> list[SqlItem]:
 
 def clambsql_db_path(db_file: str) -> str:
     return str(_CLAMBSQL_DIR / "database" / db_file)
+
+
+_BIRD_DIR = Path(__file__).parent / "data" / "bird"
+_BIRD_DATASET = "prem-research/birdbench"
+
+
+def load_bird(limit: int = 60, *, seed: int = 20261009) -> list[SqlItem]:
+    """BIRD (public Text-to-SQL bench): train split, stratified by database."""
+
+    import json
+
+    data = json.loads((_BIRD_DIR / "train.json").read_text(encoding="utf-8"))
+    rng = random.Random(seed)
+    by_db: dict[str, list[dict]] = {}
+    for row in data:
+        by_db.setdefault(row["db_id"], []).append(row)
+    dbs = sorted(by_db)
+    rng.shuffle(dbs)
+    items: list[SqlItem] = []
+    serial = 0
+    for db_id in dbs:
+        rows = by_db[db_id]
+        rng.shuffle(rows)
+        take = min(3, len(rows), max(1, limit // len(dbs) + 1))
+        for row in rows[:take]:
+            serial += 1
+            items.append(
+                SqlItem(
+                    id=f"bird-{serial:03d}",
+                    question=row["question"] + (f" Hint: {row['evidence']}" if row.get("evidence") else ""),
+                    db_file=row["db_id"],
+                    gold_sql=row["SQL"],
+                )
+            )
+        if len(items) >= limit:
+            break
+    return items[:limit]
+
+
+def bird_db_path(db_id: str) -> str:
+    """BIRD sqlite path, downloaded on demand from the mirror repo."""
+
+    local = _BIRD_DIR / "databases" / db_id / f"{db_id}.sqlite"
+    if not local.exists():
+        from huggingface_hub import hf_hub_download
+
+        downloaded = hf_hub_download(
+            _BIRD_DATASET,
+            f"train/train_databases/{db_id}/{db_id}.sqlite",
+            repo_type="dataset",
+        )
+        local.parent.mkdir(parents=True, exist_ok=True)
+        local.write_bytes(Path(downloaded).read_bytes())
+    return str(local)
