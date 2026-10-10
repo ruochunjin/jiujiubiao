@@ -1,0 +1,964 @@
+{
+  "benchmark": "clambsql",
+  "n": 56,
+  "accuracy": 0.47974017927973195,
+  "seconds": 1680.8,
+  "llm_calls": 670,
+  "llm_tokens": 357975,
+  "cases": [
+    {
+      "id": "aggregate-755",
+      "question": "What are the greatest and average capacity for rooms in each building?",
+      "gold": [
+        "max_capacity | avg_capacity | building",
+        "47.0 | 36.5 | Alumni",
+        "12.0 | 12.0 | Bronfman",
+        "11.0 | 10.5 | Chandler",
+        "18.0 | 18.0 | Drown",
+        "27.0 | 27.0 | Fairchild",
+        "59.0 | 59.0 | Garfield",
+        "65.0 | 37.5 | Gates",
+        "34.0 | 34.0 | Grace",
+        "51.0 | 51.0 | Lambeau",
+        "10.0 | 10.0 | Lamberton",
+        "30.0 | 26.0 | Main",
+        "92.0 | 92.0 | Nassau",
+        "97.0 | 97.0 | Painter",
+        "28.0 | 28.0 | Polya",
+        "12.0 | 11.0 | Power",
+        "60.0 | 60.0 | Rathbone",
+        "109.0 | 49.333333333333336 | Saucon",
+        "113.0 | 113.0 | Stabler",
+        "115.0 | 93.0 | Taylor",
+        "120.0 | 76.0 | Whitman"
+      ],
+      "answer": "Alumni: greatest 47, average 36.5; Bronfman: greatest 12, average 12; Chandler: greatest 11, average 10.5; Drown: greatest 18, average 18; Fairchild: greatest 27, average 27; Garfield: greatest 59, average 59; Gates: greatest 65, average 37.5; Grace: greatest 34, average 34; Lambeau: greatest 51, average 51; Lamberton: greatest 10, average 10; Main: greatest 30, average 26; Nassau: greatest 92, average 92; Painter: greatest 97, average 97; Polya: greatest 28, average 28; Power: greatest 12, average 11; Rathbone: greatest 60, average 60; Saucon: greatest 109, average 49.33; Stabler: greatest 113, average 113; Taylor: greatest 115, average 93; Whitman: greatest 120, average 76",
+      "norm": "alumni: greatest 47, average 36.5; bronfman: greatest 12, average 12; chandler: greatest 11, average 10.5; drown: greatest 18, average 18; fairchild: greatest 27, average 27; garfield: greatest 59, average 59; gates: greatest 65, average 37.5; grace: greatest 34, average 34; lambeau: greatest 51, average 51; lamberton: greatest 10, average 10; main: greatest 30, average 26; nassau: greatest 92, average 92; painter: greatest 97, average 97; polya: greatest 28, average 28; power: greatest 12, average 11; rathbone: greatest 60, average 60; saucon: greatest 109, average 49.33; stabler: greatest 113, average 113; taylor: greatest 115, average 93; whitman: greatest 120, average 76",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 21.1,
+      "error": null
+    },
+    {
+      "id": "aggregate-620",
+      "question": "What is the average weight of all players?",
+      "gold": [
+        "avg_weight",
+        "168.38028933092224"
+      ],
+      "answer": "168.38",
+      "norm": "168.38",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 19.5,
+      "error": null
+    },
+    {
+      "id": "aggregate-698",
+      "question": "Show the transaction types and the total amount of transactions.",
+      "gold": [
+        "transaction_type | sum(transaction_amount)",
+        "Payment | 8743.15",
+        "Refund | 11192.69"
+      ],
+      "answer": "Payment: 8743.15, Refund: 11192.69",
+      "norm": "payment: 8743.15, refund: 11192.69",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 6.9,
+      "error": null
+    },
+    {
+      "id": "aggregate-636",
+      "question": "What is the average rating and resolution of all bangla songs?",
+      "gold": [
+        "avg_rating | avg_resolution",
+        "7.5 | 558.0"
+      ],
+      "answer": "7.5, 558.0",
+      "norm": "7.5, 558.0",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 171.7,
+      "error": null
+    },
+    {
+      "id": "aggregate-760",
+      "question": "When is the last day any resident moved in?",
+      "gold": [
+        "max_date_moved_in",
+        "2017-06-17 15:43:33"
+      ],
+      "answer": "2017-06-17",
+      "norm": "2017-06-17",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 7.6,
+      "error": null
+    },
+    {
+      "id": "aggregate-627",
+      "question": "What is the average latitude and longitude in San Jose?",
+      "gold": [
+        "avg(lat) | avg(long)",
+        "37.3364135625 | -121.89160575"
+      ],
+      "answer": "37.3364135625, -121.89160575",
+      "norm": "37.3364135625, -121.89160575",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.8,
+      "error": null
+    },
+    {
+      "id": "aggregate-721",
+      "question": "What are the maximum and average height of the mountains?",
+      "gold": [
+        "max(height) | avg(height)",
+        "4260.0 | 4061.2608695652175"
+      ],
+      "answer": "maximum 4260.0, average 4061.26",
+      "norm": "maximum 4260.0, average 4061.26",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 27.7,
+      "error": null
+    },
+    {
+      "id": "aggregate-660",
+      "question": "Return the average attendance across all shows.",
+      "gold": [
+        "avg_attendance",
+        "1326.4"
+      ],
+      "answer": "1326.4",
+      "norm": "1326.4",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 26.8,
+      "error": null
+    },
+    {
+      "id": "attachment-1094",
+      "question": "Show exams and quizzes graded by Professor Smith.",
+      "gold": [
+        "title",
+        "Introduction to English Literature",
+        "Weekly quiz on literary themes"
+      ],
+      "answer": "Exam: Introduction to English Literature; Quiz: Weekly quiz on literary themes",
+      "norm": "exam: introduction to english literature; quiz: weekly quiz on literary themes",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 28.1,
+      "error": null
+    },
+    {
+      "id": "attachment-1009",
+      "question": "Show autobiographies and historical accounts from the 19th century.",
+      "gold": [
+        "title",
+        "More of My Life",
+        "Another Historical Event"
+      ],
+      "answer": "More of My Life (Autobiography, Author B), Another Historical Event (Historical Account, Author C)",
+      "norm": "more of my life (autobiography, author b), another historical event",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 30.4,
+      "error": null
+    },
+    {
+      "id": "attachment-1012",
+      "question": "Show novels and short stories about John Smith.",
+      "gold": [
+        "Title",
+        "Book1",
+        "Book2",
+        "Book3",
+        "Book4",
+        "Book5",
+        "Story1"
+      ],
+      "answer": "Book1, Story1",
+      "norm": "book1, story1",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.8,
+      "error": null
+    },
+    {
+      "id": "attachment-1110",
+      "question": "Please provide all opinion pieces and featured articles from volume 01.",
+      "gold": [
+        "title",
+        "Opinion on Brexit",
+        "Apple Launches iPhone 12"
+      ],
+      "answer": "Opinion on Brexit, Apple Launches iPhone 12",
+      "norm": "opinion on brexit, apple launches iphone 12",
+      "status": "completed",
+      "steps": 7,
+      "seconds": 49.6,
+      "error": null
+    },
+    {
+      "id": "attachment-1025",
+      "question": "Show science fiction books and romance books published in 2018.",
+      "gold": [
+        "Title",
+        "Pride and Prejudice",
+        "The Three Body Problem"
+      ],
+      "answer": "Science Fiction: The Three Body Problem by Liu Cixin; Romance: Pride and Prejudice by Jane Austen",
+      "norm": "science fiction: the three body problem by liu cixin; romance: pride and prejudice by jane austen",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 14.8,
+      "error": null
+    },
+    {
+      "id": "attachment-1085",
+      "question": "List names of blues songs and folk songs that are sung by Bessie Smith.",
+      "gold": [
+        "Song_Name",
+        "Broken Hearted Blues",
+        "Cripple Creek Ferry",
+        "Cross Road Blues",
+        "Hoochie Coochie Man",
+        "I Got A Mind To Give Up The Blues",
+        "St. Louis Blues"
+      ],
+      "answer": "St. Louis Blues, Cripple Creek Ferry",
+      "norm": "st. louis blues, cripple creek ferry",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 29.4,
+      "error": null
+    },
+    {
+      "id": "attachment-1197",
+      "question": "Show me all central banks and commercial banks in the UK.",
+      "gold": [
+        "name",
+        "Federal Reserve",
+        "Bank of England",
+        "Barclays"
+      ],
+      "answer": "Bank of England, Barclays",
+      "norm": "bank of england, barclays",
+      "status": "completed",
+      "steps": 7,
+      "seconds": 41.1,
+      "error": null
+    },
+    {
+      "id": "attachment-1180",
+      "question": "Show me unaccompanied minor and tailored assisted passengers that were assisted by Clare Allen.",
+      "gold": [
+        "FullName",
+        "Alice Morgan",
+        "Cathy Lee"
+      ],
+      "answer": "Alice Morgan, Cathy Lee",
+      "norm": "alice morgan, cathy lee",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 21.7,
+      "error": null
+    },
+    {
+      "id": "column-166",
+      "question": "How many continents speak Chinese?",
+      "gold": [
+        "count(distinct mainland)",
+        "4"
+      ],
+      "answer": "4",
+      "norm": "4",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 19.6,
+      "error": null
+    },
+    {
+      "id": "column-51",
+      "question": "Find the role, street, city and state of the professionals living in a city that contains the substring 'West'.",
+      "gold": [
+        "role_code | street | city | territory",
+        "Employee | 6915 Oberbrunner Point Suite 491",
+        "Gleasonville, LA  | West Heidi | Indiana"
+      ],
+      "answer": "Employee, 6915 Oberbrunner Point Suite 491 Gleasonville, LA, West Heidi, Indiana",
+      "norm": "employee, 6915 oberbrunner point suite 491 gleasonville, la, west heidi, indiana",
+      "status": "completed",
+      "steps": 6,
+      "seconds": 57.6,
+      "error": null
+    },
+    {
+      "id": "column-17",
+      "question": "find the id, name and age for visitors who visited some museums more than once.",
+      "gold": [
+        "ID | Name | years_old",
+        "3 | Arjen Robben | 27",
+        "5 | Fernando Gago | 36",
+        "6 | Rafael van der Vaart | 25"
+      ],
+      "answer": "No visitors found. Each visitor visited different museums; no visitor visited the same museum more than once.",
+      "norm": "no visitors found. each visitor visited different museums; no visitor visited the same museum more than once",
+      "status": "completed",
+      "steps": 6,
+      "seconds": 31.2,
+      "error": null
+    },
+    {
+      "id": "column-151",
+      "question": "Show the name and theme for all concerts and the number of singers in each concert.",
+      "gold": [
+        "concert_Name | topic | count(*)",
+        "Auditions | Free choice | 3",
+        "Super bootcamp | Free choice 2 | 2",
+        "Home Visits | Bleeding Love | 1",
+        "Week 1 | Wide Awake | 1",
+        "Week 1 | Happy Tonight | 2",
+        "Week 2 | Party All Night | 1"
+      ],
+      "answer": "Auditions (Free choice): 3, Super bootcamp (Free choice 2): 2, Home Visits (Bleeding Love): 1, Week 1 (Wide Awake): 1, Week 1 (Happy Tonight): 2, Week 2 (Party All Night): 1",
+      "norm": "auditions (free choice): 3, super bootcamp (free choice 2): 2, home visits (bleeding love): 1, week 1 (wide awake): 1, week 1 (happy tonight): 2, week 2 (party all night): 1",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.9,
+      "error": null
+    },
+    {
+      "id": "column-121",
+      "question": "Give the mean GNP and total population of nations which are considered US territory.",
+      "gold": [
+        "avg(national_income) | sum(population)",
+        "510.3333333333333 | 329000"
+      ],
+      "answer": "mean GNP: 510.33, total population: 329000",
+      "norm": "mean gnp: 510.33, total population: 329000",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 20.6,
+      "error": null
+    },
+    {
+      "id": "column-75",
+      "question": "List the earnings of poker players in descending order.",
+      "gold": [
+        "revenue",
+        "596462.0",
+        "476090.0",
+        "189233.0",
+        "142800.0",
+        "104871.0"
+      ],
+      "answer": "596462.0, 476090.0, 189233.0, 142800.0, 104871.0",
+      "norm": "596462.0, 476090.0, 189233.0, 142800.0, 104871.0",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 18.8,
+      "error": null
+    },
+    {
+      "id": "column-47",
+      "question": "Find the make and production time of the cars that were produced in the earliest year?",
+      "gold": [
+        "manufacturer | Year",
+        "chevrolet chevelle malibu | 1970",
+        "buick skylark 320 | 1970",
+        "plymouth satellite | 1970",
+        "amc rebel sst | 1970",
+        "ford torino | 1970",
+        "ford galaxie 500 | 1970",
+        "chevrolet impala | 1970",
+        "plymouth fury iii | 1970",
+        "pontiac catalina | 1970",
+        "amc ambassador dpl | 1970",
+        "citroen ds-21 pallas | 1970",
+        "chevrolet chevelle concours (sw) | 1970",
+        "ford torino (sw) | 1970",
+        "plymouth satellite (sw) | 1970",
+        "amc rebel sst (sw) | 1970",
+        "dodge challenger se | 1970",
+        "plymouth cuda 340 | 1970",
+        "ford mustang boss 302 | 1970",
+        "chevrolet monte carlo | 1970",
+        "buick estate wagon (sw) | 1970",
+        "toyota corona mark ii | 1970",
+        "plymouth duster | 1970",
+        "amc hornet | 1970",
+        "ford maverick | 1970",
+        "datsun pl510 | 1970",
+        "volkswagen 1131 deluxe sedan | 1970",
+        "peugeot 504 | 1970",
+        "audi 100 ls | 1970",
+        "saab 99e | 1970",
+        "bmw 2002 | 1970",
+        "amc gremlin | 1970",
+        "ford f250 | 1970",
+        "chevy c20 | 1970",
+        "dodge d200 | 1970",
+        "hi 1200d | 1970"
+      ],
+      "answer": "The cars produced in the earliest year (1970) were made by: amc, audi, bmw, buick, chevrolet, citroen, datsun, dodge, ford, hi, peugeot, plymouth, pontiac, saab, toyota, and volkswagen — all produced in 1970.",
+      "norm": "cars produced in the earliest year (1970) were made by: amc, audi, bmw, buick, chevrolet, citroen, datsun, dodge, ford, hi, peugeot, plymouth, pontiac, saab, toyota, and volkswagen - all produced in 1970",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 40.6,
+      "error": null
+    },
+    {
+      "id": "column-48",
+      "question": "What is the horsepower of the car with the largest accelerate?",
+      "gold": [
+        "torque",
+        "71"
+      ],
+      "answer": "71",
+      "norm": "71",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 31.0,
+      "error": null
+    },
+    {
+      "id": "join-528",
+      "question": "When is the first transcript released? List the date and details.",
+      "gold": [
+        "transcript_date | other_details",
+        "1975-05-06 12:04:47 | None"
+      ],
+      "answer": "The first transcript was released on 1975-05-06 12:04:47 (transcript_id 8), with no additional details (other_details is None).",
+      "norm": "first transcript was released on 1975-05-06 12:04:47 (transcript_id 8), with no additional details",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 18.8,
+      "error": null
+    },
+    {
+      "id": "join-543",
+      "question": "list all cartoon titles and their directors ordered by their air date",
+      "gold": [
+        "Title | Directed_by",
+        "Invasion of the Secret Santas! | Brandon Vietti",
+        "Evil Under the Sea! | Michael Chang",
+        "Return of the Fearsome Fangs! | Brandon Vietti",
+        "Deep Cover for Batman! | Michael Chang",
+        "The Eyes of Despero! | Ben Jones",
+        "Dawn of the Dead Man! | Ben Jones",
+        "Day of the Dark Knight! | Ben Jones",
+        "Fall of the Blue Beetle! | Brandon Vietti",
+        "Journey to the Center of the Bat! | Michael Chang",
+        "Enter the Outsiders! | Michael Chang",
+        "The Rise of the Blue Beetle! | Ben Jones",
+        "Terror on Dinosaur Island! | Brandon Vietti"
+      ],
+      "answer": "The Rise of the Blue Beetle! - Ben Jones; Terror on Dinosaur Island! - Brandon Vietti; Evil Under the Sea! - Michael Chang; Invasion of the Secret Santas! - Brandon Vietti; Day of the Dark Knight! - Ben Jones; Enter the Outsiders! - Michael Chang; Dawn of the Dead Man! - Ben Jones; Fall of the Blue Beetle! - Brandon Vietti; Journey to the Center of the Bat! - Michael Chang; The Eyes of Despero! - Ben Jones; Return of the Fearsome Fangs! - Brandon Vietti; Deep Cover for Batman! - Michael Chang",
+      "norm": "rise of the blue beetle! - ben jones; terror on dinosaur island! - brandon vietti; evil under the sea! - michael chang; invasion of the secret santas! - brandon vietti; day of the dark knight! - ben jones; enter the outsiders! - michael chang; dawn of the dead man! - ben jones; fall of the blue beetle! - brandon vietti; journey to the center of the bat! - michael chang; the eyes of despero! - ben jones; return of the fearsome fangs! - brandon vietti; deep cover for batman! - michael chang",
+      "status": "completed",
+      "steps": 7,
+      "seconds": 65.9,
+      "error": null
+    },
+    {
+      "id": "join-559",
+      "question": "Show the names and grades of each high schooler.",
+      "gold": [
+        "name | grade",
+        "Jordan | 9",
+        "Gabriel | 9",
+        "Tiffany | 9",
+        "Cassandra | 9",
+        "Haley | 10",
+        "Andrew | 10",
+        "Kris | 10",
+        "Brittany | 10",
+        "Alexis | 11",
+        "Austin | 11",
+        "Gabriel | 11",
+        "Jessica | 11",
+        "Jordan | 12",
+        "John | 12",
+        "Kyle | 12",
+        "Logan | 12"
+      ],
+      "answer": "Jordan | 9, Gabriel | 9, Tiffany | 9, Cassandra | 9, Haley | 10, Andrew | 10, Kris | 10, Brittany | 10, Alexis | 11, Austin | 11, Gabriel | 11, Jessica | 11, Jordan | 12, John | 12, Kyle | 12, Logan | 12",
+      "norm": "10, alexis | 10, andrew | 10, brittany | 10, kris | 11, austin | 11, gabriel | 11, jessica | 11, jordan | 12 | 12, john | 12, kyle | 12, logan | 9, cassandra | 9, gabriel | 9, haley | 9, tiffany | jordan",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 21.9,
+      "error": null
+    },
+    {
+      "id": "join-516",
+      "question": "What region does Angola belong to and what is its population?",
+      "gold": [
+        "Population | Region",
+        "12878000 | Central Africa"
+      ],
+      "answer": "Central Africa, 12878000",
+      "norm": "central africa, 12878000",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 25.6,
+      "error": null
+    },
+    {
+      "id": "join-458",
+      "question": "What are the opening year and staff number of the museum named Plaza Museum?",
+      "gold": [
+        "Num_of_Staff | Open_Year",
+        "62 | 2000"
+      ],
+      "answer": "2000, 62",
+      "norm": "200062",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 16.4,
+      "error": null
+    },
+    {
+      "id": "join-568",
+      "question": "Return the lowest version number, along with its corresponding template type code.",
+      "gold": [
+        "min(t1.version_number) | Template_Type_Code",
+        "0 | PP"
+      ],
+      "answer": "0, PP",
+      "norm": "0, pp",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 31.0,
+      "error": null
+    },
+    {
+      "id": "join-439",
+      "question": "What is the first, middle, and last name of the earliest school graduate?",
+      "gold": [
+        "first_name | middle_name | last_name",
+        "Timmothy | Anna | Ward"
+      ],
+      "answer": "Timmothy Anna Ward",
+      "norm": "timmothy anna ward",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 26.6,
+      "error": null
+    },
+    {
+      "id": "join-496",
+      "question": "List the dog name, age and weight of the dogs who have been abandoned? 1 stands for yes, and 0 stands for no.",
+      "gold": [
+        "name | age | weight",
+        "Kacey | 6 | 7.57",
+        "Lyric | 4 | 4.36",
+        "Evangeline | 1 | 4.01"
+      ],
+      "answer": "Kacey, 6, 7.57; Lyric, 4, 4.36; Evangeline, 1, 4.01",
+      "norm": "kacey, 6, 7.57; lyric, 4, 4.36; evangeline, 1, 4.01",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 17.8,
+      "error": null
+    },
+    {
+      "id": "scope-1238",
+      "question": "What is the social media integration description for each streaming service?",
+      "gold": [
+        "service_name | description",
+        "Netflix | Allows users to share content",
+        "Netflix | Allows users to like content",
+        "Amazon Prime Video | Enables user comments on content",
+        "Hulu | Lets users follow their favorite channels",
+        "Disney+ | A feature that lets users save videos to watch later",
+        "Amazon Prime Video | Allows users to share content",
+        "Hulu | Allows users to share content",
+        "Disney+ | Allows users to share content",
+        "HBO Max | Allows users to share content"
+      ],
+      "answer": "Netflix: Allows users to share content (Share Button), Allows users to like content (Like Button); Amazon Prime Video: Enables user comments on content (Comment Section), Allows users to share content (Share Button); Hulu: Lets users follow their favorite channels (Follow Feature), Allows users to share content (Share Button); Disney+: A feature that lets users save videos to watch later (Watch Later List), Allows users to share content (Share Button); HBO Max: Allows users to share content (Share Button)",
+      "norm": "netflix: allows users to share content (share button), allows users to like content (like button); amazon prime video: enables user comments on content (comment section), allows users to share content (share button); hulu: lets users follow their favorite channels (follow feature), allows users to share content (share button); disney+: a feature that lets users save videos to watch later (watch later list), allows users to share content (share button); hbo max: allows users to share content",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 30.6,
+      "error": null
+    },
+    {
+      "id": "scope-1341",
+      "question": "What types and descriptions of attractions are available at each theme park?",
+      "gold": [
+        "name | type | description",
+        "FunLand | Roller Coaster | A thrilling high-speed ride.",
+        "ThrillZone | Roller Coaster | A thrilling high-speed ride.",
+        "AdventureWorld | Roller Coaster | A thrilling high-speed ride.",
+        "Wonderland | Roller Coaster | A thrilling high-speed ride.",
+        "AmusementCentral | Roller Coaster | A thrilling high-speed ride.",
+        "AmusementCentral | Ferris Wheel | An observation wheel that gives riders a panoramic view of the surroundings."
+      ],
+      "answer": "AdventureWorld: Roller Coaster - A thrilling high-speed ride. AmusementCentral: Ferris Wheel - An observation wheel that gives riders a panoramic view of the surroundings; Roller Coaster - A thrilling high-speed ride. FunLand: Roller Coaster - A thrilling high-speed ride. ThrillZone: Roller Coaster - A thrilling high-speed ride. Wonderland: Roller Coaster - A thrilling high-speed ride.",
+      "norm": "adventureworld: roller coaster - a thrilling high-speed ride. amusementcentral: ferris wheel - an observation wheel that gives riders a panoramic view of the surroundings; roller coaster - a thrilling high-speed ride. funland: roller coaster - a thrilling high-speed ride. thrillzone: roller coaster - a thrilling high-speed ride. wonderland: roller coaster - a thrilling high-speed ride",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 48.5,
+      "error": null
+    },
+    {
+      "id": "scope-1254",
+      "question": "Give me the names and descriptions of the components every UX designer uses.",
+      "gold": [
+        "name | component_name | description",
+        "John Doe | Navigation | A navigation system helps users move between different sections of a website.",
+        "Jane Smith | Navigation | A navigation system helps users move between different sections of a website.",
+        "Mike Johnson | Navigation | A navigation system helps users move between different sections of a website.",
+        "Emily Davis | Navigation | A navigation system helps users move between different sections of a website.",
+        "David Brown | Navigation | A navigation system helps users move between different sections of a website.",
+        "David Brown | User Interface Design | UI design involves creating interfaces that are visually appealing and user-friendly."
+      ],
+      "answer": "Navigation: A navigation system helps users move between different sections of a website.",
+      "norm": "navigation: a navigation system helps users move between different sections of a website",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 18.0,
+      "error": null
+    },
+    {
+      "id": "scope-1207",
+      "question": "Show me the elements each report has.",
+      "gold": [
+        "report_name | element_value",
+        "Corruption Scandal | Interviews",
+        "Illegal Drug Trade | Documents",
+        "Tax Evasion Schemes | Photos",
+        "Financial Fraud | Videos",
+        "Cybercrime Surge | Witness Testimonies",
+        "Illegal Drug Trade | Interviews",
+        "Tax Evasion Schemes | Interviews",
+        "Financial Fraud | Interviews",
+        "Cybercrime Surge | Interviews"
+      ],
+      "answer": "Corruption Scandal: Interviews; Illegal Drug Trade: Documents, Interviews; Tax Evasion Schemes: Photos, Interviews; Financial Fraud: Videos, Interviews; Cybercrime Surge: Witness Testimonies, Interviews",
+      "norm": "corruption scandal: interviews; illegal drug trade: documents, interviews; tax evasion schemes: photos, interviews; financial fraud: videos, interviews; cybercrime surge: witness testimonies, interviews",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 18.5,
+      "error": null
+    },
+    {
+      "id": "scope-1224",
+      "question": "what themes are available for each summer camp?",
+      "gold": [
+        "campName | themeName",
+        "Camp A | Sports",
+        "Camp A | Art",
+        "Camp B | Science",
+        "Camp B | Technology",
+        "Camp C | Sports",
+        "Camp C | Mathematics",
+        "Camp D | Art",
+        "Camp E | Science",
+        "Camp B | Sports",
+        "Camp D | Sports",
+        "Camp E | Sports"
+      ],
+      "answer": "Camp A: Art, Sports; Camp B: Science, Sports, Technology; Camp C: Mathematics, Sports; Camp D: Art, Sports; Camp E: Science, Sports",
+      "norm": "camp a: art, sports; camp b: science, sports, technology; camp c: mathematics, sports; camp d: art, sports; camp e: science, sports",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 24.1,
+      "error": null
+    },
+    {
+      "id": "scope-1284",
+      "question": "what course descriptions are available for each journalism school?",
+      "gold": [
+        "description",
+        "This course covers ethical considerations in journalism."
+      ],
+      "answer": "University A: Ethics In Journalism - This course covers ethical considerations in journalism.; University B: Ethics In Journalism - This course covers ethical considerations in journalism.; University C: Ethics In Journalism - This course covers ethical considerations in journalism.; University D: Ethics In Journalism - This course covers ethical considerations in journalism.; University E: Ethics In Journalism - This course covers ethical considerations in journalism., Media Law - Understand legal issues related to media and journalism.",
+      "norm": "university a: ethics in journalism - this course covers ethical considerations in journalism.; university b: ethics in journalism - this course covers ethical considerations in journalism.; university c: ethics in journalism - this course covers ethical considerations in journalism.; university d: ethics in journalism - this course covers ethical considerations in journalism.; university e: ethics in journalism - this course covers ethical considerations in journalism., media law - understand legal issues related to media and journalism",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.5,
+      "error": null
+    },
+    {
+      "id": "scope-1287",
+      "question": "Give me the types and descriptions of social media each streaming service integrates.",
+      "gold": [
+        "integration_type | description",
+        "Share Button | Allows users to share content"
+      ],
+      "answer": "Netflix integrates Share Button (Allows users to share content) and Like Button (Allows users to like content); Amazon Prime Video integrates Comment Section (Enables user comments on content) and Share Button (Allows users to share content); Hulu integrates Follow Feature (Lets users follow their favorite channels) and Share Button (Allows users to share content); Disney+ integrates Watch Later List (A feature that lets users save videos to watch later) and Share Button (Allows users to share content); HBO Max integrates Share Button (Allows users to share content).",
+      "norm": "netflix integrates share button (allows users to share content) and like button (allows users to like content); amazon prime video integrates comment section (enables user comments on content) and share button (allows users to share content); hulu integrates follow feature (lets users follow their favorite channels) and share button (allows users to share content); disney+ integrates watch later list (a feature that lets users save videos to watch later) and share button (allows users to share content); hbo max integrates share button",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 32.7,
+      "error": null
+    },
+    {
+      "id": "scope-1201",
+      "question": "Show me video players every streaming service uses.",
+      "gold": [
+        "service_name | player_type",
+        "Netflix | HTML5",
+        "Netflix | Flash",
+        "Hulu | HTML5",
+        "Amazon Prime Video | Flash",
+        "Disney+ | HTML5",
+        "Amazon Prime Video | HTML5",
+        "Apple TV+ | HTML5"
+      ],
+      "answer": "Netflix uses HTML5 (version 3) and Flash (version 10); Hulu uses HTML5 (version 3); Amazon Prime Video uses Flash (version 10) and HTML5 (version 3); Disney+ uses HTML5 (version 3); Apple TV+ uses HTML5 (version 3).",
+      "norm": "netflix uses html5 (version 3) and flash (version 10); hulu uses html5 (version 3); amazon prime video uses flash (version 10) and html5 (version 3); disney+ uses html5 (version 3); apple tv+ uses html5",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 10.5,
+      "error": null
+    },
+    {
+      "id": "table-254",
+      "question": "What are 3 most highly rated episodes in the TV series table and what were those ratings?",
+      "gold": [
+        "Episode | Rating",
+        "A Love of a Lifetime | 5.8",
+        "Friendly Skies | 5.3",
+        "Game Three | 4.4"
+      ],
+      "answer": "A Love of a Lifetime (5.8), Friendly Skies (5.3), Game Three (4.4)",
+      "norm": "love of a lifetime (5.8), friendly skies (5.3), game three",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 23.2,
+      "error": null
+    },
+    {
+      "id": "table-271",
+      "question": "What is the maximum horsepower and the make of the car models with 3 cylinders?",
+      "gold": [
+        "Horsepower | Make",
+        "97 | mazda rx2 coupe"
+      ],
+      "answer": "",
+      "norm": "",
+      "status": "incomplete",
+      "steps": 10,
+      "seconds": 58.0,
+      "error": null
+    },
+    {
+      "id": "table-324",
+      "question": "Show names of teachers and the number of courses they teach.",
+      "gold": [
+        "Name | count(*)",
+        "Anne Walker | 2",
+        "Gustaaf Deloor | 1",
+        "Kearsley Brown | 1",
+        "Lucy Wong | 1",
+        "Vicente Carretero | 1"
+      ],
+      "answer": "Gustaaf Deloor: 1, Vicente Carretero: 1, Kearsley Brown: 1, Anne Walker: 2, Lucy Wong: 1",
+      "norm": "gustaaf deloor: 1, vicente carretero: 1, kearsley brown: 1, anne walker: 2, lucy wong: 1",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 29.3,
+      "error": null
+    },
+    {
+      "id": "table-363",
+      "question": "How many flights arriving in Aberdeen city?",
+      "gold": [
+        "count(*)",
+        "0"
+      ],
+      "answer": "0",
+      "norm": "0",
+      "status": "completed",
+      "steps": 7,
+      "seconds": 39.0,
+      "error": null
+    },
+    {
+      "id": "table-350",
+      "question": "Give me Brazil's population and life expectancies.",
+      "gold": [
+        "Population | LifeExpectancy",
+        "170115000 | 62.9"
+      ],
+      "answer": "170115000, 62.9",
+      "norm": "17011500062.9",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 15.7,
+      "error": null
+    },
+    {
+      "id": "table-380",
+      "question": "Which language is the most popular on the Asian continent?",
+      "gold": [
+        "Language",
+        "Arabic"
+      ],
+      "answer": "Chinese",
+      "norm": "chinese",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 16.4,
+      "error": null
+    },
+    {
+      "id": "table-224",
+      "question": "What are the codes of template types that are not used for any document?",
+      "gold": [
+        "Template_Type_Code",
+        "CV"
+      ],
+      "answer": "CV",
+      "norm": "cv",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 25.3,
+      "error": null
+    },
+    {
+      "id": "table-342",
+      "question": "Find the name of students who have both cat and dog pets.",
+      "gold": [
+        "Empty result."
+      ],
+      "answer": "No students have both cat and dog pets.",
+      "norm": "no students have both cat and dog pets",
+      "status": "completed",
+      "steps": 10,
+      "seconds": 77.2,
+      "error": null
+    },
+    {
+      "id": "vague-950",
+      "question": "Show a list of transactions by customer and location where the transaction amount is less than 1000 and order the list by date and lower amounts at the beginning of the list by date.",
+      "gold": [
+        "AccountNumber | fullname | Amount | TransactionDate | City",
+        "1001 | John Doe | 500 | 2021-01-01 10:00:00 | New York",
+        "1003 | Michael Johnson | 600 | 2021-01-03 10:00:00 | Chicago",
+        "1004 | Emily Williams | 800 | 2021-01-04 10:00:00 | Houston"
+      ],
+      "answer": "TransactionID | fullname | City | Country | Amount | TransactionDate",
+      "norm": "amount | city | country | fullname | transactiondate | transactionid",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 23.4,
+      "error": null
+    },
+    {
+      "id": "vague-932",
+      "question": "Which album has the longest song and when was it released?",
+      "gold": [
+        "AlbumName | Year | Month",
+        "25 | 2019 | 11"
+      ],
+      "answer": "25, released in November 2019",
+      "norm": "25, released in november 2019",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 14.3,
+      "error": null
+    },
+    {
+      "id": "vague-826",
+      "question": "Show me the ages of different generations in different countries in order from most populated to least populated",
+      "gold": [
+        "group_name | age | name",
+        "Adults | 32.6 | Canada",
+        "Elderly | 29.8 | UK",
+        "Young Adults | 30.2 | USA",
+        "Children | 30.7 | Australia",
+        "Teenagers | 28.9 | Germany"
+      ],
+      "answer": "Adults (25-34) in Canada, Elderly (23-33) in UK, Young Adults (18-24) in USA, Children (22-32) in Australia, Teenagers (27-37) in Germany",
+      "norm": "adults (25-34) in canada, elderly (23-33) in uk, young adults (18-24) in usa, children (22-32) in australia, teenagers (27-37) in germany",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 37.6,
+      "error": null
+    },
+    {
+      "id": "vague-882",
+      "question": "How many people owned homes in 2023?",
+      "gold": [
+        "O.Percentage * O.TotalPopulation / 100 | NumberOfHouseholds",
+        "570000.0 | 1600000"
+      ],
+      "answer": "1600000",
+      "norm": "1600000",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 19.9,
+      "error": null
+    },
+    {
+      "id": "vague-961",
+      "question": "In what version did the book with the smallest quantity appear and who published it?",
+      "gold": [
+        "Publisher | EditionNumber",
+        "Wiley Publishing | 2"
+      ],
+      "answer": "2, Wiley Publishing",
+      "norm": "2, wiley publishing",
+      "status": "completed",
+      "steps": 2,
+      "seconds": 26.6,
+      "error": null
+    },
+    {
+      "id": "vague-915",
+      "question": "show me cities and immigrants where more than 60,000 people live",
+      "gold": [
+        "Municipality | Foreign_born_Population",
+        "New York City | 5000",
+        "Los Angeles | 3500",
+        "Chicago | 2500"
+      ],
+      "answer": "New York City 5000, Los Angeles 3500, Chicago 2500",
+      "norm": "new york city 5000, los angeles 3500, chicago 2500",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 32.6,
+      "error": null
+    },
+    {
+      "id": "vague-870",
+      "question": "Who produced all the dramas?",
+      "gold": [
+        "producer",
+        "Peter Brook"
+      ],
+      "answer": "Peter Brook",
+      "norm": "peter brook",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 36.2,
+      "error": null
+    },
+    {
+      "id": "vague-868",
+      "question": "what is the prestige level of a particular university",
+      "gold": [
+        "universityName | admissionRate",
+        "University of California | 0.67",
+        "Stanford University | 0.53",
+        "Harvard University | 0.51",
+        "Massachusetts Institute of Technology | 0.89",
+        "California Institute of Technology | 0.11"
+      ],
+      "answer": "1",
+      "norm": "1",
+      "status": "completed",
+      "steps": 5,
+      "seconds": 40.7,
+      "error": null
+    }
+  ]
+}
