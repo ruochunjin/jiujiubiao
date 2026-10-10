@@ -244,16 +244,59 @@ _BIRD_DIR = Path(__file__).parent / "data" / "bird"
 _BIRD_DATASET = "prem-research/birdbench"
 
 
-def load_bird(limit: int = 60, *, seed: int = 20261009) -> list[SqlItem]:
-    """BIRD (public Text-to-SQL bench): train split, stratified by database."""
+_BIRD_MAX_DB_BYTES = 300 * 1024 * 1024  # skip multi-GB databases in benchmarks
+_BIRD_SIZE_CACHE = _BIRD_DIR / "db_sizes.json"
+
+
+def _bird_db_sizes() -> dict[str, int]:
+    """Database size map from the repo tree API (cached): multi-GB databases
+    (bike_share_1 is 5.2GB) would stall every benchmark run on download."""
+
+    import json
+    import urllib.request
+
+    if _BIRD_SIZE_CACHE.exists():
+        return json.loads(_BIRD_SIZE_CACHE.read_text(encoding="utf-8"))
+    sizes: dict[str, int] = {}
+
+    def _tree(subpath: str):
+        url = (
+            "https://hf-mirror.com/api/datasets/"
+            f"{_BIRD_DATASET}/tree/main/{subpath}?recursive=false"
+        )
+        # the mirror rejects the bare python-urllib User-Agent with 403
+        request = urllib.request.Request(url, headers={"User-Agent": "xuanji-benchmarks"})
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.load(response)
+
+    for entry in _tree("train/train_databases"):
+        if entry["type"] != "directory":
+            continue
+        db_id = entry["path"].rsplit("/", 1)[-1]
+        best = 0
+        for f in _tree(entry["path"]):
+            if f["path"].endswith(".sqlite"):
+                best = max(best, f.get("size") or f.get("lfs", {}).get("size") or 0)
+        sizes[db_id] = best
+    _BIRD_SIZE_CACHE.write_text(json.dumps(sizes), encoding="utf-8")
+    return sizes
+
+
+def load_bird(limit: int = 60, *, seed: int = 20261009, max_db_bytes: int = _BIRD_MAX_DB_BYTES) -> list[SqlItem]:
+    """BIRD (public Text-to-SQL bench): train split, stratified by database.
+
+    Databases over ``max_db_bytes`` are excluded from the sample.
+    """
 
     import json
 
     data = json.loads((_BIRD_DIR / "train.json").read_text(encoding="utf-8"))
+    sizes = _bird_db_sizes()
     rng = random.Random(seed)
     by_db: dict[str, list[dict]] = {}
     for row in data:
-        by_db.setdefault(row["db_id"], []).append(row)
+        if sizes.get(row["db_id"], 0) <= max_db_bytes:
+            by_db.setdefault(row["db_id"], []).append(row)
     dbs = sorted(by_db)
     rng.shuffle(dbs)
     items: list[SqlItem] = []
