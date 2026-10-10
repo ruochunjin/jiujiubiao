@@ -14,6 +14,7 @@ tables to the critic refiner), ``solve``, or ``refine``.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Callable
 
@@ -31,6 +32,44 @@ from xuanji.table import Table
 from xuanji.tools.db import Database
 
 
+# ---------------------------------------------------------------------------
+# Answer-type consistency gate (WTQ-100 attribution: "who" questions answered
+# with bare numbers — nu-1277 class).  Surface heuristics only; a mismatch
+# triggers ONE guided retry, never a silent rewrite.
+# ---------------------------------------------------------------------------
+_QUESTION_TYPE = [
+    (re.compile(r"^\s*(who|whom|whose)\b", re.I), "entity"),
+    (re.compile(r"^\s*how (many|much)\b", re.I), "number"),
+]
+_NUMBER = re.compile(r"^\s*-?[\d,]+(\.\d+)?\s*$")
+
+
+def _expected_type(question: str) -> str | None:
+    for pattern, kind in _QUESTION_TYPE:
+        if pattern.search(question):
+            return kind
+    return None
+
+
+def _is_bare_number(answer: str) -> bool:
+    return bool(_NUMBER.match(answer.strip()))
+
+
+def _type_mismatch_hint(question: str, answer: str) -> str | None:
+    """Instruction line to append when the answer's surface type mismatches
+    the question's expected type; None when consistent (or unknowable)."""
+
+    expected = _expected_type(question)
+    if expected == "entity" and _is_bare_number(answer):
+        return (
+            "That answer must be a person/team/entity name exactly as written "
+            "in the table, not a bare number."
+        )
+    if expected == "number" and answer and not _is_bare_number(answer):
+        return "Answer with just the count as a bare number (no units, no words)."
+    return None
+
+
 @dataclass
 class XuanJiResult:
     """Everything one pipeline run produced."""
@@ -44,6 +83,7 @@ class XuanJiResult:
     steps: int = 0
     status: str = "completed"
     history: list = field(default_factory=list)
+    type_retry: bool = False
 
 
 class XuanJi:
@@ -120,6 +160,34 @@ class XuanJi:
             disambiguation = self.disambiguator.run(question, schema)
             question = disambiguation.question
 
+        outcome = self._run_once(question, tbl, df, db, task, caption, evidence)
+        outcome.disambiguation = disambiguation
+        # Answer-type consistency gate: one guided retry when the surface
+        # type of the answer contradicts the question type (who->number...).
+        if task == "tqa" and outcome.norm:
+            hint = _type_mismatch_hint(question, outcome.answer)
+            if hint:
+                retry = self._run_once(
+                    question + "\n" + hint, tbl, df, db, task, caption, evidence
+                )
+                if retry.norm and _type_mismatch_hint(question, retry.answer) is None:
+                    retry.disambiguation = disambiguation
+                    retry.type_retry = True
+                    retry.question = question
+                    return retry
+        return outcome
+
+    # -------------------------------------------------------------- run once
+    def _run_once(
+        self,
+        question: str,
+        tbl: Table | None,
+        df: pd.DataFrame | None,
+        db: Database | None,
+        task: str,
+        caption: str,
+        evidence: str,
+    ) -> XuanJiResult:
         mode = self._pick_mode(df, db)
         if mode == "solve":
             solver = Solver(self.llm, self.registry, **self._solver_kwargs)
@@ -131,7 +199,7 @@ class XuanJi:
             answer, norm = self._output_check(result.answer, task)
             return XuanJiResult(
                 question=question, answer=answer, norm=norm, mode="solve", task=task,
-                disambiguation=disambiguation, steps=result.steps, status=result.status,
+                steps=result.steps, status=result.status,
                 history=[{"trajectory": result.trajectory, "tool_counts": result.tool_counts}],
             )
         refiner = Refiner(self.llm, **self._refiner_kwargs)
@@ -139,7 +207,7 @@ class XuanJi:
         answer, norm = self._output_check(result.answer, task)
         return XuanJiResult(
             question=question, answer=answer, norm=norm, mode="refine", task=task,
-            disambiguation=disambiguation, steps=result.iterations,
+            steps=result.iterations,
             status="completed" if norm else "incomplete", history=result.history,
         )
 
