@@ -109,7 +109,7 @@ class JiuJiuBiao:
         self.long_table_rows = long_table_rows
         self.registry = registry
         self.disambiguator = (
-            (DisambiguatorV2 if disambiguate == "v2" else Disambiguator)(self.llm, clarify=clarify) if disambiguate else None
+            (Disambiguator if disambiguate == "v1" else DisambiguatorV2)(self.llm, clarify=clarify) if disambiguate else None
         )
         self._solver_kwargs = solver_kwargs or {}
         self._refiner_kwargs = refiner_kwargs or {}
