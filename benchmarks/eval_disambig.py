@@ -70,7 +70,6 @@ def main() -> None:
     db_cache: dict[str, Database] = {}
     report = []
     n_flag = n_asked = n_anchored = 0
-    cov_direct_sum = cov_rewrite_sum = 0.0
     for row in picked:
         db_file = row["db_file"]
         if db_file not in db_cache:
