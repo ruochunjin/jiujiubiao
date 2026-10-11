@@ -57,7 +57,55 @@ jiujiubiao --dataset data.json --task tqa --limit 10 --output results.json
 
 ## 学术脉络
 
-璇玑整合了本课题组五篇论文：**CLEAR**（ICDE 2025，消歧）、**TALON**（EMNLP 2025，长表多智能体探索）、**RAISR**（ICASSP 2026，协作数据库智能体与输出检查）、**TableCritic**（CogSci 2025，自我批评 + 工具库）、**CORES**（ACL 2026 Findings，代码中枢推理与过程奖励）。
+九九表整合了本课题组五篇论文：**CLEAR**（ICDE 2025，消歧）、**TALON**（EMNLP 2025，长表多智能体探索）、**RAISR**（ICASSP 2026，协作数据库智能体与输出检查）、**TableCritic**（CogSci 2025，自我批评 + 工具库）、**CORES**（ACL 2026 Findings，代码中枢推理与过程奖励）。
+
+## 引用本工作
+
+如果您在工作中使用了九九表，请引用相关论文（另见 CITATION.cff）：
+
+```bibtex
+@inproceedings{zhang2025clear,
+  title={Clear: A parser-independent disambiguation framework for nl2sql},
+  author={Zhang, Meng and Ma, Kexin and Xu, Liyang and Zhang, Kedi and Peng, Yuanxi and Jin, Ruochun},
+  booktitle={2025 IEEE 41st International Conference on Data Engineering (ICDE)},
+  pages={1--14},
+  year={2025},
+  organization={IEEE}
+}
+
+@inproceedings{jin2025talon,
+  title={TALON: A multi-agent framework for long-table exploration and question answering},
+  author={Jin, Ruochun and Wang, Xiyue and Wang, Dong and Zheng, Haoqi and Qi, Yunpeng and Yang, Silin and Zhang, Meng},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={27385--27401},
+  year={2025}
+}
+
+@inproceedings{zhang2026reliable,
+  title={Reliable Database Question Answering with Collaborative Agents},
+  author={Zhang, Meng and Wang, Xiyue and Peng, Yuanxi and Yang, Wenjing and Yang, Silin and Jin, Ruochun},
+  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={17142--17146},
+  year={2026},
+  organization={IEEE}
+}
+
+@inproceedings{jin2025tablecritic,
+  title={TableCritic: Refine Table Reasoning via Self-Criticism and Tool Library},
+  author={Jin, Ruochun and Wang, Dong and Wang, Xiyue and Zheng, Haoqi},
+  booktitle={Proceedings of the Annual Meeting of the Cognitive Science Society},
+  volume={47},
+  year={2025}
+}
+
+@inproceedings{zhang2026cores,
+  title={CORES: Code-Oriented Reasoning for Complex Text-to-SQL and Generalizable TableQA},
+  author={Zhang, Meng and Jin, Ruochun and Peng, Yuanxi and Yang, Wenjing and Wang, Haotian and Sun, Liting and Hu, Kun and Yang, Silin and Ke-di, Zhang},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+  pages={4827--4847},
+  year={2026}
+}
+```
 
 ## 许可
 

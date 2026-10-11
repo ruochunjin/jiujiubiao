@@ -148,7 +148,51 @@ JiuJiuBiao consolidates five peer-reviewed works from one lab:
 - **CORES** (ACL 2026 Findings) — code-oriented reasoning (Python as pivot);
   the `def()` code tool follows this paradigm
 
-If you use JiuJiuBiao, please cite the relevant papers (see CITATION.cff).
+If you use JiuJiuBiao, please cite the relevant papers (see CITATION.cff):
+
+```bibtex
+@inproceedings{zhang2025clear,
+  title={Clear: A parser-independent disambiguation framework for nl2sql},
+  author={Zhang, Meng and Ma, Kexin and Xu, Liyang and Zhang, Kedi and Peng, Yuanxi and Jin, Ruochun},
+  booktitle={2025 IEEE 41st International Conference on Data Engineering (ICDE)},
+  pages={1--14},
+  year={2025},
+  organization={IEEE}
+}
+
+@inproceedings{jin2025talon,
+  title={TALON: A multi-agent framework for long-table exploration and question answering},
+  author={Jin, Ruochun and Wang, Xiyue and Wang, Dong and Zheng, Haoqi and Qi, Yunpeng and Yang, Silin and Zhang, Meng},
+  booktitle={Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages={27385--27401},
+  year={2025}
+}
+
+@inproceedings{zhang2026reliable,
+  title={Reliable Database Question Answering with Collaborative Agents},
+  author={Zhang, Meng and Wang, Xiyue and Peng, Yuanxi and Yang, Wenjing and Yang, Silin and Jin, Ruochun},
+  booktitle={ICASSP 2026-2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={17142--17146},
+  year={2026},
+  organization={IEEE}
+}
+
+@inproceedings{jin2025tablecritic,
+  title={TableCritic: Refine Table Reasoning via Self-Criticism and Tool Library},
+  author={Jin, Ruochun and Wang, Dong and Wang, Xiyue and Zheng, Haoqi},
+  booktitle={Proceedings of the Annual Meeting of the Cognitive Science Society},
+  volume={47},
+  year={2025}
+}
+
+@inproceedings{zhang2026cores,
+  title={CORES: Code-Oriented Reasoning for Complex Text-to-SQL and Generalizable TableQA},
+  author={Zhang, Meng and Jin, Ruochun and Peng, Yuanxi and Yang, Wenjing and Wang, Haotian and Sun, Liting and Hu, Kun and Yang, Silin and Ke-di, Zhang},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2026},
+  pages={4827--4847},
+  year={2026}
+}
+```
 
 ## License
 

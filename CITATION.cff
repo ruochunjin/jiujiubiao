@@ -1,11 +1,14 @@
 cff-version: 1.2.0
-title: "XuanJi (璇玑): unified question answering over tables and databases"
+title: "JiuJiuBiao (九九表): unified question answering over tables and databases"
 message: >-
   If you use this software, please cite both the software and the
-  underlying research papers (CLEAR, TALON, RAISR, TableCritic, CORES).
+  underlying research papers (CLEAR, TALON, RAISR, TableCritic, CORES)
+  — see README.md for BibTeX entries.
 type: software
-# TODO: add author list and repository URL before public release.
-authors: []
-url: "https://github.com/ruochunjin/xuanji"
-version: 0.2.0
+authors:
+  - family-names: Jin
+    given-names: Ruochun
+url: "https://github.com/ruochunjin/jiujiubiao"
+repository-code: "https://github.com/ruochunjin/jiujiubiao"
+version: 0.3.1
 license: Apache-2.0
