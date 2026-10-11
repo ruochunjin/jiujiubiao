@@ -1,5 +1,7 @@
 # JiuJiuBiao 九九表
 
+[![ci](https://github.com/ruochunjin/jiujiubiao/actions/workflows/ci.yml/badge.svg)](https://github.com/ruochunjin/jiujiubiao/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/jiujiubiao)](https://pypi.org/p/jiujiubiao)
+
 > 三七——二十一。每个中国孩子启蒙的第一张表：九九乘法表，有问必答、脱口而出。**九九表**对您的数据做同样的事：一张表，万千问答。
 
 [English README](README.md)

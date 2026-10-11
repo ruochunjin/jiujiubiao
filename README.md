@@ -1,5 +1,7 @@
 # JiuJiuBiao 九九表
 
+[![ci](https://github.com/ruochunjin/jiujiubiao/actions/workflows/ci.yml/badge.svg)](https://github.com/ruochunjin/jiujiubiao/actions/workflows/ci.yml) [![PyPI](https://img.shields.io/pypi/v/jiujiubiao)](https://pypi.org/p/jiujiubiao)
+
 > *三七——二十一。* — Every Chinese schoolchild learns the 九九表
 > (multiplication table): a grid you interrogate and it answers, instantly.
 > **JiuJiuBiao** does this for your data — one table, every question.
