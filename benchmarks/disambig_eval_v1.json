@@ -1,0 +1,419 @@
+{
+  "impl": "v1",
+  "n": 35,
+  "flag_rate": 0.37142857142857144,
+  "asked_rate": 0.37142857142857144,
+  "anchor_rate": 0.4,
+  "cases": [
+    {
+      "id": "aggregate-755",
+      "question": "What are the greatest and average capacity for rooms in each building?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What are the greatest and average capacity for rooms in each building?",
+      "gold_terms": [
+        "building",
+        "max_capacity",
+        "avg_capacity"
+      ],
+      "anchored": true,
+      "seconds": 2.5
+    },
+    {
+      "id": "aggregate-620",
+      "question": "What is the average weight of all players?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What is the average weight of all players?",
+      "gold_terms": [
+        "avg_weight"
+      ],
+      "anchored": false,
+      "seconds": 1.8
+    },
+    {
+      "id": "aggregate-698",
+      "question": "Show the transaction types and the total amount of transactions.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show the transaction types and the total amount of transactions.",
+      "gold_terms": [
+        "transaction_amount",
+        "transaction_type"
+      ],
+      "anchored": false,
+      "seconds": 2.2
+    },
+    {
+      "id": "aggregate-636",
+      "question": "What is the average rating and resolution of all bangla songs?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What is the average rating and resolution of all bangla songs?",
+      "gold_terms": [
+        "avg_rating",
+        "avg_resolution",
+        "languages"
+      ],
+      "anchored": false,
+      "seconds": 1.7
+    },
+    {
+      "id": "aggregate-760",
+      "question": "When is the last day any resident moved in?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "When is the last day any resident moved in?",
+      "gold_terms": [
+        "max_date_moved_in"
+      ],
+      "anchored": false,
+      "seconds": 3.8
+    },
+    {
+      "id": "attachment-1094",
+      "question": "Show exams and quizzes graded by Professor Smith.",
+      "ambiguous": true,
+      "clarification": "Which Professor Smith do you mean, and should I match by the assessor's Name exactly (e.g., Name = 'Professor Smith') or by title/last name (e.g., Title = 'Professor' and Name LIKE '%Smith%')?",
+      "rewritten": "Show all exams and quizzes where the assessor's name is exactly 'Professor Smith'.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 13.5
+    },
+    {
+      "id": "attachment-1009",
+      "question": "Show autobiographies and historical accounts from the 19th century.",
+      "ambiguous": true,
+      "clarification": "Could you specify which narrative forms correspond to 'autobiographies' and 'historical accounts' and confirm that '19th century' refers to the publication year between 1800 and 1899?",
+      "rewritten": "Show the titles of all narratives where the narrative form is either 'Autobiography' or 'Historical Account' and the publication year is between 1800 and 1899 (inclusive).",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 7.7
+    },
+    {
+      "id": "attachment-1012",
+      "question": "Show novels and short stories about John Smith.",
+      "ambiguous": true,
+      "clarification": "Is John Smith the author or a character in the novels and short stories?",
+      "rewritten": "Show novels and short stories where John Smith is the author.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 6.0
+    },
+    {
+      "id": "attachment-1110",
+      "question": "Please provide all opinion pieces and featured articles from volume 01.",
+      "ambiguous": true,
+      "clarification": "Should \"opinion pieces\" and \"featured articles\" be identified by the news_content_type column, and if so, what exact values should I look for (e.g., 'Opinion', 'Featured')?",
+      "rewritten": "Please provide all articles from volume '01' where the news_content_type is either 'Opinion' or 'Featured'.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 6.8
+    },
+    {
+      "id": "attachment-1025",
+      "question": "Show science fiction books and romance books published in 2018.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show science fiction books and romance books published in 2018.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 1.7
+    },
+    {
+      "id": "column-166",
+      "question": "How many continents speak Chinese?",
+      "ambiguous": true,
+      "clarification": "Should I count each continent only once if at least one country in that continent has Chinese listed as a spoken language in the countrylanguage table?",
+      "rewritten": "How many distinct values of `country.mainland` are there among countries where Chinese is listed as a spoken language in the `countrylanguage` table?",
+      "gold_terms": [
+        "mainland"
+      ],
+      "anchored": true,
+      "seconds": 5.4
+    },
+    {
+      "id": "column-51",
+      "question": "Find the role, street, city and state of the professionals living in a city that contains the substring 'West'.",
+      "ambiguous": true,
+      "clarification": "When you say \"role\", do you mean the professional's `role_code`, or should I map it to a description via another table?",
+      "rewritten": "Find the `role_code`, `street`, `city`, and `territory` (as the state) of the professionals whose `city` contains the substring 'West'.",
+      "gold_terms": [
+        "territory"
+      ],
+      "anchored": true,
+      "seconds": 13.6
+    },
+    {
+      "id": "column-17",
+      "question": "find the id, name and age for visitors who visited some museums more than once.",
+      "ambiguous": true,
+      "clarification": "By \"visited some museums more than once,\" do you mean visitors who visited the same museum multiple times, or visitors who visited multiple different museums? Also, should age come from the Age column or one of the duplicate columns like visitor_age or years_old?",
+      "rewritten": "Find the ID, name, and years_old for visitors who visited the same museum more than once.",
+      "gold_terms": [
+        "years_old"
+      ],
+      "anchored": true,
+      "seconds": 6.9
+    },
+    {
+      "id": "column-151",
+      "question": "Show the name and theme for all concerts and the number of singers in each concert.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show the name and theme for all concerts and the number of singers in each concert.",
+      "gold_terms": [
+        "topic"
+      ],
+      "anchored": false,
+      "seconds": 10.9
+    },
+    {
+      "id": "column-121",
+      "question": "Give the mean GNP and total population of nations which are considered US territory.",
+      "ambiguous": true,
+      "clarification": "How should \"US territory\" be determined from the available columns—should we filter on a specific Region, GovernmentForm, or another field?",
+      "rewritten": "Give the mean national_income and total population of nations which are considered US territory.",
+      "gold_terms": [
+        "national_income"
+      ],
+      "anchored": true,
+      "seconds": 7.8
+    },
+    {
+      "id": "join-528",
+      "question": "When is the first transcript released? List the date and details.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "When is the first transcript released? List the date and details.",
+      "gold_terms": [
+        "transcript_date"
+      ],
+      "anchored": false,
+      "seconds": 5.4
+    },
+    {
+      "id": "join-543",
+      "question": "list all cartoon titles and their directors ordered by their air date",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "list all cartoon titles and their directors ordered by their air date",
+      "gold_terms": [
+        "directed_by"
+      ],
+      "anchored": false,
+      "seconds": 1.8
+    },
+    {
+      "id": "join-559",
+      "question": "Show the names and grades of each high schooler.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show the names and grades of each high schooler.",
+      "gold_terms": [
+        "name"
+      ],
+      "anchored": true,
+      "seconds": 1.9
+    },
+    {
+      "id": "join-516",
+      "question": "What region does Angola belong to and what is its population?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What region does Angola belong to and what is its population?",
+      "gold_terms": [
+        "population"
+      ],
+      "anchored": true,
+      "seconds": 2.2
+    },
+    {
+      "id": "join-458",
+      "question": "What are the opening year and staff number of the museum named Plaza Museum?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What are the opening year and staff number of the museum named Plaza Museum?",
+      "gold_terms": [
+        "num_of_staff"
+      ],
+      "anchored": false,
+      "seconds": 2.6
+    },
+    {
+      "id": "scope-1238",
+      "question": "What is the social media integration description for each streaming service?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What is the social media integration description for each streaming service?",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 5.3
+    },
+    {
+      "id": "scope-1341",
+      "question": "What types and descriptions of attractions are available at each theme park?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What types and descriptions of attractions are available at each theme park?",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 1.4
+    },
+    {
+      "id": "scope-1254",
+      "question": "Give me the names and descriptions of the components every UX designer uses.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Give me the names and descriptions of the components every UX designer uses.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 1.6
+    },
+    {
+      "id": "scope-1207",
+      "question": "Show me the elements each report has.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show me the elements each report has.",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 2.8
+    },
+    {
+      "id": "scope-1224",
+      "question": "what themes are available for each summer camp?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "what themes are available for each summer camp?",
+      "gold_terms": [],
+      "anchored": false,
+      "seconds": 2.3
+    },
+    {
+      "id": "table-254",
+      "question": "What are 3 most highly rated episodes in the TV series table and what were those ratings?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "What are 3 most highly rated episodes in the TV series table and what were those ratings?",
+      "gold_terms": [
+        "episode",
+        "rating"
+      ],
+      "anchored": true,
+      "seconds": 7.4
+    },
+    {
+      "id": "table-271",
+      "question": "What is the maximum horsepower and the make of the car models with 3 cylinders?",
+      "ambiguous": true,
+      "clarification": "Should I use the `auto_data` table for horsepower and cylinder information, and the `auto_brands` table for the make?",
+      "rewritten": "What is the maximum horsepower among all vehicles with 3 cylinders in the `vehicle_data` table, and what is the make of those vehicles?",
+      "gold_terms": [
+        "cylinders",
+        "horsepower"
+      ],
+      "anchored": true,
+      "seconds": 13.9
+    },
+    {
+      "id": "table-324",
+      "question": "Show names of teachers and the number of courses they teach.",
+      "ambiguous": true,
+      "clarification": "Which table should be used to determine the courses taught by each teacher—class_schedule, course_arrange, or timetable—and should the count include all courses or distinct courses?",
+      "rewritten": "Show the names of instructors from the instructor table and the number of distinct courses each instructor teaches, using the course_arrange table to determine which courses are assigned to each instructor.",
+      "gold_terms": [
+        "name"
+      ],
+      "anchored": true,
+      "seconds": 5.4
+    },
+    {
+      "id": "table-363",
+      "question": "How many flights arriving in Aberdeen city?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "How many flights arriving in Aberdeen city?",
+      "gold_terms": [
+        "city"
+      ],
+      "anchored": true,
+      "seconds": 1.6
+    },
+    {
+      "id": "table-350",
+      "question": "Give me Brazil's population and life expectancies.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Give me Brazil's population and life expectancies.",
+      "gold_terms": [
+        "name",
+        "lifeexpectancy",
+        "population"
+      ],
+      "anchored": true,
+      "seconds": 1.7
+    },
+    {
+      "id": "vague-950",
+      "question": "Show a list of transactions by customer and location where the transaction amount is less than 1000 and order the list by date and lower amounts at the beginning of the list by date.",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Show a list of transactions by customer and location where the transaction amount is less than 1000 and order the list by date and lower amounts at the beginning of the list by date.",
+      "gold_terms": [
+        "City"
+      ],
+      "anchored": false,
+      "seconds": 2.1
+    },
+    {
+      "id": "vague-932",
+      "question": "Which album has the longest song and when was it released?",
+      "ambiguous": false,
+      "clarification": "",
+      "rewritten": "Which album has the longest song and when was it released?",
+      "gold_terms": [
+        "Year"
+      ],
+      "anchored": false,
+      "seconds": 1.6
+    },
+    {
+      "id": "vague-826",
+      "question": "Show me the ages of different generations in different countries in order from most populated to least populated",
+      "ambiguous": true,
+      "clarification": "Which specific columns do you want to display for \"ages\" (e.g., median_age, age range start/end) and should the results be ordered by the population column in descending order?",
+      "rewritten": "Show the age values from the Population_Group table for each population group, along with the associated country name, ordered by population in descending order (from most populated to least populated).",
+      "gold_terms": [
+        "age"
+      ],
+      "anchored": true,
+      "seconds": 7.3
+    },
+    {
+      "id": "vague-882",
+      "question": "How many people owned homes in 2023?",
+      "ambiguous": true,
+      "clarification": "Do you want the number of households that owned homes (from NumbersOfOwners) or the percentage of the population that owned homes (from OwnerPercentage) in 2023?",
+      "rewritten": "How many people owned homes in 2023, calculated by multiplying the OwnerPercentage.Percentage by the OwnerPercentage.TotalPopulation for that year?",
+      "gold_terms": [
+        "Percentage",
+        "TotalPopulation"
+      ],
+      "anchored": true,
+      "seconds": 5.2
+    },
+    {
+      "id": "vague-961",
+      "question": "In what version did the book with the smallest quantity appear and who published it?",
+      "ambiguous": true,
+      "clarification": "By \"version,\" do you mean the edition number or the year published of the textbook?",
+      "rewritten": "Which edition number corresponds to the textbook copy with the smallest quantity in the BookCopies table, and who published that edition?",
+      "gold_terms": [
+        "EditionNumber"
+      ],
+      "anchored": false,
+      "seconds": 7.2
+    }
+  ]
+}

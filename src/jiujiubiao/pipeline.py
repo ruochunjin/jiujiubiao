@@ -24,7 +24,7 @@ import jiujiubiao.tools  # noqa: F401 - registers built-in tools
 from jiujiubiao.agents.refiner import Refiner
 from jiujiubiao.agents.solver import Solver
 from jiujiubiao.df_utils import get_df_info, infer_dtype
-from jiujiubiao.disambiguate import DisambiguationResult, Disambiguator
+from jiujiubiao.disambiguate import DisambiguationResult, Disambiguator, DisambiguatorV2
 from jiujiubiao.llm import default_client
 from jiujiubiao.normalize import is_refusal, normalize
 from jiujiubiao.registry import DEFAULT_REGISTRY, ToolRegistry
@@ -109,7 +109,7 @@ class JiuJiuBiao:
         self.long_table_rows = long_table_rows
         self.registry = registry
         self.disambiguator = (
-            Disambiguator(self.llm, clarify=clarify) if disambiguate else None
+            (DisambiguatorV2 if disambiguate == "v2" else Disambiguator)(self.llm, clarify=clarify) if disambiguate else None
         )
         self._solver_kwargs = solver_kwargs or {}
         self._refiner_kwargs = refiner_kwargs or {}
