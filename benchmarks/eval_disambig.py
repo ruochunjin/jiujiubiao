@@ -8,7 +8,7 @@ End-to-end coverage (rewritten question → solver answer vs gold SQL values)
 is the headline metric; the intermediate rates localize failures.
 
 Usage:
-    XUANJI_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/eval_disambig.py [--n 35] [--impl v1|v2]
+    JIUJIUBIAO_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/eval_disambig.py [--n 35] [--impl v1|v2]
 """
 
 from __future__ import annotations

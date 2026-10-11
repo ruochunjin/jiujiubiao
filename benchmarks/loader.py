@@ -265,7 +265,7 @@ def _bird_db_sizes() -> dict[str, int]:
             f"{_BIRD_DATASET}/tree/main/{subpath}?recursive=false"
         )
         # the mirror rejects the bare python-urllib User-Agent with 403
-        request = urllib.request.Request(url, headers={"User-Agent": "xuanji-benchmarks"})
+        request = urllib.request.Request(url, headers={"User-Agent": "jiujiubiao-benchmarks"})
         with urllib.request.urlopen(request, timeout=60) as response:
             return json.load(response)
 

@@ -1,6 +1,6 @@
 # Benchmarks
 
-XuanJi ships with loaders for the lab's benchmark assets.  The datasets
+JiuJiuBiao ships with loaders for the lab's benchmark assets.  The datasets
 themselves are **not vendored** into this repository (size + licensing);
 use the links below and point the CLI at the downloaded files.
 

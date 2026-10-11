@@ -2,12 +2,12 @@
 
 Run from the repository root:  python examples/quickstart_offline.py
 
-With a real endpoint, drop FakeLLM and set XUANJI_BASE_URL / XUANJI_MODEL /
-XUANJI_API_KEY — the pipeline code is identical.
+With a real endpoint, drop FakeLLM and set JIUJIUBIAO_BASE_URL / JIUJIUBIAO_MODEL /
+JIUJIUBIAO_API_KEY — the pipeline code is identical.
 """
 
-import xuanji
-from xuanji import FakeLLM
+import jiujiubiao
+from jiujiubiao import FakeLLM
 
 TABLE = [
     ["Year", "Venue", "Position"],
@@ -31,7 +31,7 @@ llm = FakeLLM(
     ]
 )
 
-engine = xuanji.XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+engine = jiujiubiao.JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
 result = engine.ask("In which venue did the athlete win the first place?", TABLE)
 
 print("mode:   ", result.mode)

@@ -78,7 +78,7 @@ def copy_execution_state(state):
         if isinstance(value, ModuleType):
             memo[id(value)] = value
         elif isinstance(value, FunctionType) and (
-            value.__globals__ is state or value.__module__ == "__xuanji_exec__"
+            value.__globals__ is state or value.__module__ == "__jiujiubiao_exec__"
         ):
             cells = None
             if value.__closure__:
@@ -280,7 +280,7 @@ def _python_repl_local(code, custom_globals=None, custom_locals=None, memory=Non
         initial = {**(custom_globals or {}), **(custom_locals or {})}
         missing = {key: value for key, value in initial.items() if key not in namespace}
         namespace.update(copy_execution_state(missing))
-        namespace["__name__"] = "__xuanji_exec__"
+        namespace["__name__"] = "__jiujiubiao_exec__"
         if not isinstance(code, str) or not code.strip():
             raise ValueError("No Python code provided")
         tree = ast.parse(code)
