@@ -1,10 +1,10 @@
-"""XuanJi orchestrator: disambiguate → solve/refine → output check.
+"""JiuJiuBiao orchestrator: disambiguate → solve/refine → output check.
 
 One call, full pipeline::
 
-    import xuanjitu
+    import jiujiubiao
 
-    engine = xuanjitu.XuanJi()                      # env-configured endpoint
+    engine = jiujiubiao.JiuJiuBiao()                      # env-configured endpoint
     result = engine.ask("Which venue had the most wins?", table=my_table)
     print(result.answer, result.mode, result.disambiguation)
 
@@ -20,16 +20,16 @@ from typing import Callable
 
 import pandas as pd
 
-import xuanjitu.tools  # noqa: F401 - registers built-in tools
-from xuanjitu.agents.refiner import Refiner
-from xuanjitu.agents.solver import Solver
-from xuanjitu.df_utils import get_df_info, infer_dtype
-from xuanjitu.disambiguate import DisambiguationResult, Disambiguator
-from xuanjitu.llm import default_client
-from xuanjitu.normalize import is_refusal, normalize
-from xuanjitu.registry import DEFAULT_REGISTRY, ToolRegistry
-from xuanjitu.table import Table
-from xuanjitu.tools.db import Database
+import jiujiubiao.tools  # noqa: F401 - registers built-in tools
+from jiujiubiao.agents.refiner import Refiner
+from jiujiubiao.agents.solver import Solver
+from jiujiubiao.df_utils import get_df_info, infer_dtype
+from jiujiubiao.disambiguate import DisambiguationResult, Disambiguator
+from jiujiubiao.llm import default_client
+from jiujiubiao.normalize import is_refusal, normalize
+from jiujiubiao.registry import DEFAULT_REGISTRY, ToolRegistry
+from jiujiubiao.table import Table
+from jiujiubiao.tools.db import Database
 
 # ---------------------------------------------------------------------------
 # Answer-type consistency gate (WTQ-100 attribution: "who" questions answered
@@ -70,7 +70,7 @@ def _type_mismatch_hint(question: str, answer: str) -> str | None:
 
 
 @dataclass
-class XuanJiResult:
+class JiuJiuBiaoResult:
     """Everything one pipeline run produced."""
 
     question: str
@@ -85,7 +85,7 @@ class XuanJiResult:
     type_retry: bool = False
 
 
-class XuanJi:
+class JiuJiuBiao:
     """The unified table/database question-answering pipeline."""
 
     def __init__(
@@ -142,7 +142,7 @@ class XuanJi:
         task: str | None = None,
         caption: str = "",
         evidence: str = "",
-    ) -> XuanJiResult:
+    ) -> JiuJiuBiaoResult:
         """Answer one question over a table (any ``Table.from_obj`` input) or a Database."""
 
         task = task or self.task
@@ -186,7 +186,7 @@ class XuanJi:
         task: str,
         caption: str,
         evidence: str,
-    ) -> XuanJiResult:
+    ) -> JiuJiuBiaoResult:
         mode = self._pick_mode(df, db)
         if mode == "solve":
             solver = Solver(self.llm, self.registry, **self._solver_kwargs)
@@ -196,7 +196,7 @@ class XuanJi:
                 evidence=evidence, db=db,
             )
             answer, norm = self._output_check(result.answer, task)
-            return XuanJiResult(
+            return JiuJiuBiaoResult(
                 question=question, answer=answer, norm=norm, mode="solve", task=task,
                 steps=result.steps, status=result.status,
                 history=[{"trajectory": result.trajectory, "tool_counts": result.tool_counts}],
@@ -204,14 +204,14 @@ class XuanJi:
         refiner = Refiner(self.llm, **self._refiner_kwargs)
         result = refiner.run(tbl, question, task="tfv" if task == "tfv" else "tqa")
         answer, norm = self._output_check(result.answer, task)
-        return XuanJiResult(
+        return JiuJiuBiaoResult(
             question=question, answer=answer, norm=norm, mode="refine", task=task,
             steps=result.iterations,
             status="completed" if norm else "incomplete", history=result.history,
         )
 
 
-def ask(question: str, table=None, **kwargs) -> XuanJiResult:
+def ask(question: str, table=None, **kwargs) -> JiuJiuBiaoResult:
     """One-shot convenience: build a pipeline from the environment and ask."""
 
     pipeline_kwargs = {
@@ -219,7 +219,7 @@ def ask(question: str, table=None, **kwargs) -> XuanJiResult:
         for key in ("mode", "task", "disambiguate", "clarify")
         if key in kwargs
     }
-    return XuanJi(**pipeline_kwargs).ask(question, table, **kwargs)
+    return JiuJiuBiao(**pipeline_kwargs).ask(question, table, **kwargs)
 
 
-__all__ = ["XuanJi", "XuanJiResult", "ask"]
+__all__ = ["JiuJiuBiao", "JiuJiuBiaoResult", "ask"]

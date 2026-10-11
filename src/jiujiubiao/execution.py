@@ -193,9 +193,9 @@ def python_repl_ast(code, custom_globals=None, custom_locals=None, memory=None):
     memory = {} if memory is None else memory
     process = None
     try:
-        timeout = float(os.environ.get("XUANJI_PYTHON_TIMEOUT", "10"))
+        timeout = float(os.environ.get("JIUJIUBIAO_PYTHON_TIMEOUT", "10"))
         if not math.isfinite(timeout) or timeout <= 0:
-            raise ValueError("XUANJI_PYTHON_TIMEOUT must be a finite positive number")
+            raise ValueError("JIUJIUBIAO_PYTHON_TIMEOUT must be a finite positive number")
         if not isinstance(code, str) or not code.strip():
             raise ValueError("No Python code provided")
         payload = _serialize_state((code, custom_globals, custom_locals, memory))
@@ -219,7 +219,7 @@ def python_repl_ast(code, custom_globals=None, custom_locals=None, memory=None):
             source_root = str(Path(__file__).resolve().parents[1])
             worker_start = (
                 "import sys; sys.path.insert(0, sys.argv[1]); "
-                "from xuanjitu.execution_worker import main; main()"
+                "from jiujiubiao.execution_worker import main; main()"
             )
             process = subprocess.Popen(
                 [sys.executable, "-I", "-c", worker_start, source_root],
@@ -287,13 +287,13 @@ def _python_repl_local(code, custom_globals=None, custom_locals=None, memory=Non
         with redirect_stdout(output):
             if tree.body and isinstance(tree.body[-1], ast.Expr):
                 prefix = ast.Module(body=tree.body[:-1], type_ignores=[])
-                exec(compile(prefix, "<xuanji>", "exec"), namespace, namespace)
+                exec(compile(prefix, "<jiujiubiao>", "exec"), namespace, namespace)
                 expression = ast.Expression(body=tree.body[-1].value)
-                value = eval(compile(expression, "<xuanji>", "eval"), namespace, namespace)
+                value = eval(compile(expression, "<jiujiubiao>", "eval"), namespace, namespace)
                 if value is not None:
                     print(object_to_string(value, code.strip()), end="")
             else:
-                exec(compile(tree, "<xuanji>", "exec"), namespace, namespace)
+                exec(compile(tree, "<jiujiubiao>", "exec"), namespace, namespace)
         return output.getvalue(), namespace, 1
     except Exception as error:
         return f"{type(error).__name__}: {error}", memory, 0

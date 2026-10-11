@@ -3,9 +3,9 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [project]
-name = "xuanjitu"
+name = "jiujiubiao"
 version = "0.3.0"
-description = "XuanJi (璇玑): unified question answering over tables and databases — disambiguation, agentic solving with self-consistency, and self-criticism refinement"
+description = "JiuJiuBiao (九九表): unified question answering over tables and databases — disambiguation, agentic solving with self-consistency, and self-criticism refinement"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
@@ -29,14 +29,14 @@ fuzzy = ["rapidfuzz>=3.0"]
 dev = ["pytest>=8.0", "ruff>=0.6"]
 
 [project.scripts]
-xuanjitu = "xuanjitu.cli:main"
+jiujiubiao = "jiujiubiao.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/ruochunjin/xuanjitu"
-Issues = "https://github.com/ruochunjin/xuanjitu/issues"
+Homepage = "https://github.com/ruochunjin/jiujiubiao"
+Issues = "https://github.com/ruochunjin/jiujiubiao/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/xuanjitu"]
+packages = ["src/jiujiubiao"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -51,10 +51,10 @@ ignore = ["E501", "E731"]
 
 [tool.ruff.lint.per-file-ignores]
 # Ported prompt templates: significant whitespace and research-verbatim text.
-"src/xuanjitu/prompts/solve.py" = ["W291", "W293", "E501"]
-"src/xuanjitu/prompts/refine.py" = ["W291", "W293"]
+"src/jiujiubiao/prompts/solve.py" = ["W291", "W293", "E501"]
+"src/jiujiubiao/prompts/refine.py" = ["W291", "W293"]
 # Ported research modules preserved close to the verified originals.
-"src/xuanjitu/agents/refiner.py" = ["W291"]
-"src/xuanjitu/agents/critic.py" = ["W291"]
-"src/xuanjitu/execution.py" = ["E722"]
-"src/xuanjitu/normalize.py" = ["E722"]
+"src/jiujiubiao/agents/refiner.py" = ["W291"]
+"src/jiujiubiao/agents/critic.py" = ["W291"]
+"src/jiujiubiao/execution.py" = ["E722"]
+"src/jiujiubiao/normalize.py" = ["E722"]

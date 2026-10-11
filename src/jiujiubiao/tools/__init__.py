@@ -1,5 +1,5 @@
 """Tool registration: importing this package populates the default registry."""
 
-from xuanjitu.tools import tables as _tables  # noqa: F401 - registers table tools
+from jiujiubiao.tools import tables as _tables  # noqa: F401 - registers table tools
 
 __all__: list[str] = []

@@ -1,8 +1,8 @@
-"""Generic benchmark runner for XuanJi (test-driven development harness).
+"""Generic benchmark runner for JiuJiuBiao (test-driven development harness).
 
 Usage (from the repo root, e2e environment):
 
-    XUANJI_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/run_benchmark.py \
+    JIUJIUBIAO_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/run_benchmark.py \
         --benchmark wtq --n 100 [--sc 3] [--mode auto] [--out report.json]
 
 The runner is deliberately benchmark-agnostic: loaders yield BenchmarkItem
@@ -74,9 +74,9 @@ def gold_coverage(answer: str, gold_result: str) -> float:
 
 
 def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict:
-    import xuanjitu
-    from xuanjitu.eval import denotation_accuracy
-    from xuanjitu.table import Table
+    import jiujiubiao
+    from jiujiubiao.eval import denotation_accuracy
+    from jiujiubiao.table import Table
 
     table_map: dict = {}
     db_cache: dict = {}
@@ -95,7 +95,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
     else:
         raise ValueError(f"unknown benchmark: {benchmark!r}")
 
-    engine = xuanjitu.XuanJi(mode=mode, task=task, solver_kwargs={"sc": sc})
+    engine = jiujiubiao.JiuJiuBiao(mode=mode, task=task, solver_kwargs={"sc": sc})
     llm = engine.llm
 
     report: list[dict] = []
@@ -107,7 +107,7 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
         error = None
         try:
             if benchmark in {"clambsql", "bird"}:
-                from xuanjitu.tools.db import Database
+                from jiujiubiao.tools.db import Database
 
                 if item.db_file not in db_cache:
                     path_fn = clambsql_db_path if benchmark == "clambsql" else bird_db_path

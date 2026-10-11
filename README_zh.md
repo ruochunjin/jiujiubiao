@@ -1,10 +1,10 @@
-# XuanJi 璇玑
+# JiuJiuBiao 九九表
 
-> 一幅璇玑图，读出千首诗。苏蕙的《璇玑图》以 841 字织成方格，可读出数千首诗——一张表，万千读法。**璇玑**对您的数据做同样的事：一张表，万千问答。
+> 三七——二十一。每个中国孩子启蒙的第一张表：九九乘法表，有问必答、脱口而出。**九九表**对您的数据做同样的事：一张表，万千问答。
 
 [English README](README.md)
 
-璇玑是**表格与数据库的统一问答工具箱**。一条流水线覆盖完整链路，各阶段均可插拔：
+九九表是**表格与数据库的统一问答工具箱**。一条流水线覆盖完整链路，各阶段均可插拔：
 
 ```text
 问题 + 表格/数据库
@@ -20,9 +20,9 @@
 ## 快速开始
 
 ```python
-import xuanjitu
+import jiujiubiao
 
-engine = xuanji.XuanJi()  # 端点由环境变量配置（见下）
+engine = jiujiubiao.JiuJiuBiao()  # 端点由环境变量配置（见下）
 result = engine.ask("这位运动员在哪一站获得第一名？",
                     table=[["Year","Venue","Position"],["2003","Paris","1st"]])
 print(result.answer)  # Paris
@@ -31,7 +31,7 @@ print(result.answer)  # Paris
 数据库一等支持（Solver 自带 schema 感知工具并真实执行 SQL）：
 
 ```python
-from xuanjitu import Database
+from jiujiubiao import Database
 db = Database.from_sqlite("concert_singer.db")  # 或 Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
 ```
@@ -41,17 +41,17 @@ result = engine.ask("How many singers are from France?", db=db)
 ## 端点配置
 
 不依赖任何 SDK，纯 HTTP 调用 OpenAI 兼容端点（vLLM / Ollama / DeepSeek / OpenAI 均可）：
-`XUANJI_BASE_URL` / `XUANJI_API_KEY` / `XUANJI_MODEL`（兼容 `OPENAI_*` 变量）。
+`JIUJIUBIAO_BASE_URL` / `JIUJIUBIAO_API_KEY` / `JIUJIUBIAO_MODEL`（兼容 `OPENAI_*` 变量）。
 
 ## 命令行
 
 ```bash
-xuanji --dataset data.json --task tqa --limit 10 --output results.json
+jiujiubiao --dataset data.json --task tqa --limit 10 --output results.json
 ```
 
 ## 扩展
 
-用 `@register_tool` 注册求解工具（提示词与调度自动更新）；用 `@register_refine_tool` 注册精化工具（generate + critic 接口）。训练侧提供 CORES 过程奖励（格式门禁 + Schema 接地 + 结构相似 + 执行正确），见 `xuanji.training`。
+用 `@register_tool` 注册求解工具（提示词与调度自动更新）；用 `@register_refine_tool` 注册精化工具（generate + critic 接口）。训练侧提供 CORES 过程奖励（格式门禁 + Schema 接地 + 结构相似 + 执行正确），见 `jiujiubiao.training`。
 
 ## 学术脉络
 

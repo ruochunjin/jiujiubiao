@@ -1,12 +1,12 @@
-"""LLM interface for XuanJi: protocol, stdlib OpenAI-compatible client, FakeLLM.
+"""LLM interface for JiuJiuBiao: protocol, stdlib OpenAI-compatible client, FakeLLM.
 
 Configuration is environment-driven (no SDK dependency — plain HTTP):
 
-- ``XUANJI_API_KEY`` / ``OPENAI_API_KEY``: API key
-- ``XUANJI_BASE_URL`` / ``OPENAI_BASE_URL``: OpenAI-compatible endpoint
+- ``JIUJIUBIAO_API_KEY`` / ``OPENAI_API_KEY``: API key
+- ``JIUJIUBIAO_BASE_URL`` / ``OPENAI_BASE_URL``: OpenAI-compatible endpoint
   (works with vLLM, Ollama, DeepSeek, ...); defaults to OpenAI
-- ``XUANJI_MODEL`` / ``OPENAI_MODEL``: model name
-- ``XUANJI_TIMEOUT`` / ``XUANJI_RETRIES``: request tuning
+- ``JIUJIUBIAO_MODEL`` / ``OPENAI_MODEL``: model name
+- ``JIUJIUBIAO_TIMEOUT`` / ``JIUJIUBIAO_RETRIES``: request tuning
 
 Nothing is created at import time; pass any object implementing ``LLM``
 (``chat`` + ``sample``) to the agents — including ``FakeLLM`` for tests.
@@ -83,8 +83,8 @@ class AnthropicClient:
         self.url = self.base_url.rstrip("/") + "/v1/messages"
         self.temperature = temperature
         self.max_tokens = max_tokens
-        self.timeout = float(os.environ.get("XUANJI_TIMEOUT", "180"))
-        self.retries = int(os.environ.get("XUANJI_RETRIES", "6"))
+        self.timeout = float(os.environ.get("JIUJIUBIAO_TIMEOUT", "180"))
+        self.retries = int(os.environ.get("JIUJIUBIAO_RETRIES", "6"))
         self.pool = ThreadPoolExecutor(max_workers=max_workers)
         self.verbose = verbose
         self.n_calls = 0
@@ -152,25 +152,25 @@ class AnthropicClient:
             return self.chat(prompt, **kwargs)
         except Exception as error:  # keep sibling samples alive
             if self.verbose:
-                print("[xuanji llm error]", error)
+                print("[jiujiubiao llm error]", error)
             return ""
 
 
 def default_client(backend: str | None = None) -> LLM:
     """Build the environment-configured client.
 
-    ``backend`` (or ``XUANJI_BACKEND``) selects ``anthropic`` (K3-style
+    ``backend`` (or ``JIUJIUBIAO_BACKEND``) selects ``anthropic`` (K3-style
     messages endpoint) or the default OpenAI-compatible ``openai``.
     """
 
-    name = (backend or os.environ.get("XUANJI_BACKEND") or "openai").lower()
+    name = (backend or os.environ.get("JIUJIUBIAO_BACKEND") or "openai").lower()
     if name == "anthropic":
         return AnthropicClient()
     return ChatClient()
 
 
 class LLM(Protocol):
-    """The two call shapes every XuanJi agent needs."""
+    """The two call shapes every JiuJiuBiao agent needs."""
 
     def chat(
         self,
@@ -204,7 +204,7 @@ class ChatClient:
     ) -> None:
         url = (
             base_url
-            or os.environ.get("XUANJI_BASE_URL")
+            or os.environ.get("JIUJIUBIAO_BASE_URL")
             or os.environ.get("OPENAI_BASE_URL")
             or DEFAULT_BASE_URL
         ).rstrip("/")
@@ -212,17 +212,17 @@ class ChatClient:
             url += "/chat/completions"
         self.url = url
         self.api_key = (
-            api_key or os.environ.get("XUANJI_API_KEY") or os.environ.get("OPENAI_API_KEY") or ""
+            api_key or os.environ.get("JIUJIUBIAO_API_KEY") or os.environ.get("OPENAI_API_KEY") or ""
         )
         self.model = (
-            model or os.environ.get("XUANJI_MODEL") or os.environ.get("OPENAI_MODEL") or ""
+            model or os.environ.get("JIUJIUBIAO_MODEL") or os.environ.get("OPENAI_MODEL") or ""
         )
         if not self.model:
-            raise ValueError("Set XUANJI_MODEL (or pass model=) to the endpoint's model name")
+            raise ValueError("Set JIUJIUBIAO_MODEL (or pass model=) to the endpoint's model name")
         self.temperature = temperature
         self.max_tokens = max_tokens
-        self.timeout = float(os.environ.get("XUANJI_TIMEOUT", "180"))
-        self.retries = int(os.environ.get("XUANJI_RETRIES", "6"))
+        self.timeout = float(os.environ.get("JIUJIUBIAO_TIMEOUT", "180"))
+        self.retries = int(os.environ.get("JIUJIUBIAO_RETRIES", "6"))
         self.pool = ThreadPoolExecutor(max_workers=max_workers)
         self.verbose = verbose
         self.n_calls = 0
@@ -283,7 +283,7 @@ class ChatClient:
             return self.chat(prompt, **kwargs)
         except Exception as error:  # keep sibling samples alive
             if self.verbose:
-                print("[xuanji llm error]", error)
+                print("[jiujiubiao llm error]", error)
             return ""
 
 

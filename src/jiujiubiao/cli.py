@@ -1,4 +1,4 @@
-"""Command-line interface:  python -m xuanji --dataset data.json [--task wtq]"""
+"""Command-line interface:  python -m jiujiubiao --dataset data.json [--task wtq]"""
 
 from __future__ import annotations
 
@@ -6,14 +6,14 @@ import argparse
 import json
 import sys
 
-from xuanjitu.eval import denotation_accuracy, load_dataset
-from xuanjitu.pipeline import XuanJi
+from jiujiubiao.eval import denotation_accuracy, load_dataset
+from jiujiubiao.pipeline import JiuJiuBiao
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="xuanji",
-        description="XuanJi (璇玑): unified table/database question answering",
+        prog="jiujiubiao",
+        description="JiuJiuBiao (璇玑): unified table/database question answering",
     )
     parser.add_argument("--dataset", required=True, help="Path to a WTQ/TabFact-style JSON dataset")
     parser.add_argument("--task", default="tqa", choices=["tqa", "tfv"])
@@ -29,7 +29,7 @@ def main(argv=None) -> int:
     data = load_dataset(args.dataset)
     if args.limit > 0:
         data = data[: args.limit]
-    engine = XuanJi(mode=args.mode, task=args.task, disambiguate=args.disambiguate)
+    engine = JiuJiuBiao(mode=args.mode, task=args.task, disambiguate=args.disambiguate)
     predictions, labels, results = [], [], []
     for i, example in enumerate(data):
         question = example.get("question", example.get("statement", ""))

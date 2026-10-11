@@ -23,25 +23,25 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: xuanjitu-dist
+          name: jiujiubiao-dist
           path: dist/
 
   pypi:
     # PyPI Trusted Publishing (OIDC): no stored token.  Configure once on
     # pypi.org — Manage project → Publishing → add GitHub publisher with
-    # owner ruochunjin, repository xuanjitu, workflow publish.yml,
+    # owner ruochunjin, repository jiujiubiao, workflow publish.yml,
     # environment name "pypi".
     needs: build
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/xuanjitu
+      url: https://pypi.org/p/jiujiubiao
     permissions:
       id-token: write
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: xuanjitu-dist
+          name: jiujiubiao-dist
           path: dist/
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1

@@ -8,12 +8,12 @@ from __future__ import annotations
 
 import unittest
 
-from xuanjitu import FakeLLM, XuanJi
-from xuanjitu.agents.refiner import Refiner
-from xuanjitu.agents.solver import Solver
-from xuanjitu.execution import python_repl_ast
-from xuanjitu.table import Table
-from xuanjitu.tools.db import Database
+from jiujiubiao import FakeLLM, JiuJiuBiao
+from jiujiubiao.agents.refiner import Refiner
+from jiujiubiao.agents.solver import Solver
+from jiujiubiao.execution import python_repl_ast
+from jiujiubiao.table import Table
+from jiujiubiao.tools.db import Database
 
 TABLE = Table(
     ["Year", "Venue", "Position"],
@@ -113,7 +113,7 @@ class PipelineTests(unittest.TestCase):
                 (r"Now it's your turn", ["Row 1 is the 1st place.\nAnswer: Paris"] * 3),
             ]
         )
-        result = XuanJi(llm=llm, task="tqa", refiner_kwargs={"n_samples": 3}).ask(
+        result = JiuJiuBiao(llm=llm, task="tqa", refiner_kwargs={"n_samples": 3}).ask(
             "In which venue did the athlete win the first place?", TABLE
         )
         self.assertEqual(result.mode, "refine")
@@ -126,7 +126,7 @@ class PipelineTests(unittest.TestCase):
                 (r"Thought: $", "Thought: query the table\nFinal Answer: Paris"),
             ]
         )
-        result = XuanJi(llm=llm, solver_kwargs={"sc": 1}).ask(
+        result = JiuJiuBiao(llm=llm, solver_kwargs={"sc": 1}).ask(
             "Which venue is in the table?", db=db
         )
         self.assertEqual(result.mode, "solve")
@@ -141,7 +141,7 @@ class PipelineTests(unittest.TestCase):
                 (r"Now it's your turn", ["Answer: Paris"] * 3),
             ]
         )
-        engine = XuanJi(
+        engine = JiuJiuBiao(
             llm=llm, disambiguate=True, clarify=lambda q: "The 2003 edition.",
             refiner_kwargs={"n_samples": 3},
         )
@@ -159,7 +159,7 @@ class PipelineTests(unittest.TestCase):
                 (r"Now it's your turn", ["Answer: Paris"] * 3),
             ]
         )
-        engine = XuanJi(llm=llm, disambiguate=True, refiner_kwargs={"n_samples": 3})
+        engine = JiuJiuBiao(llm=llm, disambiguate=True, refiner_kwargs={"n_samples": 3})
         result = engine.ask("In which venue did the athlete win?", TABLE)
         self.assertTrue(result.disambiguation.ambiguous)
         self.assertEqual(result.question, "In which venue did the athlete win?")

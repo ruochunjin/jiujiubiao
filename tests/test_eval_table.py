@@ -6,8 +6,8 @@ import os
 import tempfile
 import unittest
 
-from xuanjitu.eval import denotation_accuracy
-from xuanjitu.table import Table
+from jiujiubiao.eval import denotation_accuracy
+from jiujiubiao.table import Table
 
 
 class DenotationAccuracyTests(unittest.TestCase):

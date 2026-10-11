@@ -1,11 +1,10 @@
-# XuanJi 璇玑
+# JiuJiuBiao 九九表
 
-> *一幅璇玑图，读出千首诗。* — Su Hui's 璇玑图 (841 characters woven into a
-> grid, readable into thousands of poems) is the great table of Chinese
-> culture: one grid, countless readings. **XuanJi** does this for your data —
-> one table, many questions.
+> *三七——二十一。* — Every Chinese schoolchild learns the 九九表
+> (multiplication table): a grid you interrogate and it answers, instantly.
+> **JiuJiuBiao** does this for your data — one table, every question.
 
-XuanJi is a **unified question-answering toolkit for tables and databases**.
+JiuJiuBiao is a **unified question-answering toolkit for tables and databases**.
 One pipeline covers the full chain, each stage pluggable:
 
 ```text
@@ -22,9 +21,9 @@ question + table/database
 ## Quickstart
 
 ```python
-import xuanjitu
+import jiujiubiao
 
-engine = xuanji.XuanJi()  # endpoint from env (see below)
+engine = jiujiubiao.JiuJiuBiao()  # endpoint from env (see below)
 result = engine.ask(
     "In which venue did the athlete win the first place?",
     table=[["Year", "Venue", "Position"],
@@ -39,7 +38,7 @@ Databases are first-class — the solver grounds itself with schema tools and
 executes real SQL:
 
 ```python
-from xuanjitu import Database
+from jiujiubiao import Database
 
 db = Database.from_sqlite("concert_singer.db")   # or Database.from_dataframe(df)
 result = engine.ask("How many singers are from France?", db=db)
@@ -48,25 +47,25 @@ result = engine.ask("How many singers are from France?", db=db)
 **Offline development / tests** need no endpoint at all:
 
 ```python
-from xuanjitu import FakeLLM, XuanJi
+from jiujiubiao import FakeLLM, JiuJiuBiao
 
 llm = FakeLLM(rules=[(r"Now it's your turn", ["Answer: Paris"] * 3)])
-engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+engine = JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
 ```
 
 ## Endpoint configuration
 
 No SDK dependency — plain HTTP to any OpenAI-compatible endpoint
 (vLLM, Ollama, DeepSeek, OpenAI, ...) or an Anthropic-messages endpoint
-(`XUANJI_BACKEND=anthropic`):
+(`JIUJIUBIAO_BACKEND=anthropic`):
 
 | Variable | Default | Purpose |
 | --- | --- | --- |
-| `XUANJI_BACKEND` | `openai` | `openai` (chat/completions) or `anthropic` (messages API) |
-| `XUANJI_BASE_URL` / `OPENAI_BASE_URL` | `https://api.openai.com/v1` | endpoint |
-| `XUANJI_API_KEY` / `OPENAI_API_KEY` | — | API key |
-| `XUANJI_MODEL` / `OPENAI_MODEL` | — | model name (required) |
-| `XUANJI_TIMEOUT` / `XUANJI_RETRIES` | `180` / `6` | request tuning (rate-limit-aware backoff) |
+| `JIUJIUBIAO_BACKEND` | `openai` | `openai` (chat/completions) or `anthropic` (messages API) |
+| `JIUJIUBIAO_BASE_URL` / `OPENAI_BASE_URL` | `https://api.openai.com/v1` | endpoint |
+| `JIUJIUBIAO_API_KEY` / `OPENAI_API_KEY` | — | API key |
+| `JIUJIUBIAO_MODEL` / `OPENAI_MODEL` | — | model name (required) |
+| `JIUJIUBIAO_TIMEOUT` / `JIUJIUBIAO_RETRIES` | `180` / `6` | request tuning (rate-limit-aware backoff) |
 
 ## Benchmarks (public, reproducible)
 
@@ -80,13 +79,13 @@ Seeded stratified samples, K3-class endpoint, `sc=3`, `mode=auto`:
 Reproduce:
 
 ```bash
-XUANJI_BACKEND=anthropic python benchmarks/run_benchmark.py --benchmark wtq --n 100
+JIUJIUBIAO_BACKEND=anthropic python benchmarks/run_benchmark.py --benchmark wtq --n 100
 ```
 
 ## CLI
 
 ```bash
-xuanji --dataset data/examples/wtq.json --task tqa --limit 10 --output results.json
+jiujiubiao --dataset data/examples/wtq.json --task tqa --limit 10 --output results.json
 ```
 
 Dataset format: a JSON array of
@@ -99,7 +98,7 @@ Register a solver tool and it joins the action space — prompt and dispatch
 update automatically:
 
 ```python
-from xuanjitu import register_tool
+from jiujiubiao import register_tool
 
 @register_tool
 def count_rows(ctx, arg):
@@ -108,7 +107,7 @@ def count_rows(ctx, arg):
 ```
 
 Refine-stage tools (each with `generate` + `critic`) register via
-`@register_refine_tool` in `xuanji.agents.refine_tools`.
+`@register_refine_tool` in `jiujiubiao.agents.refine_tools`.
 
 ## Installation
 
@@ -120,13 +119,13 @@ pip install -e ".[dev]"     # tests + lint
 
 ## Training-side utilities
 
-`xuanji.training` carries the CORES composite process reward (format gate +
+`jiujiubiao.training` carries the CORES composite process reward (format gate +
 schema grounding + structure similarity + execution correctness against a
 SQLite database), with everything injected — usable standalone or as a
 verl/GRPO reward function:
 
 ```python
-from xuanjitu.training import compute_process_reward
+from jiujiubiao.training import compute_process_reward
 
 reward = compute_process_reward(
     response, gold_sql, gold_python,
@@ -137,7 +136,7 @@ print(reward.total, reward.r_schema, reward.r_struct, reward.r_exec)
 
 ## Research lineage
 
-XuanJi consolidates five peer-reviewed works from one lab:
+JiuJiuBiao consolidates five peer-reviewed works from one lab:
 
 - **CLEAR** (ICDE 2025) — parser-independent NL2SQL disambiguation → stage [1]
 - **TALON** (EMNLP 2025) — multi-agent long-table exploration → solver
@@ -147,7 +146,7 @@ XuanJi consolidates five peer-reviewed works from one lab:
 - **CORES** (ACL 2026 Findings) — code-oriented reasoning (Python as pivot);
   the `def()` code tool follows this paradigm
 
-If you use XuanJi, please cite the relevant papers (see CITATION.cff).
+If you use JiuJiuBiao, please cite the relevant papers (see CITATION.cff).
 
 ## License
 

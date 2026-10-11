@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import unittest
 
-from xuanjitu import FakeLLM, XuanJi
-from xuanjitu.pipeline import _expected_type, _is_bare_number, _type_mismatch_hint
+from jiujiubiao import FakeLLM, JiuJiuBiao
+from jiujiubiao.pipeline import _expected_type, _is_bare_number, _type_mismatch_hint
 
 _TABLE = [
     ["Team", "Goals"],
@@ -43,21 +43,21 @@ class TypeGateFlowTests(unittest.TestCase):
                 (r"not a bare number", "Answer: San Marino"),
             ]
         )
-        engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+        engine = JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
         result = engine.ask("who scored the least international goals?", table=_TABLE)
         self.assertTrue(result.type_retry)
         self.assertEqual(result.norm, "san marino")
 
     def test_correct_first_answer_not_retried(self) -> None:
         llm = FakeLLM(rules=[(r".*", "Answer: San Marino")])
-        engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+        engine = JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
         result = engine.ask("who scored the least international goals?", table=_TABLE)
         self.assertFalse(result.type_retry)
         self.assertEqual(result.norm, "san marino")
 
     def test_retry_rejected_if_still_mismatched(self) -> None:
         llm = FakeLLM(rules=[(r".*", "Answer: 8")])
-        engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+        engine = JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
         result = engine.ask("who scored the least international goals?", table=_TABLE)
         # Retry happened but still numeric -> keep the FIRST outcome.
         self.assertFalse(result.type_retry)
@@ -65,7 +65,7 @@ class TypeGateFlowTests(unittest.TestCase):
 
     def test_number_question_no_entity_retry(self) -> None:
         llm = FakeLLM(rules=[(r".*", "Answer: 110")])
-        engine = XuanJi(llm=llm, refiner_kwargs={"n_samples": 3})
+        engine = JiuJiuBiao(llm=llm, refiner_kwargs={"n_samples": 3})
         result = engine.ask("how many models utilize diesel?", table=_TABLE)
         self.assertFalse(result.type_retry)
 

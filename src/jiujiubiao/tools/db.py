@@ -1,7 +1,7 @@
 """Database tools (RAISR family) over a sqlite3 backend.
 
 ``Database`` wraps any SQLite database file, or builds an in-memory one from
-a pandas DataFrame — which is also how XuanJi bridges the table world and
+a pandas DataFrame — which is also how JiuJiuBiao bridges the table world and
 the SQL world: register these tools when the question targets a database,
 and the solver gets schema-aware SQL tools instead of DataFrame tools.
 """
@@ -13,7 +13,7 @@ import sqlite3
 
 import pandas as pd
 
-from xuanjitu.registry import ToolContext, register_tool
+from jiujiubiao.registry import ToolContext, register_tool
 
 
 class Database:

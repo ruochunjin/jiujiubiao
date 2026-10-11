@@ -2,7 +2,7 @@
 the disambiguator + benchmark clarification context.
 
 Usage:
-    XUANJI_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/clambsql_disambig.py
+    JIUJIUBIAO_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/clambsql_disambig.py
 """
 
 from __future__ import annotations
@@ -19,8 +19,8 @@ from run_benchmark import gold_coverage  # noqa: E402
 
 
 def main() -> None:
-    import xuanjitu
-    from xuanjitu.tools.db import Database
+    import jiujiubiao
+    from jiujiubiao.tools.db import Database
 
     data = json.loads(Path("benchmarks/data/clambsql/clambsql.json").read_text(encoding="utf-8"))
     # same stratified sample as the clambsql_60 run: take the weak types'
@@ -48,13 +48,13 @@ def main() -> None:
         db = db_cache[db_file]
         gold = db.execute(row["gold_query"])
 
-        direct = xuanjitu.XuanJi()
+        direct = jiujiubiao.JiuJiuBiao()
         t0 = time.perf_counter()
         r1 = direct.ask(row["question"], db=db)
         cov1 = gold_coverage(r1.norm or r1.answer, gold)
 
         clarify_answer = row.get("clarification_context") or ""
-        engine2 = xuanjitu.XuanJi(disambiguate=True, clarify=lambda _q, a=clarify_answer: a)
+        engine2 = jiujiubiao.JiuJiuBiao(disambiguate=True, clarify=lambda _q, a=clarify_answer: a)
         r2 = engine2.ask(row["question"], db=db)
         cov2 = gold_coverage(r2.norm or r2.answer, gold)
         _elapsed = time.perf_counter() - t0  # noqa: F841 - timing kept for debug

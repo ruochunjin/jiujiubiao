@@ -6,8 +6,8 @@ import unittest
 
 import pandas as pd
 
-from xuanjitu import FakeLLM
-from xuanjitu.normalize import (
+from jiujiubiao import FakeLLM
+from jiujiubiao.normalize import (
     extract_answer,
     extract_code,
     extract_json,
@@ -15,9 +15,9 @@ from xuanjitu.normalize import (
     normalize,
     parse_critic,
 )
-from xuanjitu.registry import DEFAULT_REGISTRY, ToolContext
-from xuanjitu.table import Table
-from xuanjitu.tools.db import Database
+from jiujiubiao.registry import DEFAULT_REGISTRY, ToolContext
+from jiujiubiao.table import Table
+from jiujiubiao.tools.db import Database
 
 TABLE = Table(
     ["Year", "Venue", "Position"],

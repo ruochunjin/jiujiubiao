@@ -1,7 +1,7 @@
 """Re-run WTQ missed cases with full trajectory capture for failure analysis.
 
 Usage:
-    XUANJI_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/debug_misses.py [wtq_report.json]
+    JIUJIUBIAO_BACKEND=anthropic .venv/Scripts/python.exe benchmarks/debug_misses.py [wtq_report.json]
 """
 
 from __future__ import annotations
@@ -18,9 +18,9 @@ from loader import load_wtq, load_wtq_table  # noqa: E402
 
 
 def main() -> None:
-    import xuanjitu
-    from xuanjitu.eval import _norm_parts
-    from xuanjitu.table import Table
+    import jiujiubiao
+    from jiujiubiao.eval import _norm_parts
+    from jiujiubiao.table import Table
 
     report_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("benchmarks/wtq_100.json")
     rep = json.loads(report_path.read_text(encoding="utf-8"))
@@ -36,7 +36,7 @@ def main() -> None:
     print(f"re-running {len(missed_ids)} missed cases with trajectories")
 
     items = load_wtq(100)  # same seed -> same sample
-    engine = xuanjitu.XuanJi(mode="auto", solver_kwargs={"sc": 3})
+    engine = jiujiubiao.JiuJiuBiao(mode="auto", solver_kwargs={"sc": 3})
     out = []
     for item in items:
         if item.id not in missed_ids:

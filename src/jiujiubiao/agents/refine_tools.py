@@ -18,14 +18,14 @@ import textwrap
 from dataclasses import dataclass, field
 from typing import Any
 
-from xuanjitu.normalize import (
+from jiujiubiao.normalize import (
     extract_answer,
     extract_code,
     extract_json,
     normalize,
     parse_critic,
 )
-from xuanjitu.prompts import refine as P
+from jiujiubiao.prompts import refine as P
 
 REFINE_TOOL_LIBRARY: dict[str, type] = {}
 
@@ -50,7 +50,7 @@ class Candidate:
 
 @dataclass
 class RefineContext:
-    table: Any  # xuanjitu.table.Table
+    table: Any  # jiujiubiao.table.Table
     question: str
     task: str  # 'tqa' | 'tfv'
 
