@@ -26,7 +26,7 @@ from jiujiubiao.registry import ToolContext, ToolRegistry, ToolSpec, register_to
 from jiujiubiao.table import Table
 from jiujiubiao.tools.db import Database
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 __all__ = [
     "AnthropicClient",

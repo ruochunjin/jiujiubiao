@@ -4,7 +4,7 @@ requires = ["hatchling"]
 
 [project]
 name = "jiujiubiao"
-version = "0.3.0"
+version = "0.3.1"
 description = "JiuJiuBiao (九九表): unified question answering over tables and databases — disambiguation, agentic solving with self-consistency, and self-criticism refinement"
 readme = "README.md"
 requires-python = ">=3.10"
