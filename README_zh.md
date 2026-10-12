@@ -45,6 +45,14 @@ result = engine.ask("How many singers are from France?", db=db)
 不依赖任何 SDK，纯 HTTP 调用 OpenAI 兼容端点（vLLM / Ollama / DeepSeek / OpenAI 均可）：
 `JIUJIUBIAO_BASE_URL` / `JIUJIUBIAO_API_KEY` / `JIUJIUBIAO_MODEL`（兼容 `OPENAI_*` 变量）。
 
+## 基准与消歧建议
+
+公开基准（K3 端点，种子分层抽样）：WTQ-200 = **0.79**，TabFact-100 = **0.97**。
+消歧 A/B（CLAMBSQL 弱类型 50 例）：直接求解 0.695 → 消歧重写 **0.723**；
+分类型看，vague 型 0.546 → **0.692**（重写显著帮助），table 型 0.844 → 0.755
+（重写可能过度锚定）。**建议**：自由表述的模糊问题开启 `disambiguate=True`；
+问题已点名具体 schema 元素时保持关闭。
+
 ## 命令行
 
 ```bash

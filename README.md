@@ -77,6 +77,12 @@ Seeded stratified samples, K3-class endpoint, `sc=3`, `mode=auto`:
 | --- | --- | --- | --- |
 | WikiTableQuestions (test) | 200 | **0.79** | larger sample; misses cluster on subtle counting and gold-format quirks |
 | TabFact (validation) | 100 | **0.97** | balanced labels (51/49); misses are subtle "only X" claims |
+| CLAMBSQL disambiguation A/B | 50 weak-type items | direct 0.695 → disambiguated **0.723** | per-type split: vague 0.546 → **0.692** (rewrites help); table 0.844 → 0.755 (rewrites can over-anchor) |
+
+Disambiguation guidance (from the A/B): enable `disambiguate=True` for
+free-form, vaguely worded questions; leave it off when the question already
+names concrete schema elements — anchored rewrites can over-commit to one
+reading there.
 
 Reproduce:
 
