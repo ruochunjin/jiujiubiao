@@ -12,7 +12,6 @@ from __future__ import annotations
 import unittest
 
 from jiujiubiao import FakeLLM, JiuJiuBiao
-from jiujiubiao.table import Table
 
 _ANSWER = "Let's think step by step. Row 0 has the answer.\nAnswer: Paris"
 

@@ -11,7 +11,11 @@ def extract_answer(text):
     if not text:
         return ""
     m = re.findall(r"(?:final answer|answer)\s*[:：]\s*(.+)", text, flags=re.I)
-    ans = m[-1] if m else text.strip().splitlines()[-1]
+    lines = text.strip().splitlines()
+    if not m and not lines:
+        # whitespace-only output has no last line to fall back to
+        return ""
+    ans = m[-1] if m else lines[-1]
     ans = ans.strip().strip("*").strip()
     ans = re.sub(r"^\\boxed\{(.*)\}$", r"\1", ans)
     return ans.strip().rstrip(".").strip().strip('"').strip()
