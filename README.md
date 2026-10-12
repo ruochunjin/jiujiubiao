@@ -75,7 +75,7 @@ Seeded stratified samples, K3-class endpoint, `sc=3`, `mode=auto`:
 
 | Benchmark | Sample | Accuracy | Notes |
 | --- | --- | --- | --- |
-| WikiTableQuestions (test) | 100 | **0.82** | misses cluster on subtle counting (dedup/temporal filters) and gold-format quirks |
+| WikiTableQuestions (test) | 200 | **0.79** | larger sample; misses cluster on subtle counting and gold-format quirks |
 | TabFact (validation) | 100 | **0.97** | balanced labels (51/49); misses are subtle "only X" claims |
 
 Reproduce:
