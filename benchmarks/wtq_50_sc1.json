@@ -1,0 +1,661 @@
+{
+  "benchmark": "wtq",
+  "n": 50,
+  "accuracy": 0.88,
+  "seconds": 1180.0,
+  "llm_calls": 440,
+  "llm_tokens": 392276,
+  "cases": [
+    {
+      "id": "nu-2316",
+      "question": "which driver had the most points?",
+      "gold": [
+        "Alain Prost"
+      ],
+      "answer": "Alain Prost",
+      "norm": "alain prost",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.7,
+      "error": null
+    },
+    {
+      "id": "nu-798",
+      "question": "what is each location listed for the benteak timber tree?",
+      "gold": [
+        "Kerala, Madras, Maharashtra, Karnataka"
+      ],
+      "answer": "Kerala, Madras, Maharashtra, Karnataka",
+      "norm": "kerala, madras, maharashtra, karnataka",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.8,
+      "error": null
+    },
+    {
+      "id": "nu-2650",
+      "question": "does sibiu have an altitude above 200m?",
+      "gold": [
+        "yes"
+      ],
+      "answer": "yes",
+      "norm": "yes",
+      "status": "completed",
+      "steps": 6,
+      "seconds": 36.4,
+      "error": null
+    },
+    {
+      "id": "nu-2616",
+      "question": "how many episodes aired before the one on november 9, 1997?",
+      "gold": [
+        "6"
+      ],
+      "answer": "6",
+      "norm": "6",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.6,
+      "error": null
+    },
+    {
+      "id": "nu-969",
+      "question": "what is the difference in years between paradise city and sweet child o' mine?",
+      "gold": [
+        "1 year"
+      ],
+      "answer": "1",
+      "norm": "1",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 39.6,
+      "error": null
+    },
+    {
+      "id": "nu-3505",
+      "question": "what year did morocco win the largest amount of medals during the summer games?",
+      "gold": [
+        "2008"
+      ],
+      "answer": "2008",
+      "norm": "2008",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 24.2,
+      "error": null
+    },
+    {
+      "id": "nu-2491",
+      "question": "who was the opponent after mikael pernfors?",
+      "gold": [
+        "Ivan Lendl"
+      ],
+      "answer": "Ivan Lendl",
+      "norm": "ivan lendl",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 15.5,
+      "error": null
+    },
+    {
+      "id": "nu-1507",
+      "question": "name one example of a transcription factor",
+      "gold": [
+        "myc gene"
+      ],
+      "answer": "myc gene",
+      "norm": "myc gene",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.2,
+      "error": null
+    },
+    {
+      "id": "nu-1551",
+      "question": "venue competed at most",
+      "gold": [
+        "Beijing, China"
+      ],
+      "answer": "Beijing, China",
+      "norm": "beijing, china",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 34.3,
+      "error": null
+    },
+    {
+      "id": "nu-2959",
+      "question": "what company has the longest tenure as kit manufacturer?",
+      "gold": [
+        "Errea"
+      ],
+      "answer": "Errea",
+      "norm": "errea",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.8,
+      "error": null
+    },
+    {
+      "id": "nu-3069",
+      "question": "which title had more acts, \"an allem ist hütchen schuld!\" or \"das liebesopfer (libretto only, no music completed)\"?",
+      "gold": [
+        "Das Liebesopfer (libretto only, no music completed)"
+      ],
+      "answer": "Das Liebesopfer (libretto only, no music completed)",
+      "norm": "das liebesopfer",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.8,
+      "error": null
+    },
+    {
+      "id": "nu-151",
+      "question": "how many years after the levanger church was built was the bamberg church built?",
+      "gold": [
+        "96"
+      ],
+      "answer": "96",
+      "norm": "96",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.8,
+      "error": null
+    },
+    {
+      "id": "nu-4111",
+      "question": "name a driver than has more total points than phillip.",
+      "gold": [
+        "Kerry Baily"
+      ],
+      "answer": "John Briggs | Kerry Baily",
+      "norm": "john briggs | kerry baily",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 57.8,
+      "error": null
+    },
+    {
+      "id": "nu-2418",
+      "question": "what is the total number of team?",
+      "gold": [
+        "14"
+      ],
+      "answer": "14",
+      "norm": "14",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.8,
+      "error": null
+    },
+    {
+      "id": "nu-1573",
+      "question": "7qn and 7qt are the only two stations to be in what area?",
+      "gold": [
+        "Queenstown"
+      ],
+      "answer": "Queenstown",
+      "norm": "queenstown",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 11.9,
+      "error": null
+    },
+    {
+      "id": "nu-419",
+      "question": "which division has the most area?",
+      "gold": [
+        "Hailin City"
+      ],
+      "answer": "Hailin City",
+      "norm": "hailin city",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.7,
+      "error": null
+    },
+    {
+      "id": "nu-1793",
+      "question": "which nation earned the most medals?",
+      "gold": [
+        "Indonesia"
+      ],
+      "answer": "Indonesia",
+      "norm": "indonesia",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.8,
+      "error": null
+    },
+    {
+      "id": "nu-1014",
+      "question": "how many models utilize diesel as their fuel type?",
+      "gold": [
+        "110"
+      ],
+      "answer": "111",
+      "norm": "111",
+      "status": "completed",
+      "steps": 3,
+      "seconds": 18.8,
+      "error": null
+    },
+    {
+      "id": "nu-2313",
+      "question": "which team could india not beat?",
+      "gold": [
+        "Pakistan"
+      ],
+      "answer": "Pakistan | South Africa",
+      "norm": "pakistan | south africa",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 27.8,
+      "error": null
+    },
+    {
+      "id": "nu-702",
+      "question": "how many tournaments were held in the month of november?",
+      "gold": [
+        "3"
+      ],
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 21.9,
+      "error": null
+    },
+    {
+      "id": "nu-3088",
+      "question": "what was the score of the last game of the season?",
+      "gold": [
+        "8-14"
+      ],
+      "answer": "L 8–14",
+      "norm": "l 8-14",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.8,
+      "error": null
+    },
+    {
+      "id": "nu-2673",
+      "question": "how long is the protected coastline in redwoods national park?",
+      "gold": [
+        "37 miles (60 km)"
+      ],
+      "answer": "37 miles (60 km)",
+      "norm": "37 miles",
+      "status": "completed",
+      "steps": 4,
+      "seconds": 34.5,
+      "error": null
+    },
+    {
+      "id": "nu-744",
+      "question": "name the only format with a decimal 128 value above 10,000.",
+      "gold": [
+        "Exponent range"
+      ],
+      "answer": "Exponent range",
+      "norm": "exponent range",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 17.8,
+      "error": null
+    },
+    {
+      "id": "nu-1634",
+      "question": "which one is the last on the chart",
+      "gold": [
+        "Brighton & Hove Albion"
+      ],
+      "answer": "Brighton & Hove Albion",
+      "norm": "brighton & hove albion",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 9.9,
+      "error": null
+    },
+    {
+      "id": "nu-2183",
+      "question": "who scored the most goals?",
+      "gold": [
+        "Spas Delev"
+      ],
+      "answer": "Spas Delev",
+      "norm": "spas delev",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.2,
+      "error": null
+    },
+    {
+      "id": "nu-2965",
+      "question": "how many players were transferred in 2012?",
+      "gold": [
+        "2"
+      ],
+      "answer": "2",
+      "norm": "2",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 27.8,
+      "error": null
+    },
+    {
+      "id": "nu-3210",
+      "question": "who was voted out after ivan demidov?",
+      "gold": [
+        "Yelena Proklova 49.the TV presenter"
+      ],
+      "answer": "Yelena Proklova",
+      "norm": "yelena proklova",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 22.3,
+      "error": null
+    },
+    {
+      "id": "nu-40",
+      "question": "in cycle 4 of austria's next top model,how many contestants were older than 20?",
+      "gold": [
+        "5"
+      ],
+      "answer": "5",
+      "norm": "5",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 53.1,
+      "error": null
+    },
+    {
+      "id": "nu-4338",
+      "question": "is the number of wins higher than the number of runner-up?",
+      "gold": [
+        "no"
+      ],
+      "answer": "No",
+      "norm": "no",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 45.7,
+      "error": null
+    },
+    {
+      "id": "nu-3129",
+      "question": "what is the number of 1st places obtained?",
+      "gold": [
+        "4"
+      ],
+      "answer": "4",
+      "norm": "4",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.5,
+      "error": null
+    },
+    {
+      "id": "nu-50",
+      "question": "besides angola racing team, what other team is listed in the 23rd position?",
+      "gold": [
+        "Carlin"
+      ],
+      "answer": "Carlin",
+      "norm": "carlin",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 10.4,
+      "error": null
+    },
+    {
+      "id": "nu-2849",
+      "question": "which continent has the greatest population growth between 1975 and 1985?",
+      "gold": [
+        "Asia"
+      ],
+      "answer": "Asia",
+      "norm": "asia",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 27.1,
+      "error": null
+    },
+    {
+      "id": "nu-4235",
+      "question": "how many destinations have the same frequency in minutes as princess street?",
+      "gold": [
+        "13"
+      ],
+      "answer": "13",
+      "norm": "13",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 29.3,
+      "error": null
+    },
+    {
+      "id": "nu-3074",
+      "question": "what two races are the longest?",
+      "gold": [
+        "Surround Stakes",
+        "Warwick Stakes"
+      ],
+      "answer": "Surround Stakes | Warwick Stakes",
+      "norm": "surround stakes | warwick stakes",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 48.4,
+      "error": null
+    },
+    {
+      "id": "nu-2374",
+      "question": "how many total award winners were goal keeps?",
+      "gold": [
+        "3"
+      ],
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 39.3,
+      "error": null
+    },
+    {
+      "id": "nu-2977",
+      "question": "how many consecutive years has leona lewis been nominated for an award?",
+      "gold": [
+        "3"
+      ],
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.8,
+      "error": null
+    },
+    {
+      "id": "nu-1777",
+      "question": "how man contestants were taller than paola saint-hilaire arias at reina nacional de belleza miss república dominicana 2007?",
+      "gold": [
+        "9"
+      ],
+      "answer": "9",
+      "norm": "9",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 20.2,
+      "error": null
+    },
+    {
+      "id": "nu-942",
+      "question": "who holds the first fastest time?",
+      "gold": [
+        "Adam Kszczot"
+      ],
+      "answer": "Adam Kszczot",
+      "norm": "adam kszczot",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 14.0,
+      "error": null
+    },
+    {
+      "id": "nu-2697",
+      "question": "how many years are listed?",
+      "gold": [
+        "16"
+      ],
+      "answer": "16",
+      "norm": "16",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 36.0,
+      "error": null
+    },
+    {
+      "id": "nu-2363",
+      "question": "how many combined gold medals did brazil and australia win?",
+      "gold": [
+        "22"
+      ],
+      "answer": "22",
+      "norm": "22",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 30.0,
+      "error": null
+    },
+    {
+      "id": "nu-4142",
+      "question": "how many number of cast members were there on zoom season 1?",
+      "gold": [
+        "7"
+      ],
+      "answer": "7",
+      "norm": "7",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.9,
+      "error": null
+    },
+    {
+      "id": "nu-3177",
+      "question": "name a country that earned more than 1 gol medal but less than 4 silvers.",
+      "gold": [
+        "Yugoslavia"
+      ],
+      "answer": "Yugoslavia",
+      "norm": "yugoslavia",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 19.9,
+      "error": null
+    },
+    {
+      "id": "nu-120",
+      "question": "what is the total number of times the team did not qualify for playoffs?",
+      "gold": [
+        "6"
+      ],
+      "answer": "6",
+      "norm": "6",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 25.1,
+      "error": null
+    },
+    {
+      "id": "nu-2125",
+      "question": "how many participants have a final score more than 262?",
+      "gold": [
+        "3"
+      ],
+      "answer": "3",
+      "norm": "3",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 12.8,
+      "error": null
+    },
+    {
+      "id": "nu-1496",
+      "question": "how many movies were made in 2010?",
+      "gold": [
+        "2"
+      ],
+      "answer": "2",
+      "norm": "2",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 7.8,
+      "error": null
+    },
+    {
+      "id": "nu-3962",
+      "question": "what is the first hexadecimal listed on table?",
+      "gold": [
+        "30"
+      ],
+      "answer": "30",
+      "norm": "30",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.4,
+      "error": null
+    },
+    {
+      "id": "nu-3523",
+      "question": "how many more votes did daryl reid than bryan mcleod in the 2007 manitoba general election?",
+      "gold": [
+        "3090"
+      ],
+      "answer": "3,090",
+      "norm": "3090",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 13.7,
+      "error": null
+    },
+    {
+      "id": "nu-2846",
+      "question": "how many consecutive 1st positions are there?",
+      "gold": [
+        "2"
+      ],
+      "answer": "2",
+      "norm": "2",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 18.4,
+      "error": null
+    },
+    {
+      "id": "nu-1100",
+      "question": "were the 2007 world championships in japan or finland?",
+      "gold": [
+        "Japan"
+      ],
+      "answer": "Japan",
+      "norm": "japan",
+      "status": "completed",
+      "steps": 0,
+      "seconds": 7.7,
+      "error": null
+    },
+    {
+      "id": "nu-3010",
+      "question": "what is the difference in points between scott dixon and ryan briscoe?",
+      "gold": [
+        "11"
+      ],
+      "answer": "11",
+      "norm": "11",
+      "status": "completed",
+      "steps": 1,
+      "seconds": 53.2,
+      "error": null
+    }
+  ]
+}
