@@ -27,6 +27,7 @@ def main() -> None:
     # first-9 shuffled items (same seed logic => overlapping subset)
     import random
 
+    per_type = int(sys.argv[1]) if len(sys.argv) > 1 else 8
     rng = random.Random(20261009)
     rows = [r for r in data if r["ambig_type"] in {"table", "vague"}]
     by_type: dict[str, list[dict]] = {}
@@ -36,7 +37,7 @@ def main() -> None:
     for t in sorted(by_type):
         rs = by_type[t]
         rng.shuffle(rs)
-        picked.extend(rs[:8])
+        picked.extend(rs[:per_type])
     print(f"A/B on {len(picked)} weak-type items")
 
     db_cache: dict[str, Database] = {}
