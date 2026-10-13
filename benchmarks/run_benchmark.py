@@ -102,7 +102,49 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
     predictions: list[str] = []
     labels: list[list[str]] = []
     total_seconds = 0.0
+    # Resume: an existing report at ``out`` contributes its completed cases;
+    # items already done are skipped so interrupted long runs can be
+    # restarted without losing progress (background shells get killed).
+    done: dict[str, dict] = {}
+    out_path = Path(out)
+    if out_path.exists():
+        try:
+            prior = json.loads(out_path.read_text(encoding="utf-8"))
+            for case in prior.get("cases", []):
+                done[case["id"]] = case
+            if done:
+                print(f"resuming: {len(done)} cases already done")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    def _write_partial() -> None:
+        """Flush progress after every item (crash-safe resume)."""
+
+        all_cases = list(done.values()) + report
+        preds = [c.get("norm") or c.get("answer", "") for c in all_cases]
+        golds = [c["gold"] for c in all_cases]
+        if benchmark in {"clambsql", "bird"}:
+            acc = sum(
+                gold_coverage(p, " | ".join(str(g) for g in gv))
+                for p, gv in zip(preds, golds)
+            ) / max(len(preds), 1)
+        else:
+            acc = denotation_accuracy(preds, golds)
+        partial = {
+            "benchmark": benchmark,
+            "n": len(items),
+            "completed": len(all_cases),
+            "accuracy": acc,
+            "seconds": round(total_seconds, 1),
+            "llm_calls": getattr(llm, "n_calls", None),
+            "llm_tokens": getattr(llm, "n_tokens", None),
+            "cases": all_cases,
+        }
+        out_path.write_text(json.dumps(partial, ensure_ascii=False, indent=2), encoding="utf-8")
+
     for index, item in enumerate(items, 1):
+        if item.id in done:
+            continue
         start = time.perf_counter()
         error = None
         try:
@@ -160,7 +202,11 @@ def run(benchmark: str, n: int, sc: int, mode: str, out: str, seed: int) -> dict
             f"answer={norm or answer!r} gold={labels[-1]!r} ({elapsed:.0f}s)",
             flush=True,
         )
+        _write_partial()
 
+    all_cases = list(done.values()) + report
+    predictions = [c.get("norm") or c.get("answer", "") for c in all_cases]
+    labels = [c["gold"] for c in all_cases]
     if benchmark in {"clambsql", "bird"}:
         # value-coverage scoring for prose-vs-SQL-result comparison
         accuracy = sum(
